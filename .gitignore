@@ -1,0 +1,11 @@
+Midna/Temp/
+Midna/Library/
+Midna/Obj/
+Midna/Assets/UnityTestTools/Examples/
+ 
+*.csproj
+*.unityproj
+*.sln
+*.user
+*.userprefs
+*.DS_store
