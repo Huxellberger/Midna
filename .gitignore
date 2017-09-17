@@ -1,7 +1,7 @@
-Midna/Temp/
-Midna/Library/
-Midna/Obj/
-Midna/Assets/UnityTestTools/Examples/
+Temp/
+Library/
+Obj/
+Assets/UnityTestsTools/Examples/
  
 *.csproj
 *.unityproj
