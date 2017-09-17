@@ -1,7 +1,7 @@
 Temp/
 Library/
 Obj/
-Assets/UnityTestsTools/Examples/
+Assets/UnityTestTools/Examples/
  
 *.csproj
 *.unityproj
