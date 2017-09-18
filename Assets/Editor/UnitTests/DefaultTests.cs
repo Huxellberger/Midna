@@ -20,8 +20,7 @@ namespace Midna.Editor.UnitTests
 
             //Then
             //The object has a new name
-            // Make it fail to check build fails
-            Assert.AreNotEqual(newGameObjectName, gameObject.name);
+            Assert.AreEqual(newGameObjectName, gameObject.name);
         }
     }
 }
