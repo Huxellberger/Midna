@@ -1,8 +1,8 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
-using UnityEngine;
 using NUnit.Framework;
 using Midna.Components.ActionStateMachine;
+using Midna.Editor.UnitTests.TestHelpers;
 using Midna.Test.Components.ActionStateMachine;
 using System;
 
@@ -14,9 +14,7 @@ namespace Midna.Editor.UnitTests.Components.ActionStateMachine
         [Test]
         public void WhenCreated_AllTracksHaveNullActionStateId()
         {
-            var gameObject = new GameObject();
-            var actionStateMachineComponent = gameObject.AddComponent<TestActionStateMachineComponent>();
-            actionStateMachineComponent.TestAwake();
+            var actionStateMachineComponent = TestableMonobehaviourFunctions<TestActionStateMachineComponent>.PrepareMonobehaviourComponentForTest(null);
 
             var tracks = Enum.GetValues(typeof(EActionStateMachineTrack));
 
@@ -29,9 +27,7 @@ namespace Midna.Editor.UnitTests.Components.ActionStateMachine
         [Test]
         public void IsActionStateActiveOnTrack_WrongTrackCorrectId_False()
         {
-            var gameObject = new GameObject();
-            var actionStateMachineComponent = gameObject.AddComponent<TestActionStateMachineComponent>();
-            actionStateMachineComponent.TestAwake();
+            var actionStateMachineComponent = TestableMonobehaviourFunctions<TestActionStateMachineComponent>.PrepareMonobehaviourComponentForTest(null);
 
             const EActionStateId expectedStateId = EActionStateId.Locomotion;
             const EActionStateMachineTrack wrongTrack = EActionStateMachineTrack.None;
@@ -45,9 +41,7 @@ namespace Midna.Editor.UnitTests.Components.ActionStateMachine
         [Test]
         public void IsActionStateActiveOnTrack_CorrectTrackWrongId_False()
         {
-            var gameObject = new GameObject();
-            var actionStateMachineComponent = gameObject.AddComponent<TestActionStateMachineComponent>();
-            actionStateMachineComponent.TestAwake();
+            var actionStateMachineComponent = TestableMonobehaviourFunctions<TestActionStateMachineComponent>.PrepareMonobehaviourComponentForTest(null);
 
             const EActionStateId wrongId = EActionStateId.Null;
             const EActionStateId expectedStateId = EActionStateId.Locomotion;
@@ -61,9 +55,7 @@ namespace Midna.Editor.UnitTests.Components.ActionStateMachine
         [Test]
         public void RequestActionState_SetsTrackToNewIdAndIsActionStateActiveReturnsTrue()
         {
-            var gameObject = new GameObject();
-            var actionStateMachineComponent = gameObject.AddComponent<TestActionStateMachineComponent>();
-            actionStateMachineComponent.TestAwake();
+            var actionStateMachineComponent = TestableMonobehaviourFunctions<TestActionStateMachineComponent>.PrepareMonobehaviourComponentForTest(null);
 
             const EActionStateId expectedStateId = EActionStateId.Locomotion;
             const EActionStateMachineTrack changedTrack = EActionStateMachineTrack.Locomotion;
