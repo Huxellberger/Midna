@@ -18,9 +18,6 @@ namespace Midna.Editor.UnitTests.Components.ActionStateMachine
             var actionStateMachineComponent = gameObject.AddComponent<TestActionStateMachineComponent>();
             actionStateMachineComponent.TestAwake();
 
-            actionStateMachineComponent.Invoke("Awake", 0.0f);
-            gameObject.SendMessage("Update", 10.0f);
-
             var tracks = Enum.GetValues(typeof(EActionStateMachineTrack));
 
             foreach(EActionStateMachineTrack track in tracks)
