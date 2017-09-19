@@ -28,7 +28,7 @@ namespace Midna.Editor.UnitTests.TestFixtures
         [Test]
         public void WhenFixtureStartsTest_ConsoleLogHandlerIsActive()
         {
-            Debug.LogError("Error is here!");
+            Debug.LogError("Test!");
 
             Assert.IsTrue(consoleLogHandler.HasReceivedExactlyNNewErrors(1));
         }

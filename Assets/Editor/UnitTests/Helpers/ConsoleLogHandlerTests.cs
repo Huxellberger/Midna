@@ -3,6 +3,8 @@
 using NUnit.Framework;
 using UnityEngine;
 
+// NB: Using "Bad log" instead of error as the word error upsets the cloud build for some reason when it shows up in a log
+
 namespace Midna.Editor.UnitTests.TestHelpers
 {
     [TestFixture]
@@ -23,17 +25,17 @@ namespace Midna.Editor.UnitTests.TestHelpers
         [Test]
         public void GivenConsoleLogHandler_WhenCreated_NotListeningForEvents()
         {
-            Debug.LogError("TestError");
+            Debug.LogError("Test");
 
             Assert.IsFalse(testHandler.HasReceivedAnyNewErrors());
         }
 
         [Test]
-        public void GivenConsoleLogHandler_WhenActivated_RemembersIfErrorOccurred()
+        public void GivenConsoleLogHandler_WhenActivated_RemembersIfBadLogOccurred()
         {
             testHandler.Activate();
 
-            Debug.LogError("TestError");
+            Debug.LogError("Test");
 
             Assert.IsTrue(testHandler.HasReceivedAnyNewErrors());
 
@@ -41,11 +43,11 @@ namespace Midna.Editor.UnitTests.TestHelpers
         }
 
         [Test]
-        public void GivenConsoleLogHandler_WhenActivated_CatchesCorrectError()
+        public void GivenConsoleLogHandler_WhenActivated_CatchesCorrectBadLog()
         {
             testHandler.Activate();
 
-            const string errorMessage = "TestError";
+            const string errorMessage = "Test";
 
             Debug.LogError(errorMessage);
 
@@ -54,30 +56,30 @@ namespace Midna.Editor.UnitTests.TestHelpers
         }
 
         [Test]
-        public void GivenConsoleLogHandler_WhenActivated_CatchesMultipleErrors()
+        public void GivenConsoleLogHandler_WhenActivated_CatchesMultipleBadLogs()
         {
             testHandler.Activate();
 
-            Debug.LogError("TestError");
-            Debug.LogError("OtherTestError");
+            Debug.LogError("Test");
+            Debug.LogError("OtherTest");
 
             Assert.IsTrue(testHandler.HasReceivedExactlyNNewErrors(2));
             testHandler.Deactivate();
         }
 
         [Test]
-        public void GivenConsoleLogHandler_WhenDeactivated_StopsCatchingErrors()
+        public void GivenConsoleLogHandler_WhenDeactivated_StopsCatchingBadLogs()
         {
             testHandler.Activate();
             testHandler.Deactivate();
 
-            Debug.LogError("TestError");
+            Debug.LogError("Test");
 
             Assert.IsFalse(testHandler.HasReceivedAnyNewErrors());
         }
 
         [Test]
-        public void GivenConsoleLogHandler_HasReceivedAnyNewErrors_NoErrors_False()
+        public void GivenConsoleLogHandler_HasReceivedAnyNewBadLogs_NoBadLogs_False()
         {
             testHandler.Activate();
 
@@ -86,22 +88,22 @@ namespace Midna.Editor.UnitTests.TestHelpers
         }
 
         [Test]
-        public void GivenConsoleLogHandler_HasReceivedAnyNewErrors_NewError_True()
+        public void GivenConsoleLogHandler_HasReceivedAnyNewBadLogs_NewBadLog_True()
         {
             testHandler.Activate();
 
-            Debug.LogError("TestError");
+            Debug.LogError("Test");
 
             Assert.IsTrue(testHandler.HasReceivedAnyNewErrors());
             testHandler.Deactivate();
         }
 
         [Test]
-        public void GivenConsoleLogHandler_HasReceivedAnyNewErrors_OldError_False()
+        public void GivenConsoleLogHandler_HasReceivedAnyNewBadLogs_OldBadLog_False()
         {
             testHandler.Activate();
 
-            Debug.LogError("TestError");
+            Debug.LogError("Test");
 
             testHandler.HasReceivedAnyNewErrors();
 
@@ -110,11 +112,11 @@ namespace Midna.Editor.UnitTests.TestHelpers
         }
 
         [Test]
-        public void GivenConsoleLogHandler_HasReceivedExactlyNNewErrors_WrongN_False()
+        public void GivenConsoleLogHandler_HasReceivedExactlyNNewBadLogs_WrongN_False()
         {
             testHandler.Activate();
 
-            Debug.LogError("TestError");
+            Debug.LogError("Test");
 
             Assert.IsFalse(testHandler.HasReceivedExactlyNNewErrors(2));
 
@@ -123,22 +125,22 @@ namespace Midna.Editor.UnitTests.TestHelpers
         }
 
         [Test]
-        public void GivenConsoleLogHandler_HasReceivedExactlyNNewErrors_CorrectN_True()
+        public void GivenConsoleLogHandler_HasReceivedExactlyNNewBadLogs_CorrectN_True()
         {
             testHandler.Activate();
 
-            Debug.LogError("TestError");
+            Debug.LogError("Test");
 
             Assert.IsTrue(testHandler.HasReceivedExactlyNNewErrors(1));
             testHandler.Deactivate();
         }
 
         [Test]
-        public void GivenConsoleLogHandler_HasReceivedExactlyNNewErrors_OldErrors_False()
+        public void GivenConsoleLogHandler_HasReceivedExactlyNNewBadLogs_OldBadLog_False()
         {
             testHandler.Activate();
 
-            Debug.LogError("TestError");
+            Debug.LogError("Test");
 
             testHandler.HasReceivedExactlyNNewErrors(1);
 
@@ -147,12 +149,12 @@ namespace Midna.Editor.UnitTests.TestHelpers
         }
 
         [Test]
-        public void GivenConsoleLogHandler_HasReceivedNewErrorOfString_WrongString_False()
+        public void GivenConsoleLogHandler_HasReceivedNewBadLogOfString_WrongString_False()
         {
             testHandler.Activate();
 
-            const string errorMessage = "TestError";
-            const string wrongErrorMessage = "NotTestError";
+            const string errorMessage = "Test";
+            const string wrongErrorMessage = "NotTest";
 
             Debug.LogError(errorMessage);
 
@@ -163,11 +165,11 @@ namespace Midna.Editor.UnitTests.TestHelpers
         }
 
         [Test]
-        public void GivenConsoleLogHandler_HasReceivedNewErrorOfString_CorrectString_True()
+        public void GivenConsoleLogHandler_HasReceivedNewBadLogOfString_CorrectString_True()
         {
             testHandler.Activate();
 
-            const string errorMessage = "TestError";
+            const string errorMessage = "Test";
 
             Debug.LogError(errorMessage);
 
@@ -176,11 +178,11 @@ namespace Midna.Editor.UnitTests.TestHelpers
         }
 
         [Test]
-        public void GivenConsoleLogHandler_HasReceivedNewErrorOfString_OldCorrectString_False()
+        public void GivenConsoleLogHandler_HasReceivedNewBadLogOfString_OldCorrectString_False()
         {
             testHandler.Activate();
 
-            const string errorMessage = "TestError";
+            const string errorMessage = "Test";
 
             Debug.LogError(errorMessage);
 
