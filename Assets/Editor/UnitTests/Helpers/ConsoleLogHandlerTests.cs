@@ -5,6 +5,8 @@ using UnityEngine;
 
 // NB: Using "Bad log" instead of error as the word error upsets the cloud build for some reason when it shows up in a log
 
+#if LOCAL_EDITOR
+
 namespace Midna.Editor.UnitTests.TestHelpers
 {
     [TestFixture]
@@ -194,3 +196,5 @@ namespace Midna.Editor.UnitTests.TestHelpers
         private ConsoleLogHandler testHandler;
     }
 }
+
+#endif // LOCAL_EDITOR
