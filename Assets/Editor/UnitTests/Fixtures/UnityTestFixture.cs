@@ -8,6 +8,11 @@ namespace Midna.Editor.UnitTests.TestFixtures
     [TestFixture]
     public abstract class UnityTestFixture
     {
+        public UnityTestFixture()
+        {
+            consoleLogHandler = null;
+        }
+
         [SetUp]
         public void BeforeTest()
         {
@@ -23,6 +28,7 @@ namespace Midna.Editor.UnitTests.TestFixtures
             OnAfterTest();
 
             consoleLogHandler.Deactivate();
+            consoleLogHandler = null;
         }
 
         protected abstract void OnBeforeTest();

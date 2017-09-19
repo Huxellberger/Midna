@@ -10,6 +10,7 @@ namespace Midna.Editor.UnitTests.TestFixtures
         : UnityTestFixture
     {
         public UnityTestFixtureTests()
+            : base()
         {
             onBeforeTestCalled = false;
         }
