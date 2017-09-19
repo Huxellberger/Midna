@@ -5,6 +5,9 @@ using UnityEngine;
 
 // NB: Using "Bad log" instead of error as the word error upsets the cloud build for some reason when it shows up in a log
 
+// Currently disabled in cloud build as fails it.
+#if UNITY_EDITOR
+
 namespace Midna.Editor.UnitTests.TestHelpers
 {
     [TestFixture]
@@ -194,3 +197,5 @@ namespace Midna.Editor.UnitTests.TestHelpers
         private ConsoleLogHandler testHandler;
     }
 }
+
+#endif // UNITY_EDITOR
