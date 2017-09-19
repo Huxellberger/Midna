@@ -11,11 +11,21 @@ namespace Midna.Editor.UnitTests.Components.ActionStateMachine
     [TestFixture]
     public class ActionStateMachineComponentTests
     {
+        [SetUp]
+        public void BeforeTest()
+        {
+            actionStateMachineComponent = TestableMonobehaviourFunctions<TestActionStateMachineComponent>.PrepareMonobehaviourComponentForTest(null);
+        }
+
+        [TearDown]
+        public void AfterTest()
+        {
+            actionStateMachineComponent = null;
+        }
+
         [Test]
         public void WhenCreated_AllTracksHaveNullActionStateId()
         {
-            var actionStateMachineComponent = TestableMonobehaviourFunctions<TestActionStateMachineComponent>.PrepareMonobehaviourComponentForTest(null);
-
             var tracks = Enum.GetValues(typeof(EActionStateMachineTrack));
 
             foreach(EActionStateMachineTrack track in tracks)
@@ -27,8 +37,6 @@ namespace Midna.Editor.UnitTests.Components.ActionStateMachine
         [Test]
         public void IsActionStateActiveOnTrack_WrongTrackCorrectId_False()
         {
-            var actionStateMachineComponent = TestableMonobehaviourFunctions<TestActionStateMachineComponent>.PrepareMonobehaviourComponentForTest(null);
-
             const EActionStateId expectedStateId = EActionStateId.Locomotion;
             const EActionStateMachineTrack wrongTrack = EActionStateMachineTrack.None;
             const EActionStateMachineTrack changedTrack = EActionStateMachineTrack.Locomotion;
@@ -41,8 +49,6 @@ namespace Midna.Editor.UnitTests.Components.ActionStateMachine
         [Test]
         public void IsActionStateActiveOnTrack_CorrectTrackWrongId_False()
         {
-            var actionStateMachineComponent = TestableMonobehaviourFunctions<TestActionStateMachineComponent>.PrepareMonobehaviourComponentForTest(null);
-
             const EActionStateId wrongId = EActionStateId.Null;
             const EActionStateId expectedStateId = EActionStateId.Locomotion;
             const EActionStateMachineTrack changedTrack = EActionStateMachineTrack.Locomotion;
@@ -55,8 +61,6 @@ namespace Midna.Editor.UnitTests.Components.ActionStateMachine
         [Test]
         public void RequestActionState_SetsTrackToNewIdAndIsActionStateActiveReturnsTrue()
         {
-            var actionStateMachineComponent = TestableMonobehaviourFunctions<TestActionStateMachineComponent>.PrepareMonobehaviourComponentForTest(null);
-
             const EActionStateId expectedStateId = EActionStateId.Locomotion;
             const EActionStateMachineTrack changedTrack = EActionStateMachineTrack.Locomotion;
 
@@ -64,5 +68,7 @@ namespace Midna.Editor.UnitTests.Components.ActionStateMachine
 
             Assert.IsTrue(actionStateMachineComponent.IsActionStateActiveOnTrack(changedTrack, expectedStateId));
         }
+
+        TestActionStateMachineComponent actionStateMachineComponent;
     }
 }
