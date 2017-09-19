@@ -3,8 +3,6 @@
 using NUnit.Framework;
 using Midna.Editor.UnitTests.TestHelpers;
 
-#if UNITY_EDITOR
-
 namespace Midna.Editor.UnitTests.TestFixtures
 {
     [TestFixture]
@@ -39,5 +37,3 @@ namespace Midna.Editor.UnitTests.TestFixtures
         protected ConsoleLogHandler consoleLogHandler;
     }
 }
-
-#endif // UNITY_EDITOR

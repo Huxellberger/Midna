@@ -3,8 +3,6 @@
 using UnityEngine;
 using NUnit.Framework;
 
-#if UNITY_EDITOR
-
 namespace Midna.Editor.UnitTests.TestFixtures
 {
     [TestFixture]
@@ -45,5 +43,3 @@ namespace Midna.Editor.UnitTests.TestFixtures
         private bool onBeforeTestCalled;
     }
 }
-
-#endif // UNITY_EDITOR

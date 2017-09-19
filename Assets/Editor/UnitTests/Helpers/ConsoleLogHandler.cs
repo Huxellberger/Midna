@@ -4,9 +4,6 @@ using UnityEngine;
 using System.Collections.Generic;
 using NUnit.Framework;
 
-// Fails cloud build at the moment so should only be used for locally checking errors
-#if UNITY_EDITOR
-
 namespace Midna.Editor.UnitTests.TestHelpers
 {
     public class ConsoleLogHandler
@@ -110,5 +107,3 @@ namespace Midna.Editor.UnitTests.TestHelpers
         private List<ConsoleLogEntry> receivedErrors;
     }
 }
-
-#endif // UNITY_EDITOR
