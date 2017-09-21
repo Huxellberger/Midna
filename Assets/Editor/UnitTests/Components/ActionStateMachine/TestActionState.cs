@@ -7,7 +7,12 @@ namespace Midna.Editor.UnitTests.Components.ActionStateMachine
     public class TestActionState : ActionState
     {
         public TestActionState()
-            : base()
+            : this(EActionStateId.Null)
+        {
+        }
+
+        public TestActionState(EActionStateId inActionStateId)
+            : base(inActionStateId)
         {
             onStartCalled = false;
             onUpdateCalled = false;

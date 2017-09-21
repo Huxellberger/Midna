@@ -4,7 +4,7 @@ namespace Midna.Components.ActionStateMachine
 {
     public interface IActionStateMachineInterface
     {
-        void RequestActionState(EActionStateMachineTrack selectedTrack, EActionStateId newId);
+        void RequestActionState(EActionStateMachineTrack selectedTrack, ActionState newState);
 
         bool IsActionStateActiveOnTrack(EActionStateMachineTrack selectedTrack, EActionStateId expectedId);
     }

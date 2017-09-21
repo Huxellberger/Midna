@@ -12,26 +12,26 @@ namespace Midna.Components.ActionStateMachine
         protected virtual void Awake()
         {
             // Initialise all tracks to null
-            activeActionStates = new Dictionary<EActionStateMachineTrack, EActionStateId>();
+            activeActionStates = new Dictionary<EActionStateMachineTrack, ActionState>();
 
             foreach (EActionStateMachineTrack track in Enum.GetValues(typeof(EActionStateMachineTrack)))
             {
-                activeActionStates.Add(track, EActionStateId.Null);
+                activeActionStates.Add(track, new NullActionState());
             }
         }
 
         // IActionStateMachineInterface
-        public virtual void RequestActionState(EActionStateMachineTrack selectedTrack, EActionStateId newId)
+        public virtual void RequestActionState(EActionStateMachineTrack selectedTrack, ActionState newId)
         {
             activeActionStates[selectedTrack] = newId;
         }
 
         public virtual bool IsActionStateActiveOnTrack(EActionStateMachineTrack selectedTrack, EActionStateId expectedId)
         {
-            return activeActionStates[selectedTrack] == expectedId;
+            return activeActionStates[selectedTrack].actionStateId == expectedId;
         }
         // ~IActionStateMachineInterface
 
-        private Dictionary<EActionStateMachineTrack, EActionStateId> activeActionStates;
+        private Dictionary<EActionStateMachineTrack, ActionState> activeActionStates;
     }
 }

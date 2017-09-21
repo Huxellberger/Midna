@@ -9,7 +9,7 @@ using System;
 namespace Midna.Editor.UnitTests.Components.ActionStateMachine
 {
     [TestFixture]
-    public class ActionStateMachineComponentTests
+    public class ActionStateMachineComponentTestFixture
     {
         [SetUp]
         public void BeforeTest()
@@ -41,7 +41,9 @@ namespace Midna.Editor.UnitTests.Components.ActionStateMachine
             const EActionStateMachineTrack wrongTrack = EActionStateMachineTrack.None;
             const EActionStateMachineTrack changedTrack = EActionStateMachineTrack.Locomotion;
 
-            actionStateMachineComponent.RequestActionState(changedTrack, expectedStateId);
+            var actionState = new TestActionState(expectedStateId);
+
+            actionStateMachineComponent.RequestActionState(changedTrack, actionState);
 
             Assert.IsFalse(actionStateMachineComponent.IsActionStateActiveOnTrack(wrongTrack, expectedStateId));
         }
@@ -53,7 +55,9 @@ namespace Midna.Editor.UnitTests.Components.ActionStateMachine
             const EActionStateId expectedStateId = EActionStateId.Locomotion;
             const EActionStateMachineTrack changedTrack = EActionStateMachineTrack.Locomotion;
 
-            actionStateMachineComponent.RequestActionState(changedTrack, expectedStateId);
+            var actionState = new TestActionState(expectedStateId);
+
+            actionStateMachineComponent.RequestActionState(changedTrack, actionState);
 
             Assert.IsFalse(actionStateMachineComponent.IsActionStateActiveOnTrack(changedTrack, wrongId));
         }
@@ -64,7 +68,9 @@ namespace Midna.Editor.UnitTests.Components.ActionStateMachine
             const EActionStateId expectedStateId = EActionStateId.Locomotion;
             const EActionStateMachineTrack changedTrack = EActionStateMachineTrack.Locomotion;
 
-            actionStateMachineComponent.RequestActionState(changedTrack, expectedStateId);
+            var actionState = new TestActionState(expectedStateId);
+
+            actionStateMachineComponent.RequestActionState(changedTrack, actionState);
 
             Assert.IsTrue(actionStateMachineComponent.IsActionStateActiveOnTrack(changedTrack, expectedStateId));
         }
