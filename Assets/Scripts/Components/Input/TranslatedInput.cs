@@ -1,0 +1,18 @@
+﻿// Copyright Threetee Gang (C) 2017
+
+namespace Assets.Scripts.Components.Input
+{
+    public class TranslatedInput
+        : PlayerInput
+    {
+        private readonly EInputKey _inputKey;
+
+        public TranslatedInput(EInputKey inInputKey, EInputType inInputType)
+            : base(inInputType)
+        {
+            _inputKey = inInputKey;
+        }
+
+        public EInputKey InputKey { get { return _inputKey; } }
+    }
+}

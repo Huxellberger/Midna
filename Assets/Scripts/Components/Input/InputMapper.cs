@@ -6,11 +6,11 @@ namespace Assets.Scripts.Components.Input
 {
     public class InputMapper
     {
-        public PlayerInput MapInput(PlayerInput inInput)
+        public TranslatedInput MapInput(RawInput inInput)
         {
             return InputMappings[inInput];
         }
 
-        public IDictionary<PlayerInput, PlayerInput> InputMappings { get; set; }
+        public IDictionary<RawInput, TranslatedInput> InputMappings { get; set; }
     }
 }

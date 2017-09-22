@@ -10,7 +10,7 @@ namespace Assets.Scripts.Components.Input
         // Load from PlayerPrefs/abstraction of it
         private InputMapper _inputMapper;
         // Update from some master list
-        private IEnumerable<PlayerInput> _inputs;
+        private IEnumerable<RawInput> _inputs;
 	
         // Update is called once per frame
         private void Update ()
@@ -43,10 +43,10 @@ namespace Assets.Scripts.Components.Input
                 switch (actualInput.InputType)
                 {
                     case EInputType.Analog:
-                        OnAnalogInput(actualInput.InputName, inputValue);
+                        OnAnalogInput(actualInput.InputKey, inputValue);
                         break;
                     case EInputType.Button:
-                        OnButtonPressed(actualInput.InputName, inputPressed);
+                        OnButtonPressed(actualInput.InputKey, inputPressed);
                         break;
                     case EInputType.Mouse:
                         // ToDo: Handle mouse locations. Buttons and analog will do for now
@@ -57,12 +57,12 @@ namespace Assets.Scripts.Components.Input
             }
         }
 
-        private void OnAnalogInput(string inputName, float inputValue)
+        private void OnAnalogInput(EInputKey inputKey, float inputValue)
         {
             
         }
 
-        private void OnButtonPressed(string inputName, bool pressed)
+        private void OnButtonPressed(EInputKey inputKey, bool pressed)
         {
             
         }

@@ -2,18 +2,15 @@
 
 namespace Assets.Scripts.Components.Input
 {
-    public struct PlayerInput
+    public class PlayerInput
     {
-        private readonly string _inputName;
         private readonly EInputType _inputType;
 
-        public PlayerInput(string inInputName, EInputType inInputType)
+        public PlayerInput(EInputType inInputType)
         {
-            _inputName = inInputName;
             _inputType = inInputType;
         }
 
-        public string InputName { get { return _inputName; }  }
         public EInputType InputType { get { return _inputType; } }
     }
 }
