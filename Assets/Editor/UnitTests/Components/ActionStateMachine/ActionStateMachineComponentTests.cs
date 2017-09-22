@@ -14,13 +14,13 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine
         [SetUp]
         public void BeforeTest()
         {
-            actionStateMachineComponent = TestableMonobehaviourFunctions<TestActionStateMachineComponent>.PrepareMonobehaviourComponentForTest(null);
+            _actionStateMachineComponent = TestableMonobehaviourFunctions<TestActionStateMachineComponent>.PrepareMonobehaviourComponentForTest(null);
         }
 
         [TearDown]
         public void AfterTest()
         {
-            actionStateMachineComponent = null;
+            _actionStateMachineComponent = null;
         }
 
         [Test]
@@ -30,7 +30,7 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine
 
             foreach(EActionStateMachineTrack track in tracks)
             {
-                Assert.IsTrue(actionStateMachineComponent.IsActionStateActiveOnTrack(track, EActionStateId.Null));
+                Assert.IsTrue(_actionStateMachineComponent.IsActionStateActiveOnTrack(track, EActionStateId.Null));
             }
         }
 
@@ -43,9 +43,9 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine
 
             var actionState = new TestActionState(expectedStateId, new ActionStateInfo());
 
-            actionStateMachineComponent.RequestActionState(changedTrack, actionState);
+            _actionStateMachineComponent.RequestActionState(changedTrack, actionState);
 
-            Assert.IsFalse(actionStateMachineComponent.IsActionStateActiveOnTrack(wrongTrack, expectedStateId));
+            Assert.IsFalse(_actionStateMachineComponent.IsActionStateActiveOnTrack(wrongTrack, expectedStateId));
         }
 
         [Test]
@@ -57,9 +57,9 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine
 
             var actionState = new TestActionState(expectedStateId, new ActionStateInfo());
 
-            actionStateMachineComponent.RequestActionState(changedTrack, actionState);
+            _actionStateMachineComponent.RequestActionState(changedTrack, actionState);
 
-            Assert.IsFalse(actionStateMachineComponent.IsActionStateActiveOnTrack(changedTrack, wrongId));
+            Assert.IsFalse(_actionStateMachineComponent.IsActionStateActiveOnTrack(changedTrack, wrongId));
         }
 
         [Test]
@@ -70,11 +70,11 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine
 
             var actionState = new TestActionState(expectedStateId, new ActionStateInfo());
 
-            actionStateMachineComponent.RequestActionState(changedTrack, actionState);
+            _actionStateMachineComponent.RequestActionState(changedTrack, actionState);
 
-            Assert.IsTrue(actionStateMachineComponent.IsActionStateActiveOnTrack(changedTrack, expectedStateId));
+            Assert.IsTrue(_actionStateMachineComponent.IsActionStateActiveOnTrack(changedTrack, expectedStateId));
         }
 
-        TestActionStateMachineComponent actionStateMachineComponent;
+        TestActionStateMachineComponent _actionStateMachineComponent;
     }
 }
