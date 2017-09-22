@@ -9,13 +9,12 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Threading;
-using UnityEditorInternal;
 using UnityEngine;
 #if UTT_SOCKETS_SUPPORTED
 #endif
 
 #if UNITY_EDITOR
-
+using UnityEditorInternal;
 #endif
 
 namespace Assets.UnityTestTools.IntegrationTestsFramework.TestRunner
