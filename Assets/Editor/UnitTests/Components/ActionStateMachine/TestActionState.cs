@@ -7,12 +7,12 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine
     public class TestActionState : ActionState
     {
         public TestActionState()
-            : this(EActionStateId.Null)
+            : this(EActionStateId.Null, new ActionStateInfo())
         {
         }
 
-        public TestActionState(EActionStateId inActionStateId)
-            : base(inActionStateId)
+        public TestActionState(EActionStateId inActionStateId, ActionStateInfo inActionStateInfo)
+            : base(inActionStateId, inActionStateInfo)
         {
             OnStartCalled = false;
             OnUpdateCalled = false;

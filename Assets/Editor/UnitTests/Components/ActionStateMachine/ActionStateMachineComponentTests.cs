@@ -41,7 +41,7 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine
             const EActionStateMachineTrack wrongTrack = EActionStateMachineTrack.None;
             const EActionStateMachineTrack changedTrack = EActionStateMachineTrack.Locomotion;
 
-            var actionState = new TestActionState(expectedStateId);
+            var actionState = new TestActionState(expectedStateId, new ActionStateInfo());
 
             actionStateMachineComponent.RequestActionState(changedTrack, actionState);
 
@@ -55,7 +55,7 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine
             const EActionStateId expectedStateId = EActionStateId.Locomotion;
             const EActionStateMachineTrack changedTrack = EActionStateMachineTrack.Locomotion;
 
-            var actionState = new TestActionState(expectedStateId);
+            var actionState = new TestActionState(expectedStateId, new ActionStateInfo());
 
             actionStateMachineComponent.RequestActionState(changedTrack, actionState);
 
@@ -68,7 +68,7 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine
             const EActionStateId expectedStateId = EActionStateId.Locomotion;
             const EActionStateMachineTrack changedTrack = EActionStateMachineTrack.Locomotion;
 
-            var actionState = new TestActionState(expectedStateId);
+            var actionState = new TestActionState(expectedStateId, new ActionStateInfo());
 
             actionStateMachineComponent.RequestActionState(changedTrack, actionState);
 

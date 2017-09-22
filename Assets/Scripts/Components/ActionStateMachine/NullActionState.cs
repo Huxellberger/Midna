@@ -5,7 +5,7 @@ namespace Assets.Scripts.Components.ActionStateMachine
     public class NullActionState : ActionState
     {
         public NullActionState()
-            : base(EActionStateId.Null)
+            : base(EActionStateId.Null, new ActionStateInfo())
         {
         }
 

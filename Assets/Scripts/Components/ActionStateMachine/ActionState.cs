@@ -4,9 +4,10 @@ namespace Assets.Scripts.Components.ActionStateMachine
 {
     public abstract class ActionState
     {
-        protected ActionState(EActionStateId inActionStateId)
+        protected ActionState(EActionStateId inActionStateId, ActionStateInfo inInfo)
         {
             ActionStateId = inActionStateId;
+            Info = inInfo;
         }
 
         public void Start()
@@ -29,5 +30,6 @@ namespace Assets.Scripts.Components.ActionStateMachine
         protected abstract void OnEnd();
 
         public EActionStateId ActionStateId { get; private set; }
+        protected ActionStateInfo Info { get; set; }
     }
 }
