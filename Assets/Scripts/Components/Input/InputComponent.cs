@@ -1,0 +1,70 @@
+﻿// Copyright Threetee Gang (C) 2017
+
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Assets.Scripts.Components.Input
+{
+    public class InputComponent : MonoBehaviour
+    {
+        // Load from PlayerPrefs/abstraction of it
+        private InputMapper _inputMapper;
+        // Update from some master list
+        private IEnumerable<PlayerInput> _inputs;
+	
+        // Update is called once per frame
+        private void Update ()
+        {
+            foreach (var input in _inputs)
+            {
+                var inputPressed = false;
+                var inputValue = 0.0f;
+
+                // Get state of button
+                switch (input.InputType)
+                {
+                    case EInputType.Analog:
+                        inputValue = UnityEngine.Input.GetAxis(input.InputName);
+                        inputPressed = inputValue == 0.0f;
+                        break;
+                    case EInputType.Button:
+                        inputPressed = UnityEngine.Input.GetButton(input.InputName); // Make everything a button
+                        break;
+                    case EInputType.Mouse:
+                        // ToDo: Handle mouse locations. Buttons and analog will do for now
+                        break;
+                    default:
+                        break;
+                }
+
+                var actualInput = _inputMapper.MapInput(input);
+
+                // respond to state
+                switch (actualInput.InputType)
+                {
+                    case EInputType.Analog:
+                        OnAnalogInput(actualInput.InputName, inputValue);
+                        break;
+                    case EInputType.Button:
+                        OnButtonPressed(actualInput.InputName, inputPressed);
+                        break;
+                    case EInputType.Mouse:
+                        // ToDo: Handle mouse locations. Buttons and analog will do for now
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private void OnAnalogInput(string inputName, float inputValue)
+        {
+            
+        }
+
+        private void OnButtonPressed(string inputName, bool pressed)
+        {
+            
+        }
+    }
+}
