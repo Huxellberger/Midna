@@ -1,6 +1,6 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
-namespace Midna.Test.TestHelpers
+namespace Assets.Scripts.Test.TestableMonobehaviour
 {
     public interface ITestableMonobehaviour
     {

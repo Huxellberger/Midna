@@ -1,10 +1,10 @@
 ﻿// Copyright (C) Threetee Gang 2017
 
-using UnityEngine;
 using System.Collections.Generic;
 using NUnit.Framework;
+using UnityEngine;
 
-namespace Midna.Editor.UnitTests.TestHelpers
+namespace Assets.Editor.UnitTests.Helpers
 {
     public class ConsoleLogHandler
     {
@@ -12,17 +12,17 @@ namespace Midna.Editor.UnitTests.TestHelpers
         {
             public ConsoleLogEntry(string inErrorMessage)
             {
-                errorMessage = inErrorMessage;
-                active = true;
+                ErrorMessage = inErrorMessage;
+                Active = true;
             }
 
-            public string errorMessage { get; set; }
-            public bool active { get; set; }
+            public string ErrorMessage { get; set; }
+            public bool Active { get; set; }
         }
 
         public ConsoleLogHandler()
         {
-            receivedErrors = new List<ConsoleLogEntry>();
+            _receivedErrors = new List<ConsoleLogEntry>();
         }
 
         public void Activate()
@@ -41,11 +41,11 @@ namespace Midna.Editor.UnitTests.TestHelpers
 
         public bool HasReceivedNewErrorString(string desiredError)
         {
-            foreach (var receivedError in receivedErrors)
+            foreach (var receivedError in _receivedErrors)
             {
-                if (receivedError.errorMessage.Equals(desiredError) && receivedError.active)
+                if (receivedError.ErrorMessage.Equals(desiredError) && receivedError.Active)
                 {
-                    receivedError.active = false;
+                    receivedError.Active = false;
                     return true;
                 }
             }
@@ -78,9 +78,9 @@ namespace Midna.Editor.UnitTests.TestHelpers
         private int GetNumberOfActiveErrors()
         {
             int totalActiveErrors = 0;
-            foreach (var receivedError in receivedErrors)
+            foreach (var receivedError in _receivedErrors)
             {
-                if (receivedError.active)
+                if (receivedError.Active)
                 {
                     totalActiveErrors++;
                 }
@@ -90,9 +90,9 @@ namespace Midna.Editor.UnitTests.TestHelpers
 
         private void DeactivateAllActiveErrors()
         {
-            foreach (var receivedError in receivedErrors)
+            foreach (var receivedError in _receivedErrors)
             {
-                receivedError.active = false;
+                receivedError.Active = false;
             }
         }
 
@@ -100,10 +100,10 @@ namespace Midna.Editor.UnitTests.TestHelpers
         {
             if (givenLogType == LogType.Error || givenLogType == LogType.Exception)
             {
-                receivedErrors.Add(new ConsoleLogEntry(logString));
+                _receivedErrors.Add(new ConsoleLogEntry(logString));
             }
         }
 
-        private List<ConsoleLogEntry> receivedErrors;
+        private readonly List<ConsoleLogEntry> _receivedErrors;
     }
 }

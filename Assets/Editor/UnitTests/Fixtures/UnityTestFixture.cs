@@ -1,9 +1,9 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+using Assets.Editor.UnitTests.Helpers;
 using NUnit.Framework;
-using Midna.Editor.UnitTests.TestHelpers;
 
-namespace Midna.Editor.UnitTests.TestFixtures
+namespace Assets.Editor.UnitTests.Fixtures
 {
     [TestFixture]
     public abstract class UnityTestFixture

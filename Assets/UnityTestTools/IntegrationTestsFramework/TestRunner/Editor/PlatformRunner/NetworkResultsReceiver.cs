@@ -4,11 +4,13 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using Assets.UnityTestTools.Common;
+using Assets.UnityTestTools.Common.Editor.ResultWriter;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
 
-namespace UnityTest
+namespace Assets.UnityTestTools.IntegrationTestsFramework.TestRunner.Editor.PlatformRunner
 {
     [Serializable]
     public class NetworkResultsReceiver : EditorWindow

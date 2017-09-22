@@ -1,12 +1,12 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
-namespace Midna.Components.ActionStateMachine
+namespace Assets.Scripts.Components.ActionStateMachine
 {
     public abstract class ActionState
     {
         protected ActionState(EActionStateId inActionStateId)
         {
-            actionStateId = inActionStateId;
+            ActionStateId = inActionStateId;
         }
 
         public void Start()
@@ -28,6 +28,6 @@ namespace Midna.Components.ActionStateMachine
         protected abstract void OnUpdate(float deltaTime);
         protected abstract void OnEnd();
 
-        public EActionStateId actionStateId { get; private set; }
+        public EActionStateId ActionStateId { get; private set; }
     }
 }

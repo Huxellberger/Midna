@@ -1,10 +1,11 @@
-using System;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEditor;
 using System.Linq;
+using Assets.UnityTestTools.Common.Editor.ResultWriter;
+using Assets.UnityTestTools.IntegrationTestsFramework.TestRunner.Editor.Renderer;
+using UnityEditor;
+using UnityEngine;
 
-namespace UnityTest
+namespace Assets.UnityTestTools.Common.Editor
 {
     public class TestFilterSettings
     {

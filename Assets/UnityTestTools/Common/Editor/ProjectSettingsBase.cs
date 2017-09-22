@@ -1,11 +1,9 @@
-using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace UnityTest
+namespace Assets.UnityTestTools.Common.Editor
 {
     public abstract class ProjectSettingsBase : ScriptableObject
     {

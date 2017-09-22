@@ -1,9 +1,8 @@
 using System;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace UnityTest
+namespace Assets.UnityTestTools.Assertions.Editor
 {
     [Serializable]
     internal class DropDownControl<T>

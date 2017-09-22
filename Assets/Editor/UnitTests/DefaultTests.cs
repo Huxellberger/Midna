@@ -1,8 +1,7 @@
-﻿using UnityEngine;
-using UnityEditor;
-using NUnit.Framework;
+﻿using NUnit.Framework;
+using UnityEngine;
 
-namespace Midna.Editor.UnitTests
+namespace Assets.Editor.UnitTests
 {
     [TestFixture]
     public class DefaultTests

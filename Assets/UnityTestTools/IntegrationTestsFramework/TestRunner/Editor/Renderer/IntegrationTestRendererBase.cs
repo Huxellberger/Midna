@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Assets.UnityTestTools.Common.Editor;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace UnityTest
+namespace Assets.UnityTestTools.IntegrationTestsFramework.TestRunner.Editor.Renderer
 {
     public abstract class IntegrationTestRendererBase : IComparable<IntegrationTestRendererBase>
     {

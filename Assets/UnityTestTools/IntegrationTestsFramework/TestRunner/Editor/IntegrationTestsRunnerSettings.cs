@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEditor;
+using Assets.UnityTestTools.Common.Editor;
 
-namespace UnityTest
+namespace Assets.UnityTestTools.IntegrationTestsFramework.TestRunner.Editor
 {
     public class IntegrationTestsRunnerSettings : ProjectSettingsBase
     {

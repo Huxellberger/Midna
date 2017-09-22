@@ -1,9 +1,9 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+using Assets.Scripts.Test.TestableMonobehaviour;
 using UnityEngine;
-using Midna.Test.TestHelpers;
 
-namespace Midna.Editor.UnitTests.TestHelpers
+namespace Assets.Editor.UnitTests.Helpers
 {
     public static class TestableMonobehaviourFunctions<MonoBehaviourType>
         where MonoBehaviourType : MonoBehaviour, ITestableMonobehaviour

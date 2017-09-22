@@ -4,9 +4,8 @@
 
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
-namespace UnityTest
+namespace Assets.UnityTestTools.Common.Editor.ResultWriter
 {
     /// <summary>
     /// Summary description for ResultSummarizer.

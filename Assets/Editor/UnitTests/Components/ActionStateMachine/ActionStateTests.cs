@@ -2,7 +2,7 @@
 
 using NUnit.Framework;
 
-namespace Midna.Editor.UnitTests.Components.ActionStateMachine
+namespace Assets.Editor.UnitTests.Components.ActionStateMachine
 {
     [TestFixture]
     public class ActionStateTestFixture
@@ -14,7 +14,7 @@ namespace Midna.Editor.UnitTests.Components.ActionStateMachine
 
             actionState.Start();
 
-            Assert.IsTrue(actionState.onStartCalled);
+            Assert.IsTrue(actionState.OnStartCalled);
         }
 
         [Test]
@@ -25,8 +25,8 @@ namespace Midna.Editor.UnitTests.Components.ActionStateMachine
 
             actionState.Update(expectedDelta);
 
-            Assert.IsTrue(actionState.onUpdateCalled);
-            Assert.AreEqual(actionState.onUpdateValue, expectedDelta);
+            Assert.IsTrue(actionState.OnUpdateCalled);
+            Assert.AreEqual(actionState.OnUpdateValue, expectedDelta);
         }
 
         [Test]
@@ -36,7 +36,7 @@ namespace Midna.Editor.UnitTests.Components.ActionStateMachine
 
             actionState.End();
 
-            Assert.IsTrue(actionState.onEndCalled);
+            Assert.IsTrue(actionState.OnEndCalled);
         }
     }
 }

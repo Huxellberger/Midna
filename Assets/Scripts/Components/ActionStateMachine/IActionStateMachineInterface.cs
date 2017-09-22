@@ -1,6 +1,6 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
-namespace Midna.Components.ActionStateMachine
+namespace Assets.Scripts.Components.ActionStateMachine
 {
     public interface IActionStateMachineInterface
     {

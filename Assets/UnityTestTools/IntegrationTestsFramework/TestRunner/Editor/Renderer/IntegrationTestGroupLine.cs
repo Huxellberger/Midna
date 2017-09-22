@@ -1,10 +1,10 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
+using Assets.UnityTestTools.Common.Editor;
 using UnityEditor;
 using UnityEngine;
 
-namespace UnityTest
+namespace Assets.UnityTestTools.IntegrationTestsFramework.TestRunner.Editor.Renderer
 {
     class IntegrationTestGroupLine : IntegrationTestRendererBase
     {

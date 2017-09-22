@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
-namespace UnityTest
+namespace Assets.UnityTestTools.Assertions.Editor
 {
     [Serializable]
     public class PropertyResolver

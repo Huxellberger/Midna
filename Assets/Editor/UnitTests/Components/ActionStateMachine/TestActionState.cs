@@ -1,8 +1,8 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
-using Midna.Components.ActionStateMachine;
+using Assets.Scripts.Components.ActionStateMachine;
 
-namespace Midna.Editor.UnitTests.Components.ActionStateMachine
+namespace Assets.Editor.UnitTests.Components.ActionStateMachine
 {
     public class TestActionState : ActionState
     {
@@ -14,30 +14,30 @@ namespace Midna.Editor.UnitTests.Components.ActionStateMachine
         public TestActionState(EActionStateId inActionStateId)
             : base(inActionStateId)
         {
-            onStartCalled = false;
-            onUpdateCalled = false;
-            onEndCalled = false;
+            OnStartCalled = false;
+            OnUpdateCalled = false;
+            OnEndCalled = false;
         }
 
         protected override void OnStart()
         {
-            onStartCalled = true;
+            OnStartCalled = true;
         }
 
         protected override void OnUpdate(float deltaTime)
         {
-            onUpdateCalled = true;
-            onUpdateValue = deltaTime;
+            OnUpdateCalled = true;
+            OnUpdateValue = deltaTime;
         }
 
         protected override void OnEnd()
         {
-            onEndCalled = true;
+            OnEndCalled = true;
         }
 
-        public bool onStartCalled { get; set; }
-        public bool onUpdateCalled { get; set; }
-        public float ? onUpdateValue { get; set; }
-        public bool onEndCalled { get; set; }
+        public bool OnStartCalled { get; set; }
+        public bool OnUpdateCalled { get; set; }
+        public float ? OnUpdateValue { get; set; }
+        public bool OnEndCalled { get; set; }
     }
 }

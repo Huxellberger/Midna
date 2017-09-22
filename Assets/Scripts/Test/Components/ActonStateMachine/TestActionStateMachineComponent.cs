@@ -1,9 +1,9 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
-using Midna.Components.ActionStateMachine;
-using Midna.Test.TestHelpers;
+using Assets.Scripts.Components.ActionStateMachine;
+using Assets.Scripts.Test.TestableMonobehaviour;
 
-namespace Midna.Test.Components.ActionStateMachine
+namespace Assets.Scripts.Test.Components.ActonStateMachine
 {
     public class TestActionStateMachineComponent 
         : ActionStateMachineComponent

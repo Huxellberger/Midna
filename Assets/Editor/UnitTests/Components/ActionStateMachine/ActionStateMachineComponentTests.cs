@@ -1,12 +1,12 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
-using NUnit.Framework;
-using Midna.Components.ActionStateMachine;
-using Midna.Editor.UnitTests.TestHelpers;
-using Midna.Test.Components.ActionStateMachine;
 using System;
+using Assets.Editor.UnitTests.Helpers;
+using Assets.Scripts.Components.ActionStateMachine;
+using Assets.Scripts.Test.Components.ActonStateMachine;
+using NUnit.Framework;
 
-namespace Midna.Editor.UnitTests.Components.ActionStateMachine
+namespace Assets.Editor.UnitTests.Components.ActionStateMachine
 {
     [TestFixture]
     public class ActionStateMachineComponentTestFixture

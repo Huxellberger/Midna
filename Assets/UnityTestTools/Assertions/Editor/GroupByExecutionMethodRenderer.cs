@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
-namespace UnityTest
+namespace Assets.UnityTestTools.Assertions.Editor
 {
     public class GroupByExecutionMethodRenderer : AssertionListRenderer<CheckMethod>
     {

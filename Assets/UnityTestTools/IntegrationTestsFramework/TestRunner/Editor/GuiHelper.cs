@@ -2,7 +2,7 @@ using System;
 using System.Reflection;
 using UnityEditor;
 
-namespace UnityTest
+namespace Assets.UnityTestTools.IntegrationTestsFramework.TestRunner.Editor
 {
     public static class GuiHelper
     {

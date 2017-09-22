@@ -1,10 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
-using UnityEngine;
 
-namespace UnityTest
+namespace Assets.UnityTestTools.IntegrationTestsFramework.TestRunner.Editor.PlatformRunner
 {
     class PlayerSettingConfigurator
     {
