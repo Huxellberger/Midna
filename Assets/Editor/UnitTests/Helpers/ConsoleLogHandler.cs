@@ -1,6 +1,7 @@
 ﻿// Copyright (C) Threetee Gang 2017
 
 using System.Collections.Generic;
+using System.Linq;
 using NUnit.Framework;
 using UnityEngine;
 
@@ -77,15 +78,7 @@ namespace Assets.Editor.UnitTests.Helpers
 
         private int GetNumberOfActiveErrors()
         {
-            int totalActiveErrors = 0;
-            foreach (var receivedError in _receivedErrors)
-            {
-                if (receivedError.Active)
-                {
-                    totalActiveErrors++;
-                }
-            }
-            return totalActiveErrors;
+            return _receivedErrors.Count(receivedError => receivedError.Active);
         }
 
         private void DeactivateAllActiveErrors()
