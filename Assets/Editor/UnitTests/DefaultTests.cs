@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿// Copyright Threetee Gang (C) 2017
+
+using NUnit.Framework;
 using UnityEngine;
 
 namespace Assets.Editor.UnitTests

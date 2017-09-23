@@ -14,5 +14,8 @@ namespace Assets.Scripts.Components.Input
         }
 
         public EInputKey InputKey { get { return _inputKey; } }
+
+        public bool Pressed { get; set; }
+        public float AxisValue { get; set; }
     }
 }
