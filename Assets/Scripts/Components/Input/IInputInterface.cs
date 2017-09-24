@@ -1,5 +1,6 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+using Assets.Scripts.UnityLayer.Input;
 using UnityEngine;
 
 namespace Assets.Scripts.Components.Input
@@ -15,5 +16,6 @@ namespace Assets.Scripts.Components.Input
         event OnMouseInputDelegate OnMouseInputEvent;
 
         void SetInputMappingProvider(IInputMappingProviderInterface inInputMappingProviderInterface);
+        void SetUnityInputInterface(IUnityInputInterface inUnityInputInterface);
     }
 }

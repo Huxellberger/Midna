@@ -8,7 +8,7 @@ namespace Assets.Editor.UnitTests.Helpers
     public static class TestableMonobehaviourFunctions<MonoBehaviourType>
         where MonoBehaviourType : MonoBehaviour, ITestableMonobehaviour
     {
-        public static MonoBehaviourType PrepareMonobehaviourComponentForTest(object[] parameters)
+        public static MonoBehaviourType PrepareMonobehaviourComponentForTest(params object[] parameters)
         {
             var gameObject = new GameObject();
             var createdComponent = gameObject.AddComponent<MonoBehaviourType>();

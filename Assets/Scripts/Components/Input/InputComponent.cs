@@ -1,6 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
 using System;
+using Assets.Scripts.UnityLayer.Input;
 using UnityEngine;
 
 namespace Assets.Scripts.Components.Input
@@ -9,18 +10,24 @@ namespace Assets.Scripts.Components.Input
         : MonoBehaviour
         , IInputInterface
     {
-
         private IInputMappingProviderInterface _inputMappingProviderInterface;
+        private IUnityInputInterface _unityInputInterface;
         private const float AxisPrecision = 0.01f;
 
-        private void Awake()
+        protected void Awake()
         {
             _inputMappingProviderInterface = null;
+            _unityInputInterface = null;
         }
 	    
         // When input flags are updated
-        private void Update ()
+        protected void Update ()
         {
+            if (_inputMappingProviderInterface == null || _unityInputInterface == null)
+            {
+                return;
+            }
+
             foreach (var input in _inputMappingProviderInterface.GetRawInputs())
             {
                 var inputPressed = false;
@@ -31,14 +38,14 @@ namespace Assets.Scripts.Components.Input
                 switch (input.InputType)
                 {
                     case EInputType.Analog:
-                        inputValue = UnityEngine.Input.GetAxis(input.InputName);
+                        inputValue = _unityInputInterface.GetAxis(input.InputName);
                         inputPressed = Math.Abs(inputValue) < AxisPrecision;
                         break;
                     case EInputType.Button:
-                        inputPressed = UnityEngine.Input.GetButton(input.InputName); // Make everything a button
+                        inputPressed = _unityInputInterface.GetButton(input.InputName); // Make everything a button
                         break;
                     case EInputType.Mouse:
-                        inputCoordinate = UnityEngine.Input.mousePosition;
+                        inputCoordinate = _unityInputInterface.GetMousePosition();
                         break;
                     default:
                         break;
@@ -46,20 +53,23 @@ namespace Assets.Scripts.Components.Input
 
                 var actualInput = _inputMappingProviderInterface.GetTranslatedInput(input);
 
-                // respond to state
-                switch (actualInput.InputType)
+                if (actualInput != null)
                 {
-                    case EInputType.Analog:
-                        OnAnalogInput(actualInput, inputValue);
-                        break;
-                    case EInputType.Button:
-                        OnButtonInput(actualInput, inputPressed);
-                        break;
-                    case EInputType.Mouse:
-                        OnMouseInput(actualInput, inputCoordinate);
-                        break;
-                    default:
-                        break;
+                    // respond to state
+                    switch (actualInput.InputType)
+                    {
+                        case EInputType.Analog:
+                            OnAnalogInput(actualInput, inputValue);
+                            break;
+                        case EInputType.Button:
+                            OnButtonInput(actualInput, inputPressed);
+                            break;
+                        case EInputType.Mouse:
+                            OnMouseInput(actualInput, inputCoordinate);
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
         }
@@ -89,7 +99,7 @@ namespace Assets.Scripts.Components.Input
         }
         private void OnMouseInput(TranslatedInput translatedInput, Vector3 newSpace)
         {
-            if (!Mathf.Approximately(translatedInput.Coordinate.sqrMagnitude, translatedInput.Coordinate.sqrMagnitude))
+            if (!Mathf.Approximately(translatedInput.Coordinate.sqrMagnitude, newSpace.sqrMagnitude))
             {
                 translatedInput.Coordinate = newSpace;
                 if (OnMouseInputEvent != null)
@@ -99,6 +109,7 @@ namespace Assets.Scripts.Components.Input
             }
         }
 
+        // IInputInterface
         public event OnButtonInputDelegate OnButtonInputEvent;
         public event OnAnalogInputDelegate OnAnalogInputEvent;
         public event OnMouseInputDelegate OnMouseInputEvent;
@@ -107,5 +118,11 @@ namespace Assets.Scripts.Components.Input
         {
             _inputMappingProviderInterface = inInputMappingProviderInterface;
         }
+
+        public void SetUnityInputInterface(IUnityInputInterface inUnityInputInterface)
+        {
+            _unityInputInterface = inUnityInputInterface;
+        }
+        // ~IInputInterface
     }
 }

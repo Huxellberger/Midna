@@ -4,6 +4,6 @@ namespace Assets.Scripts.Test.TestableMonobehaviour
 {
     public interface ITestableMonobehaviour
     {
-        void PrepareForTest(object[] parameters);
+        void PrepareForTest(params object[] parameters);
     }
 }

@@ -14,7 +14,7 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine
         [SetUp]
         public void BeforeTest()
         {
-            _actionStateMachineComponent = TestableMonobehaviourFunctions<TestActionStateMachineComponent>.PrepareMonobehaviourComponentForTest(null);
+            _actionStateMachineComponent = TestableMonobehaviourFunctions<TestActionStateMachineComponent>.PrepareMonobehaviourComponentForTest();
         }
 
         [TearDown]
