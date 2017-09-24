@@ -8,7 +8,7 @@ using NSubstitute;
 namespace Assets.Editor.UnitTests.Components.Input
 {
     [TestFixture]
-    public class DefaultInputMappingProviderTests {
+    public class DefaultInputMappingProviderTestFixture {
 
         [Test]
         public void DefaultInputMappingProviderCreated_RawInputsAreOnesProvided()
