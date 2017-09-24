@@ -25,6 +25,7 @@ namespace Assets.Scripts.Components.Input
             {
                 var inputPressed = false;
                 var inputValue = 0.0f;
+                var inputCoordinate = new Vector3();
 
                 // Get state of button
                 switch (input.InputType)
@@ -37,7 +38,7 @@ namespace Assets.Scripts.Components.Input
                         inputPressed = UnityEngine.Input.GetButton(input.InputName); // Make everything a button
                         break;
                     case EInputType.Mouse:
-                        // ToDo: Handle mouse locations. Buttons and analog will do for now
+                        inputCoordinate = UnityEngine.Input.mousePosition;
                         break;
                     default:
                         break;
@@ -52,10 +53,10 @@ namespace Assets.Scripts.Components.Input
                         OnAnalogInput(actualInput, inputValue);
                         break;
                     case EInputType.Button:
-                        OnButtonPressed(actualInput, inputPressed);
+                        OnButtonInput(actualInput, inputPressed);
                         break;
                     case EInputType.Mouse:
-                        // ToDo: Handle mouse locations. Buttons and analog will do for now
+                        OnMouseInput(actualInput, inputCoordinate);
                         break;
                     default:
                         break;
@@ -68,16 +69,39 @@ namespace Assets.Scripts.Components.Input
             if (Math.Abs(translatedInput.AxisValue - newInputValue) > AxisPrecision)
             {
                 translatedInput.AxisValue = newInputValue;
+                if (OnAnalogInputEvent != null)
+                {
+                    OnAnalogInputEvent(translatedInput.InputKey, translatedInput.AxisValue);
+                }
             }
         }
 
-        private void OnButtonPressed(TranslatedInput translatedInput, bool newPressed)
+        private void OnButtonInput(TranslatedInput translatedInput, bool newPressed)
         {
             if (translatedInput.Pressed != newPressed)
             {
                 translatedInput.Pressed = newPressed;
+                if (OnButtonInputEvent != null)
+                {
+                    OnButtonInputEvent(translatedInput.InputKey, translatedInput.Pressed);
+                }
             }
         }
+        private void OnMouseInput(TranslatedInput translatedInput, Vector3 newSpace)
+        {
+            if (!Mathf.Approximately(translatedInput.Coordinate.sqrMagnitude, translatedInput.Coordinate.sqrMagnitude))
+            {
+                translatedInput.Coordinate = newSpace;
+                if (OnMouseInputEvent != null)
+                {
+                    OnMouseInputEvent(translatedInput.InputKey, translatedInput.Coordinate);
+                }
+            }
+        }
+
+        public event OnButtonInputDelegate OnButtonInputEvent;
+        public event OnAnalogInputDelegate OnAnalogInputEvent;
+        public event OnMouseInputDelegate OnMouseInputEvent;
 
         public void SetInputMappingProvider(IInputMappingProviderInterface inInputMappingProviderInterface)
         {

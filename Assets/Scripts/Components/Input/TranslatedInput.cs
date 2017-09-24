@@ -1,5 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+using UnityEngine;
+
 namespace Assets.Scripts.Components.Input
 {
     public class TranslatedInput
@@ -17,5 +19,6 @@ namespace Assets.Scripts.Components.Input
 
         public bool Pressed { get; set; }
         public float AxisValue { get; set; }
+        public Vector3 Coordinate { get; set; }
     }
 }
