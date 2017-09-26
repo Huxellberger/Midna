@@ -13,5 +13,10 @@ namespace Assets.Scripts.Test.Components.ActonStateMachine
         {
             Awake();
         }
+
+        public void TestUpdate()
+        {
+            Update();
+        }
     }
 }

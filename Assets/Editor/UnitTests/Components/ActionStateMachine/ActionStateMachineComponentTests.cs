@@ -5,6 +5,7 @@ using Assets.Editor.UnitTests.Helpers;
 using Assets.Scripts.Components.ActionStateMachine;
 using Assets.Scripts.Test.Components.ActonStateMachine;
 using NUnit.Framework;
+using UnityEngine;
 
 namespace Assets.Editor.UnitTests.Components.ActionStateMachine
 {
@@ -73,6 +74,35 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine
             _actionStateMachineComponent.RequestActionState(changedTrack, actionState);
 
             Assert.IsTrue(_actionStateMachineComponent.IsActionStateActiveOnTrack(changedTrack, expectedStateId));
+        }
+
+        [Test]
+        public void RequestActionState_SetsCallsEndOnPriorActionStateAndStartOnNewOne()
+        {
+            const EActionStateId newStateId = EActionStateId.Null;
+            const EActionStateId oldStateId = EActionStateId.Locomotion;
+            const EActionStateMachineTrack changedTrack = EActionStateMachineTrack.Locomotion;
+
+            var oldActionState = new TestActionState(oldStateId, new ActionStateInfo());
+            var newActionState = new TestActionState(newStateId, new ActionStateInfo());
+
+            _actionStateMachineComponent.RequestActionState(changedTrack, oldActionState);
+            _actionStateMachineComponent.RequestActionState(changedTrack, newActionState);
+
+            Assert.IsTrue(oldActionState.OnEndCalled);
+            Assert.IsTrue(newActionState.OnStartCalled);
+        }
+
+        [Test]
+        public void Update_CallsUpdateOnActionState()
+        {
+            var actionState = new TestActionState(EActionStateId.Locomotion, new ActionStateInfo());
+
+            _actionStateMachineComponent.RequestActionState(EActionStateMachineTrack.Locomotion, actionState);
+            _actionStateMachineComponent.TestUpdate();
+
+            Assert.IsTrue(actionState.OnUpdateCalled);
+            Assert.AreEqual(actionState.OnUpdateValue, Time.deltaTime);
         }
 
         TestActionStateMachineComponent _actionStateMachineComponent;

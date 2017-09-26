@@ -9,7 +9,7 @@ namespace Assets.Scripts.Components.ActionStateMachine
     public class ActionStateMachineComponent : MonoBehaviour
       , IActionStateMachineInterface
     {
-        protected virtual void Awake()
+        protected void Awake()
         {
             // Initialise all tracks to null
             _activeActionStates = new Dictionary<EActionStateMachineTrack, ActionState>();
@@ -20,10 +20,20 @@ namespace Assets.Scripts.Components.ActionStateMachine
             }
         }
 
-        // IActionStateMachineInterface
-        public virtual void RequestActionState(EActionStateMachineTrack selectedTrack, ActionState newId)
+        protected void Update()
         {
-            _activeActionStates[selectedTrack] = newId;
+            foreach (var activeActionState in _activeActionStates)
+            {
+                activeActionState.Value.Update(Time.deltaTime);
+            }
+        }
+
+        // IActionStateMachineInterface
+        public virtual void RequestActionState(EActionStateMachineTrack selectedTrack, ActionState newState)
+        {
+            _activeActionStates[selectedTrack].End();
+            _activeActionStates[selectedTrack] = newState;
+            newState.Start();
         }
 
         public virtual bool IsActionStateActiveOnTrack(EActionStateMachineTrack selectedTrack, EActionStateId expectedId)
