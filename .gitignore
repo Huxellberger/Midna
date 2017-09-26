@@ -9,3 +9,5 @@ Assets/UnityTestTools/Examples/
 *.user
 *.userprefs
 *.DS_store
+
+!*.dll
