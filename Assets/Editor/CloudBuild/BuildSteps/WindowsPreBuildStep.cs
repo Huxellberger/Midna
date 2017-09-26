@@ -8,7 +8,7 @@ namespace Assets.Editor.CloudBuild.BuildSteps
     {
         public static void RunWindowsPreBuildStep()
         {
-            Debug.Log("Pre Build Step Has Begun.");
+            // Debug.Log("Pre Build Step Has Begun.");
         }
     }
 }

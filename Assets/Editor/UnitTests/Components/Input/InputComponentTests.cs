@@ -7,7 +7,6 @@ using Assets.Editor.UnitTests.Helpers;
 using Assets.Scripts.Components.Input;
 using Assets.Scripts.UnityLayer.Input;
 using NSubstitute;
-using NSubstitute.Core.Arguments;
 
 namespace Assets.Editor.UnitTests.Components.Input
 {
