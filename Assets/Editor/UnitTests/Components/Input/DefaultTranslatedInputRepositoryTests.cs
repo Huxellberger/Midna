@@ -22,12 +22,14 @@ namespace Assets.Editor.UnitTests.Components.Input
                 new RawInput("Test2", EInputType.Analog)
             };
 
+            mockPlayerPrefsRepoInterface.GetValueForKey(Arg.Any<string>()).Returns(EInputKey.FireButton.ToString());
+
             var defaultTranslatedInputRepo = new DefaultTranslatedInputRepository(mockPlayerPrefsRepoInterface);
             defaultTranslatedInputRepo.RetrieveMappingsForRawInputs(expectedRawInputs);
 
             foreach (var expectedRawInput in expectedRawInputs)
             {
-                mockPlayerPrefsRepoInterface.Received().GetValueForKey<EInputKey>(Arg.Is(expectedRawInput.InputName));
+                mockPlayerPrefsRepoInterface.Received().GetValueForKey(Arg.Is(expectedRawInput.InputName));
             }
         }
 
@@ -46,10 +48,9 @@ namespace Assets.Editor.UnitTests.Components.Input
 
             foreach (var expectedRawInput in expectedRawInputs)
             {
-                mockPlayerPrefsRepoInterface.GetValueForKey<EInputKey>(Arg.Is(expectedRawInput.InputName))
-                    .Returns(expectedInputKey);
+                mockPlayerPrefsRepoInterface.GetValueForKey(Arg.Is(expectedRawInput.InputName))
+                    .Returns(expectedInputKey.ToString());
             }
-            
 
             var defaultTranslatedInputRepo = new DefaultTranslatedInputRepository(mockPlayerPrefsRepoInterface);
             var actualMappings = defaultTranslatedInputRepo.RetrieveMappingsForRawInputs(expectedRawInputs);

@@ -5,7 +5,8 @@ namespace Assets.Scripts.UnityLayer.Storage
     public interface IPlayerPrefsRepositoryInterface
     {
         void SetKey<TValueType>(string key, TValueType inValue);
-        TValueType GetValueForKey<TValueType>(string key);
+
+        string GetValueForKey(string key);
 
         void Save();
         void DeleteAll();

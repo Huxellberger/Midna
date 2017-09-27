@@ -1,5 +1,6 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts.UnityLayer.Storage;
@@ -22,7 +23,7 @@ namespace Assets.Scripts.Components.Input
             (
                 rawInput => rawInput, rawInput => new TranslatedInput
                 (
-                    _playerPlayerPrefsRepositoryInterface.GetValueForKey<EInputKey>(rawInput.InputName), rawInput.InputType
+                    (EInputKey)Enum.Parse(typeof(EInputKey), _playerPlayerPrefsRepositoryInterface.GetValueForKey(rawInput.InputName)), rawInput.InputType
                 )
             );
         }
