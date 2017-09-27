@@ -2,6 +2,7 @@
 
 namespace Assets.Scripts.Components.Input
 {
+    [System.Serializable]
     public class PlayerInput
     {
         private readonly EInputType _inputType;
