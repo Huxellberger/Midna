@@ -48,7 +48,7 @@ namespace Assets.Editor.UnitTests.Components.Input
 
             foreach (var expectedRawInput in expectedRawInputs)
             {
-                mockPlayerPrefsRepoInterface.GetValueForKey(Arg.Is(expectedRawInput.InputName))
+                mockPlayerPrefsRepoInterface.GetValueForKey(Arg.Any<string>())
                     .Returns(expectedInputKey.ToString());
             }
 
@@ -58,6 +58,34 @@ namespace Assets.Editor.UnitTests.Components.Input
             foreach (var expectedRawInput in expectedRawInputs)
             {
                 Assert.IsTrue(ObjectComparisonExtensions.EqualByPublicProperties(actualMappings[expectedRawInput], new TranslatedInput(expectedInputKey, expectedRawInput.InputType)));
+            }
+        }
+
+        [Test]
+        public void DefaultTranslatedInputRepository_RetrieveMappingsForRawInputs_NoMappingsReturnsDefaultMappings()
+        {
+            var mockPlayerPrefsRepoInterface = Substitute.For<IPlayerPrefsRepositoryInterface>();
+
+            var expectedRawInputs = new List<RawInput>
+            {
+                new RawInput("Test", EInputType.Button),
+                new RawInput("Test2", EInputType.Analog)
+            };
+
+            const string nullString = null;
+
+            foreach (var expectedRawInput in expectedRawInputs)
+            {
+                mockPlayerPrefsRepoInterface.GetValueForKey(Arg.Is(expectedRawInput.InputName))
+                    .Returns(nullString);
+            }
+
+            var defaultTranslatedInputRepo = new DefaultTranslatedInputRepository(mockPlayerPrefsRepoInterface);
+            var actualMappings = defaultTranslatedInputRepo.RetrieveMappingsForRawInputs(expectedRawInputs);
+
+            foreach (var mapping in actualMappings)
+            {
+                Assert.IsTrue(ObjectComparisonExtensions.EqualByPublicProperties(mapping.Value, defaultTranslatedInputRepo.DefaultMappings[mapping.Key]));
             }
         }
     }
