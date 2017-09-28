@@ -1,6 +1,5 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
-using System.Collections.Generic;
 using Assets.Scripts.Components.Input;
 using Assets.Scripts.UnityLayer.Input;
 using Assets.Scripts.UnityLayer.Storage;
