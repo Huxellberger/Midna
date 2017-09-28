@@ -10,14 +10,12 @@ namespace Assets.Scripts.Components.GameMode
 {
     public class MidnaGameModeComponent : MonoBehaviour
     {
-        public List<RawInput> RawInputs;
-
         // Use this for initialization
         private void Start ()
         {
             var inputInterface = GetComponent<IInputInterface>();
             inputInterface.SetUnityInputInterface(new DefaultUnityInput());
-            inputInterface.SetInputMappingProvider(new DefaultInputMappingProvider(RawInputs, new DefaultTranslatedInputRepository( new PlayerPrefsRepository())));
+            inputInterface.SetInputMappingProvider(new DefaultInputMappingProvider(InputManagerParser.ReadInputManagerOutput(), new DefaultTranslatedInputRepository( new PlayerPrefsRepository())));
         }
     }
 }
