@@ -7,7 +7,7 @@ namespace Assets.Scripts.Components.ActionStateMachine.States.Locomotion
     public class LocomotionActionState
         : ActionState
     {
-        private InputHandler locomotionInputHandler { get; set; }
+        private InputHandler LocomotionInputHandler { get; set; }
 
         public LocomotionActionState(ActionStateInfo inInfo) : base(EActionStateId.Locomotion, inInfo)
         {

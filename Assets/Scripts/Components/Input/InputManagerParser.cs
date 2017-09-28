@@ -55,6 +55,7 @@ namespace Assets.Scripts.Components.Input
         {
             var allRawInputs = new List<RawInput>();
 
+#if UNITY_EDITOR
             var serialisedObject = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath(InputManagerPath)[0]);
 
             var serialisedProperty = serialisedObject.FindProperty(InputManagerProperties);
@@ -84,11 +85,13 @@ namespace Assets.Scripts.Components.Input
                     Debug.Log("Failed to categorise " + axis.stringValue);
                 }
             }
+#endif // UNITY_EDITOR
             return allRawInputs;
         }
 
         public static int GetNumberOfInputsRegistered()
         {
+#if UNITY_EDITOR
             var serialisedObject = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath(InputManagerPath)[0]);
 
             var serialisedProperty = serialisedObject.FindProperty(InputManagerProperties);
@@ -98,6 +101,9 @@ namespace Assets.Scripts.Components.Input
             serialisedProperty.Next(true);
 
             return serialisedProperty.intValue;
+#else
+            return 0;
+#endif // UNITY_EDITOR
         }
 
         public static List<RawInput> ReadInputManagerOutput()
