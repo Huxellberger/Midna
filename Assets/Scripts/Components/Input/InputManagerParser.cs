@@ -3,8 +3,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using UnityEditor;
 using UnityEngine;
+
+#if UNITY_EDITOR
+    using UnityEditor;
+#endif // UNITY_EDITOR
 
 namespace Assets.Scripts.Components.Input
 {
