@@ -23,7 +23,7 @@ namespace Assets.Scripts.Components.Input
         public IDictionary<RawInput, TranslatedInput> RetrieveMappingsForRawInputs(IEnumerable<RawInput> inRawInputs)
         {
             // Multiple enumerations is fine, will usually fail on first if not saved and this is easier to follow
-            if (inRawInputs.Count() == 0 || MappingsAreNotCustomised(inRawInputs))
+            if (!inRawInputs.Any() || MappingsAreNotCustomised(inRawInputs))
             {
                 return DefaultMappings;
             }
