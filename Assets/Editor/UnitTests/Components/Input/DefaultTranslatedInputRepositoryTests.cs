@@ -88,5 +88,23 @@ namespace Assets.Editor.UnitTests.Components.Input
                 Assert.IsTrue(ObjectComparisonExtensions.EqualByPublicProperties(mapping.Value, defaultTranslatedInputRepo.DefaultMappings[mapping.Key]));
             }
         }
+
+        [Test]
+        public void DefaultTranslatedInputRepository_RetrieveMappingsForRawInputs_NoRawInputsReturnsDefaultMappings()
+        {
+            var mockPlayerPrefsRepoInterface = Substitute.For<IPlayerPrefsRepositoryInterface>();
+
+            var emptyRawInputs = new List<RawInput>();
+
+            const string nullString = null;
+
+            var defaultTranslatedInputRepo = new DefaultTranslatedInputRepository(mockPlayerPrefsRepoInterface);
+            var actualMappings = defaultTranslatedInputRepo.RetrieveMappingsForRawInputs(emptyRawInputs);
+
+            foreach (var mapping in actualMappings)
+            {
+                Assert.IsTrue(ObjectComparisonExtensions.EqualByPublicProperties(mapping.Value, defaultTranslatedInputRepo.DefaultMappings[mapping.Key]));
+            }
+        }
     }
 }

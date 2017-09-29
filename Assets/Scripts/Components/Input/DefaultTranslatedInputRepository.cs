@@ -23,7 +23,7 @@ namespace Assets.Scripts.Components.Input
         public IDictionary<RawInput, TranslatedInput> RetrieveMappingsForRawInputs(IEnumerable<RawInput> inRawInputs)
         {
             // Multiple enumerations is fine, will usually fail on first if not saved and this is easier to follow
-            if (MappingsAreNotCustomised(inRawInputs))
+            if (inRawInputs.Count() == 0 || MappingsAreNotCustomised(inRawInputs))
             {
                 return DefaultMappings;
             }
@@ -39,15 +39,7 @@ namespace Assets.Scripts.Components.Input
 
         private bool MappingsAreNotCustomised(IEnumerable<RawInput> inRawInputs)
         {
-            foreach (var rawInput in inRawInputs)
-            {
-                if (_playerPlayerPrefsRepositoryInterface.GetValueForKey(rawInput.InputName) == null)
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            return inRawInputs.Any(rawInput => _playerPlayerPrefsRepositoryInterface.GetValueForKey(rawInput.InputName) == null);
         }
 
         // These are the fallback mappings, you should change these if you update the InputManager
