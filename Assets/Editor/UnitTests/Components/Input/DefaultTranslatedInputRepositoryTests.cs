@@ -96,7 +96,21 @@ namespace Assets.Editor.UnitTests.Components.Input
 
             var emptyRawInputs = new List<RawInput>();
 
-            const string nullString = null;
+            var defaultTranslatedInputRepo = new DefaultTranslatedInputRepository(mockPlayerPrefsRepoInterface);
+            var actualMappings = defaultTranslatedInputRepo.RetrieveMappingsForRawInputs(emptyRawInputs);
+
+            foreach (var mapping in actualMappings)
+            {
+                Assert.IsTrue(ObjectComparisonExtensions.EqualByPublicProperties(mapping.Value, defaultTranslatedInputRepo.DefaultMappings[mapping.Key]));
+            }
+        }
+
+        [Test]
+        public void DefaultTranslatedInputRepository_RetrieveMappingsForRawInputs_NullRawInputsReturnsDefaultMappings()
+        {
+            var mockPlayerPrefsRepoInterface = Substitute.For<IPlayerPrefsRepositoryInterface>();
+
+            List<RawInput> emptyRawInputs = null;
 
             var defaultTranslatedInputRepo = new DefaultTranslatedInputRepository(mockPlayerPrefsRepoInterface);
             var actualMappings = defaultTranslatedInputRepo.RetrieveMappingsForRawInputs(emptyRawInputs);
