@@ -16,5 +16,13 @@ namespace Assets.Editor.UnitTests.Helpers
 
             return createdComponent;
         }
+
+        public static MonoBehaviourType AddTestableMonobehaviourComponent(GameObject inGameObject, params object[] parameters)
+        {
+            var createdComponent = inGameObject.AddComponent<MonoBehaviourType>();
+            createdComponent.PrepareForTest();
+
+            return createdComponent;
+        }
     }
 }

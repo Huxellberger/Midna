@@ -10,7 +10,7 @@ namespace Assets.Scripts.Components.Character
     public class MidnaCharacterComponent 
         : MonoBehaviour
     {
-        void Start ()
+        protected void Start ()
         {
             var inputInterface = MidnaGameMode.CurrentGameMode.GetComponent<IInputInterface>();
             GetComponent<IInputBinderInterface>().SetInputInterface(inputInterface);
