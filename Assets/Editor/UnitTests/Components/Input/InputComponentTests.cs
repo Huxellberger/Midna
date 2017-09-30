@@ -62,7 +62,7 @@ namespace Assets.Editor.UnitTests.Components.Input
         }
 
         [Test]
-        public void InputComponent_UpdateNoChange_AnalogInputDoesNotCallAnalogInputEvent()
+        public void InputComponent_UpdateNoChange_AnalogInputCallsAnalogInputEvent()
         {
             var analogEventCalled = false;
             
@@ -89,7 +89,7 @@ namespace Assets.Editor.UnitTests.Components.Input
 
             _inputComponent.TestUpdate();
 
-            Assert.IsFalse(analogEventCalled);
+            Assert.IsTrue(analogEventCalled);
         }
 
         [Test]

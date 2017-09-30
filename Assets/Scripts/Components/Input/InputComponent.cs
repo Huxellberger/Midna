@@ -10,14 +10,12 @@ namespace Assets.Scripts.Components.Input
         : MonoBehaviour
         , IInputInterface
     {
-        private IInputMappingProviderInterface _inputMappingProviderInterface;
-        private IUnityInputInterface _unityInputInterface;
+        private IInputMappingProviderInterface _inputMappingProviderInterface = null;
+        private IUnityInputInterface _unityInputInterface = null;
         private const float AxisPrecision = 0.01f;
 
         protected void Awake()
         {
-            _inputMappingProviderInterface = null;
-            _unityInputInterface = null;
         }
 	    
         // When input flags are updated
@@ -76,13 +74,10 @@ namespace Assets.Scripts.Components.Input
 
         private void OnAnalogInput(TranslatedInput translatedInput, float newInputValue)
         {
-            if (Math.Abs(translatedInput.AxisValue - newInputValue) > AxisPrecision)
+            translatedInput.AxisValue = newInputValue;
+            if (OnAnalogInputEvent != null)
             {
-                translatedInput.AxisValue = newInputValue;
-                if (OnAnalogInputEvent != null)
-                {
-                    OnAnalogInputEvent(translatedInput.InputKey, translatedInput.AxisValue);
-                }
+                OnAnalogInputEvent(translatedInput.InputKey, translatedInput.AxisValue);
             }
         }
 

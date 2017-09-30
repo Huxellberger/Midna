@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts.Core;
 using Assets.Scripts.UnityLayer.Storage;
 
 namespace Assets.Scripts.Components.Input
@@ -28,13 +29,25 @@ namespace Assets.Scripts.Components.Input
                 return DefaultMappings;
             }
 
-            return inRawInputs.ToDictionary
-            (
-                rawInput => rawInput, rawInput => new TranslatedInput
-                (
-                    (EInputKey)Enum.Parse(typeof(EInputKey), _playerPlayerPrefsRepositoryInterface.GetValueForKey(rawInput.InputName)), rawInput.InputType
-                )
-            );
+            var inputTranslations = new Dictionary<RawInput, TranslatedInput>();
+
+            foreach (var rawInput in inRawInputs)
+            {
+                var potentialEnum =
+                    EnumExtensions.TryParse<EInputKey>(
+                        _playerPlayerPrefsRepositoryInterface.GetValueForKey(rawInput.InputName));
+
+                if (potentialEnum.IsSet())
+                {
+                    inputTranslations.Add(rawInput, new TranslatedInput(potentialEnum.Get(), rawInput.InputType));
+                }
+                else
+                {
+                    return DefaultMappings;
+                }
+            }
+
+            return inputTranslations;
         }
 
         private bool MappingsAreNotCustomised(IEnumerable<RawInput> inRawInputs)
@@ -43,12 +56,18 @@ namespace Assets.Scripts.Components.Input
         }
 
         // These are the fallback mappings, you should change these if you update the InputManager
-        private static Dictionary<RawInput, TranslatedInput> GetDefaultMappings()
+        public static Dictionary<RawInput, TranslatedInput> GetDefaultMappings()
         {
-            return new Dictionary<RawInput, TranslatedInput>
+            return new Dictionary<RawInput, TranslatedInput>(new RawInputEqualityComparer())
             {
-                { new RawInput("Vertical_Analog", EInputType.Analog), new TranslatedInput(EInputKey.VerticalAnalog, EInputType.Analog)  },
-                { new RawInput("Horizontal_Analog", EInputType.Analog), new TranslatedInput(EInputKey.HorizontalAnalog, EInputType.Analog)  }
+                {
+                    new RawInput("Vertical_Analog", EInputType.Analog),
+                    new TranslatedInput(EInputKey.VerticalAnalog, EInputType.Analog)
+                },
+                {
+                    new RawInput("Horizontal_Analog", EInputType.Analog),
+                    new TranslatedInput(EInputKey.HorizontalAnalog, EInputType.Analog)
+                }
             };
         }
     }
