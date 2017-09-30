@@ -1,6 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
 using Assets.Scripts.Components.Input;
+using Assets.Scripts.Components.MidnaMovement;
 
 namespace Assets.Scripts.Components.ActionStateMachine.States.Locomotion
 {
@@ -8,24 +9,33 @@ namespace Assets.Scripts.Components.ActionStateMachine.States.Locomotion
         : ActionState
     {
         private InputHandler LocomotionInputHandler { get; set; }
+        private IInputBinderInterface InputBinderInterface { get; set; }
 
         public LocomotionActionState(ActionStateInfo inInfo) : base(EActionStateId.Locomotion, inInfo)
         {
+            LocomotionInputHandler = new LocomotionInputHandler(inInfo.Owner.GetComponent<IMidnaMovementInterface>());
+            InputBinderInterface = inInfo.Owner.GetComponent<IInputBinderInterface>();
         }
 
         protected override void OnStart()
         {
-            throw new System.NotImplementedException();
+            if (InputBinderInterface != null)
+            {
+                InputBinderInterface.RegisterInputHandler(LocomotionInputHandler);
+            }
         }
 
         protected override void OnUpdate(float deltaTime)
         {
-            throw new System.NotImplementedException();
+            
         }
 
         protected override void OnEnd()
         {
-            throw new System.NotImplementedException();
+            if (InputBinderInterface != null)
+            {
+                InputBinderInterface.UnregisterInputHandler(LocomotionInputHandler);
+            }
         }
     }
 }
