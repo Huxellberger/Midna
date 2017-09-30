@@ -93,7 +93,7 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner
             condition.ForceComplete();
             conditionRunner.Update(1.0f);
 
-            Assert.IsTrue(condition.EndCalled);
+            Assert.AreEqual(1, condition.EndCalls);
         }
 
         [Test]
@@ -119,7 +119,7 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner
             conditionRunner.AddCondition(condition);
             condition.ForceComplete();
 
-            Assert.IsFalse(condition.EndCalled);
+            Assert.AreEqual(0, condition.EndCalls);
         }
 
         [Test]
@@ -137,6 +137,24 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner
             conditionRunner.Update(1.0f);
 
             Assert.IsFalse(conditionRunner.IsComplete());
+        }
+
+        [Test]
+        public void Update_OnlyEndsConditionOnceOnCompletion()
+        {
+            var conditionRunner = new ActionStateConditionRunner();
+
+            var firstCondition = new TestActionStateCondition();
+            var secondCondition = new TestActionStateCondition();
+
+            conditionRunner.AddCondition(firstCondition);
+            conditionRunner.AddCondition(secondCondition);
+            firstCondition.ForceComplete();
+
+            conditionRunner.Update(1.0f);
+            conditionRunner.Update(1.0f);
+
+            Assert.AreEqual(1, firstCondition.EndCalls);
         }
 
         [Test]

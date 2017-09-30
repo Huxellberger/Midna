@@ -30,6 +30,7 @@ namespace Assets.Scripts.Components.ActionStateMachine.ConditionRunner
             if (!IsComplete())
             {
                 var trackComplete = true;
+                var completedConditions = new List<ActionStateCondition>();
 
                 foreach (var condition in ConditionTracks.First())
                 {
@@ -37,12 +38,15 @@ namespace Assets.Scripts.Components.ActionStateMachine.ConditionRunner
                     if (condition.Complete)
                     {
                         condition.End();
+                        completedConditions.Add(condition);
                     }
                     else
                     {
                         trackComplete = false;
                     }
                 }
+
+                ConditionTracks.First().RemoveAll(condition => completedConditions.Contains(condition));
 
                 if (trackComplete)
                 {

@@ -10,7 +10,7 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner
         public bool StartCalled { get; private set; }
         public bool UpdateCalled { get; private set; }
         public float UpdateDelta { get; private set; }
-        public bool EndCalled { get; private set; }
+        public int EndCalls { get; private set; }
 
         public TestActionStateCondition()
             : base()
@@ -18,7 +18,7 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner
             StartCalled = false;
             UpdateCalled = false;
             UpdateDelta = -1.0f;
-            EndCalled = false;
+            EndCalls = 0;
         }
 
         public override void Start()
@@ -34,7 +34,7 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner
 
         public override void End()
         {
-            EndCalled = true;
+            EndCalls++;
         }
 
         public void ForceComplete()
