@@ -1,0 +1,59 @@
+﻿// Copyright Threetee Gang (C) 2017
+
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Assets.Scripts.Components.ActionStateMachine.ConditionRunner
+{
+    public class ActionStateConditionRunner
+    {
+        private List<List<ActionStateCondition>> ConditionTracks { get; set; }
+
+        public ActionStateConditionRunner()
+        {
+            ConditionTracks = new List<List<ActionStateCondition>> {new List<ActionStateCondition>()};
+        }
+
+        public void AddCondition(ActionStateCondition inCondition)
+        {
+            inCondition.Start();
+            ConditionTracks[ConditionTracks.Count-1].Add(inCondition);
+        }
+
+        public void PushNewTrack()
+        {
+            ConditionTracks.Add(new List<ActionStateCondition>());
+        }
+
+        public void Update(float deltaTime)
+        {
+            if (!IsComplete())
+            {
+                var trackComplete = true;
+
+                foreach (var condition in ConditionTracks.First())
+                {
+                    condition.Update(deltaTime);
+                    if (condition.Complete)
+                    {
+                        condition.End();
+                    }
+                    else
+                    {
+                        trackComplete = false;
+                    }
+                }
+
+                if (trackComplete)
+                {
+                    ConditionTracks.RemoveAt(0);
+                }
+            }
+        }
+
+        public bool IsComplete()
+        {
+            return ConditionTracks.Count == 0;
+        }
+    }
+}
