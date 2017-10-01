@@ -3,9 +3,7 @@
 using Assets.Editor.UnitTests.Helpers;
 using Assets.Scripts.Test.Components.Controller;
 using Assets.Scripts.Test.Components.TestHelpers;
-using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
 using NUnit.Framework;
-using NUnit.Framework.Constraints;
 using UnityEngine;
 
 namespace Assets.Editor.UnitTests.Components.Controller
@@ -24,6 +22,20 @@ namespace Assets.Editor.UnitTests.Components.Controller
             controllerComponent.CreatePawnOfType(gameObject);
 
             Assert.IsNotNull(controllerComponent.GetPawnInstance());
+        }
+
+        [Test]
+        public void CreatePawnOfType_SetsTransformCorrectly()
+        {
+            var gameObject = new GameObject();
+
+            var controllerComponent = TestableMonobehaviourFunctions<TestControllerComponent>
+                .PrepareMonobehaviourComponentForTest();
+
+            controllerComponent.CreatePawnOfType(gameObject);
+
+            Assert.AreEqual(controllerComponent.GetPawnInstance().transform, controllerComponent.gameObject.transform.parent);
+            Assert.AreEqual(new Vector3(0, 0, controllerComponent.PerspectiveDistance), controllerComponent.gameObject.transform.localPosition);
         }
 
         [Test]
@@ -58,6 +70,20 @@ namespace Assets.Editor.UnitTests.Components.Controller
 
             // Note: destruction detection is not currently working in Unit Tests
             Assert.IsFalse(destructableTestObject.OnDestroyCalled);
+        }
+
+        [Test]
+        public void SetPawn_SetsTransformCorrectly()
+        {
+            var gameObject = new GameObject();
+
+            var controllerComponent = TestableMonobehaviourFunctions<TestControllerComponent>
+                .PrepareMonobehaviourComponentForTest();
+
+            controllerComponent.SetPawn(gameObject);
+
+            Assert.AreEqual(controllerComponent.GetPawnInstance().transform, controllerComponent.gameObject.transform.parent);
+            Assert.AreEqual(new Vector3(0, 0, controllerComponent.PerspectiveDistance), controllerComponent.gameObject.transform.localPosition);
         }
     }
 }
