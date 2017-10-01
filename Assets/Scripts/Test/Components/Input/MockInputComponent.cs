@@ -16,18 +16,23 @@ namespace Assets.Scripts.Test.Components.Input
         public event OnAnalogInputDelegate OnAnalogInputEvent;
         public event OnMouseInputDelegate OnMouseInputEvent;
 
+        public IInputMappingProviderInterface InputMappingProvider { get; private set; }
+        public IUnityInputInterface UnityInputInterface { get; private set; }
+
         public void PrepareForTest(params object[] parameters)
         {
+            InputMappingProvider = null;
+            UnityInputInterface = null;
         }
  
         public void SetInputMappingProvider(IInputMappingProviderInterface inInputMappingProviderInterface)
         {
-            throw new System.NotImplementedException();
+            InputMappingProvider = inInputMappingProviderInterface;
         }
 
         public void SetUnityInputInterface(IUnityInputInterface inUnityInputInterface)
         {
-            throw new System.NotImplementedException();
+            UnityInputInterface = inUnityInputInterface;
         }
     }
 }

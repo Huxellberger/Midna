@@ -16,9 +16,9 @@ namespace Assets.Scripts.Components.GameMode
         public GameObject PlayerControllerType;
         public GameObject PlayerCharacterType;
 
-        private List<GameObject> PlayerControllers { get; set; }
+        protected List<GameObject> PlayerControllers { get; set; }
 
-        private void Awake ()
+        protected void Awake ()
         {
             MidnaGameMode.CurrentGameMode = gameObject;
 
