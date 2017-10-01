@@ -1,5 +1,6 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+using System;
 using Assets.Editor.UnitTests.Helpers;
 using Assets.Scripts.Components.GameMode;
 using Assets.Scripts.Test.Components.Controller;
@@ -11,7 +12,7 @@ using UnityEngine;
 namespace Assets.Editor.UnitTests.Components.GameMode
 {
     [TestFixture]
-    public class MidnaGameModeComponentTests
+    public class MidnaGameModeComponentTestFixture
     {
         [SetUp]
         public void BeforeTest()
@@ -61,6 +62,13 @@ namespace Assets.Editor.UnitTests.Components.GameMode
             var controller = _midnaGameModeComponent.GetPlayerControllers()[0].GetComponent<TestControllerComponent>();
 
             Assert.IsTrue(controller.GetPawnInstance().name.Contains(_midnaGameModeComponent.PlayerCharacterType.name));
+        }
+
+        [Test]
+        public void Creation_InvalidControllerType_ThrowsException()
+        {
+            _midnaGameModeComponent.PlayerControllerType = new GameObject();
+            Assert.Throws<ApplicationException>(() => _midnaGameModeComponent.PrepareForTest());
         }
 
         private TestMidnaGameModeComponent _midnaGameModeComponent;

@@ -5,6 +5,7 @@ namespace Assets.Scripts.Components.ActionStateMachine
     public enum EActionStateId
     {
         Locomotion,
+        Dead,
 
         Null
     }
