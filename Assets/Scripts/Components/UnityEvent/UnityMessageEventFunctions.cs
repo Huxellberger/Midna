@@ -1,5 +1,6 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Assets.Scripts.Components.UnityEvent
@@ -47,6 +48,16 @@ namespace Assets.Scripts.Components.UnityEvent
             }
 
             inDispatcherInterface.GetUnityMessageEventDispatcher().InvokeMessageEvent(inMessage);
+        }
+
+        public static void InvokeMessageEventWithDispatcher<TMessageType>
+        (
+            GameObject inDispatcherObject,
+            TMessageType inMessage
+        )
+            where TMessageType : UnityMessagePayload
+        {
+            InvokeMessageEventWithDispatcher(inDispatcherObject.GetComponent<IUnityMessageEventInterface>(), inMessage);
         }
     }
 }

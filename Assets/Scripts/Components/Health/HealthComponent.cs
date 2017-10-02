@@ -1,6 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
 using Assets.Scripts.Components.ActionStateMachine.States.Dead;
+using Assets.Scripts.Components.UnityEvent;
 using UnityEngine;
 
 namespace Assets.Scripts.Components.Health
@@ -57,6 +58,8 @@ namespace Assets.Scripts.Components.Health
             {
                 _currentHealth = newHealth;
                 _currentHealth = Mathf.Clamp(_currentHealth, 0, GetMaxHealth());
+
+                UnityMessageEventFunctions.InvokeMessageEventWithDispatcher(gameObject, new HealthChangedMessage(_currentHealth));
 
                 if (_currentHealth <= 0)
                 {
