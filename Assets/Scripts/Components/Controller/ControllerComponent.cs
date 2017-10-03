@@ -1,5 +1,6 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+using Assets.Scripts.Components.Character;
 using UnityEngine;
 
 namespace Assets.Scripts.Components.Controller
@@ -8,16 +9,31 @@ namespace Assets.Scripts.Components.Controller
     {
         public int PerspectiveDistance = -10;
         protected GameObject PawnInstance { get; set; }
+        public Transform PawnInitialTransform { get; set; }
 
         public void CreatePawnOfType(GameObject inPawnType)
         {
-            PawnInstance = Instantiate(inPawnType);
-            UpdateTransformParent();
+            if (PawnInitialTransform != null)
+            {
+                SetPawn(Instantiate(inPawnType, PawnInitialTransform.localPosition, PawnInitialTransform.localRotation));
+            }
+            else
+            {
+                SetPawn(Instantiate(inPawnType));
+            }
         }
 
         public void SetPawn(GameObject inPawnInstance)
         {
             PawnInstance = inPawnInstance;
+
+            // Characters need their controller updating
+            var midnaCharacterComponent = PawnInstance.GetComponent<MidnaCharacterComponent>();
+            if (midnaCharacterComponent != null)
+            {
+                midnaCharacterComponent.CurrentControllerComponent = this;
+            }
+
             UpdateTransformParent();
         }
 

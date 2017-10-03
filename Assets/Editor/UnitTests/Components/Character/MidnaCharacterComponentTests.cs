@@ -3,9 +3,13 @@
 using Assets.Editor.UnitTests.Helpers;
 using Assets.Scripts.Components.ActionStateMachine.States.Locomotion;
 using Assets.Scripts.Components.GameMode;
+using Assets.Scripts.Components.Spawn;
+using Assets.Scripts.Components.UnityEvent;
 using Assets.Scripts.Test.Components.ActonStateMachine;
 using Assets.Scripts.Test.Components.Character;
+using Assets.Scripts.Test.Components.Controller;
 using Assets.Scripts.Test.Components.Input;
+using Assets.Scripts.Test.UnityEvent;
 using NUnit.Framework;
 
 namespace Assets.Editor.UnitTests.Components.Character
@@ -28,8 +32,12 @@ namespace Assets.Editor.UnitTests.Components.Character
                 TestableMonobehaviourFunctions<MockActionStateMachineComponent>.AddTestableMonobehaviourComponent(
                     _mockInputBinderComponent.gameObject);
 
-            TestableMonobehaviourFunctions<TestMidnaCharacterComponent>.AddTestableMonobehaviourComponent(
+            TestableMonobehaviourFunctions<TestUnityMessageEventDispatcherComponent>
+                .AddTestableMonobehaviourComponent(_mockInputBinderComponent.gameObject);
+
+            _characterComponent = TestableMonobehaviourFunctions<TestMidnaCharacterComponent>.AddTestableMonobehaviourComponent(
                 _mockInputBinderComponent.gameObject);
+
         }
 
         [TearDown]
@@ -50,6 +58,19 @@ namespace Assets.Editor.UnitTests.Components.Character
             Assert.NotNull((LocomotionActionState)_mockActionStateMachineComponent.RequestedState);
         }
 
+        [Test]
+        public void ReceivesTriggerSpawnMessage_UpdatesControllerInitialTransformToMatch()
+        {
+            var controller = TestableMonobehaviourFunctions<TestControllerComponent>
+                .PrepareMonobehaviourComponentForTest();
+
+            _characterComponent.CurrentControllerComponent = controller;
+
+            UnityMessageEventFunctions.InvokeMessageEventWithDispatcher(_characterComponent.gameObject, new TriggerSpawnUpdateMessage(controller.transform));
+            Assert.AreEqual(controller.transform, controller.PawnInitialTransform);
+        }
+
+        private TestMidnaCharacterComponent _characterComponent;
         private MockInputBinderComponent _mockInputBinderComponent;
         private MockInputComponent _mockInputComponent;
         private MockActionStateMachineComponent _mockActionStateMachineComponent;

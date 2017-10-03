@@ -1,6 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
 using Assets.Editor.UnitTests.Helpers;
+using Assets.Scripts.Test.Components.Character;
 using Assets.Scripts.Test.Components.Controller;
 using Assets.Scripts.Test.Components.TestHelpers;
 using NUnit.Framework;
@@ -39,6 +40,41 @@ namespace Assets.Editor.UnitTests.Components.Controller
         }
 
         [Test]
+        public void CreatePawnOfType_PawnIsCharacter_UpdatesControllerReference()
+        {
+            var characterComponent = TestableMonobehaviourFunctions<TestMidnaCharacterComponent>
+                .PrepareMonobehaviourComponentForTest();
+
+            var controllerComponent = TestableMonobehaviourFunctions<TestControllerComponent>
+                .PrepareMonobehaviourComponentForTest();
+
+            controllerComponent.CreatePawnOfType(characterComponent.gameObject);
+
+            Assert.AreEqual
+            (
+                controllerComponent, 
+                controllerComponent.GetPawnInstance().GetComponent<TestMidnaCharacterComponent>().GetControllerComponent()
+            );
+        }
+
+        [Test]
+        public void CreatePawnOfType_SetInitialTransform_UsedOnCreation()
+        {
+            var gameObject = new GameObject();
+            var expectedTransform = new GameObject().transform;
+            expectedTransform.localPosition = Vector3.forward;
+
+            var controllerComponent = TestableMonobehaviourFunctions<TestControllerComponent>
+                .PrepareMonobehaviourComponentForTest();
+
+            controllerComponent.PawnInitialTransform = expectedTransform;
+
+            controllerComponent.CreatePawnOfType(gameObject);
+
+            Assert.AreEqual(expectedTransform.localPosition, controllerComponent.GetPawnInstance().transform.localPosition);
+        }
+
+        [Test]
         public void SetPawn_OverridesCurrentPawn()
         {
             var gameObject = new GameObject();
@@ -52,6 +88,20 @@ namespace Assets.Editor.UnitTests.Components.Controller
             controllerComponent.SetPawn(otherPawn);
 
             Assert.AreEqual(otherPawn, controllerComponent.GetPawnInstance());
+        }
+
+        [Test]
+        public void SetPawn_PawnIsCharacter_UpdatesControllerReference()
+        {
+            var characterComponent = TestableMonobehaviourFunctions<TestMidnaCharacterComponent>
+                .PrepareMonobehaviourComponentForTest();
+
+            var controllerComponent = TestableMonobehaviourFunctions<TestControllerComponent>
+                .PrepareMonobehaviourComponentForTest();
+
+            controllerComponent.SetPawn(characterComponent.gameObject);
+
+            Assert.AreEqual(controllerComponent, characterComponent.GetControllerComponent());
         }
 
         [Test]
