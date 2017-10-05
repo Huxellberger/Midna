@@ -8,12 +8,12 @@ namespace Assets.Scripts.Components.ActionStateMachine.States.Locomotion
     public class LocomotionActionState
         : ActionState
     {
-        private InputHandler LocomotionInputHandler { get; set; }
+        private InputHandler SetLocomotionInputHandler { get; set; }
         private IInputBinderInterface InputBinderInterface { get; set; }
 
         public LocomotionActionState(ActionStateInfo inInfo) : base(EActionStateId.Locomotion, inInfo)
         {
-            LocomotionInputHandler = new LocomotionInputHandler(inInfo.Owner.GetComponent<IMidnaMovementInterface>());
+            SetLocomotionInputHandler = new LocomotionInputHandler(inInfo.Owner.GetComponent<IMidnaMovementInterface>());
             InputBinderInterface = inInfo.Owner.GetComponent<IInputBinderInterface>();
         }
 
@@ -21,7 +21,7 @@ namespace Assets.Scripts.Components.ActionStateMachine.States.Locomotion
         {
             if (InputBinderInterface != null)
             {
-                InputBinderInterface.RegisterInputHandler(LocomotionInputHandler);
+                InputBinderInterface.RegisterInputHandler(SetLocomotionInputHandler);
             }
         }
 
@@ -34,7 +34,7 @@ namespace Assets.Scripts.Components.ActionStateMachine.States.Locomotion
         {
             if (InputBinderInterface != null)
             {
-                InputBinderInterface.UnregisterInputHandler(LocomotionInputHandler);
+                InputBinderInterface.UnregisterInputHandler(SetLocomotionInputHandler);
             }
         }
     }
