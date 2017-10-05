@@ -1,27 +1,30 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+using Assets.Scripts.Components.UnityEvent;
+
 namespace Assets.Scripts.Components.ActionStateMachine.States.Dead
 {
     public class DeadActionState
         : ActionState
     {
+        private IUnityMessageEventInterface DispatcherInterface { get; set; }
         public DeadActionState(ActionStateInfo inInfo) : base(EActionStateId.Dead, inInfo)
         {
         }
 
         protected override void OnStart()
         {
-            throw new System.NotImplementedException();
+            DispatcherInterface = Info.Owner.GetComponent<IUnityMessageEventInterface>();
+            DispatcherInterface.GetUnityMessageEventDispatcher().InvokeMessageEvent(new EnteredDeadActionStateMessage());
         }
 
         protected override void OnUpdate(float deltaTime)
         {
-            throw new System.NotImplementedException();
         }
 
         protected override void OnEnd()
         {
-            throw new System.NotImplementedException();
+            DispatcherInterface.GetUnityMessageEventDispatcher().InvokeMessageEvent(new LeftDeadActionStateMessage());
         }
     }
 }
