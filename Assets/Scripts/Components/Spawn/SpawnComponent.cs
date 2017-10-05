@@ -8,7 +8,7 @@ namespace Assets.Scripts.Components.Spawn
     public abstract class SpawnComponent 
         : MonoBehaviour
     {
-        protected void TriggerSpawnUpdate(GameObject spawnableGameObject)
+        protected virtual void TriggerSpawnUpdate(GameObject spawnableGameObject)
         {
             UnityMessageEventFunctions.InvokeMessageEventWithDispatcher(spawnableGameObject, new TriggerSpawnUpdateMessage(gameObject.transform));
         }
