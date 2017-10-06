@@ -22,7 +22,7 @@ namespace Assets.Editor.UnitTests.Components.Controller
 
             controllerComponent.CreatePawnOfType(gameObject);
 
-            Assert.IsNotNull(controllerComponent.GetPawnInstance());
+            Assert.IsNotNull(controllerComponent.PawnInstance);
         }
 
         [Test]
@@ -35,7 +35,7 @@ namespace Assets.Editor.UnitTests.Components.Controller
 
             controllerComponent.CreatePawnOfType(gameObject);
 
-            Assert.AreEqual(controllerComponent.GetPawnInstance().transform, controllerComponent.gameObject.transform.parent);
+            Assert.AreEqual(controllerComponent.PawnInstance.transform, controllerComponent.gameObject.transform.parent);
             Assert.AreEqual(new Vector3(0, 0, controllerComponent.PerspectiveDistance), controllerComponent.gameObject.transform.localPosition);
         }
 
@@ -53,7 +53,7 @@ namespace Assets.Editor.UnitTests.Components.Controller
             Assert.AreEqual
             (
                 controllerComponent, 
-                controllerComponent.GetPawnInstance().GetComponent<TestMidnaCharacterComponent>().GetControllerComponent()
+                controllerComponent.PawnInstance.GetComponent<TestMidnaCharacterComponent>().GetControllerComponent()
             );
         }
 
@@ -71,7 +71,7 @@ namespace Assets.Editor.UnitTests.Components.Controller
 
             controllerComponent.CreatePawnOfType(gameObject);
 
-            Assert.AreEqual(expectedTransform.localPosition, controllerComponent.GetPawnInstance().transform.localPosition);
+            Assert.AreEqual(expectedTransform.localPosition, controllerComponent.PawnInstance.transform.localPosition);
         }
 
         [Test]
@@ -87,7 +87,7 @@ namespace Assets.Editor.UnitTests.Components.Controller
 
             controllerComponent.SetPawn(otherPawn);
 
-            Assert.AreEqual(otherPawn, controllerComponent.GetPawnInstance());
+            Assert.AreEqual(otherPawn, controllerComponent.PawnInstance);
         }
 
         [Test]
@@ -132,7 +132,7 @@ namespace Assets.Editor.UnitTests.Components.Controller
 
             controllerComponent.SetPawn(gameObject);
 
-            Assert.AreEqual(controllerComponent.GetPawnInstance().transform, controllerComponent.gameObject.transform.parent);
+            Assert.AreEqual(controllerComponent.PawnInstance.transform, controllerComponent.gameObject.transform.parent);
             Assert.AreEqual(new Vector3(0, 0, controllerComponent.PerspectiveDistance), controllerComponent.gameObject.transform.localPosition);
         }
     }

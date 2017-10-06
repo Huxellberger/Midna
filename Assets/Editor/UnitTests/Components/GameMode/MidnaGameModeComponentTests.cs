@@ -1,11 +1,14 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
 using System;
+using System.Linq;
 using Assets.Editor.UnitTests.Helpers;
+using Assets.Scripts.Components.ActionStateMachine.States.Dead;
 using Assets.Scripts.Components.GameMode;
 using Assets.Scripts.Test.Components.Controller;
 using Assets.Scripts.Test.Components.GameMode;
 using Assets.Scripts.Test.Components.Input;
+using Assets.Scripts.Test.UnityEvent;
 using NUnit.Framework;
 using UnityEngine;
 
@@ -19,6 +22,10 @@ namespace Assets.Editor.UnitTests.Components.GameMode
         {
             _inputComponent =
                 TestableMonobehaviourFunctions<MockInputComponent>.PrepareMonobehaviourComponentForTest();
+
+            _dispatcherComponent =
+                TestableMonobehaviourFunctions<TestUnityMessageEventDispatcherComponent>
+                    .AddTestableMonobehaviourComponent(_inputComponent.gameObject);
 
             _midnaGameModeComponent = _inputComponent.gameObject.AddComponent<TestMidnaGameModeComponent>();
             
@@ -61,7 +68,7 @@ namespace Assets.Editor.UnitTests.Components.GameMode
 
             var controller = _midnaGameModeComponent.GetPlayerControllers()[0].GetComponent<TestControllerComponent>();
 
-            Assert.IsTrue(controller.GetPawnInstance().name.Contains(_midnaGameModeComponent.PlayerCharacterType.name));
+            Assert.IsTrue(controller.PawnInstance.name.Contains(_midnaGameModeComponent.PlayerCharacterType.name));
         }
 
         [Test]
@@ -71,8 +78,24 @@ namespace Assets.Editor.UnitTests.Components.GameMode
             Assert.Throws<ApplicationException>(() => _midnaGameModeComponent.PrepareForTest());
         }
 
+        [Test]
+        public void ReceivesRequestRespawnMessage_DestroysAndRecreatesPawn()
+        {
+            _midnaGameModeComponent.PrepareForTest();
+
+            var controller = _midnaGameModeComponent.GetPlayerControllers().First()
+                .GetComponent<TestControllerComponent>();
+
+            var initialPawn = controller.PawnInstance;
+
+            _dispatcherComponent.GetUnityMessageEventDispatcher().InvokeMessageEvent(new RequestRespawnMessage(controller.PawnInstance));
+
+            Assert.AreNotEqual(initialPawn, controller.PawnInstance);
+        }
+
         private TestMidnaGameModeComponent _midnaGameModeComponent;
         private MockInputComponent _inputComponent;
+        private TestUnityMessageEventDispatcherComponent _dispatcherComponent;
         private TestControllerComponent _controllerComponent;
     }
 }

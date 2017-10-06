@@ -8,7 +8,7 @@ namespace Assets.Scripts.Components.Controller
     public class ControllerComponent : MonoBehaviour
     {
         public int PerspectiveDistance = -10;
-        protected GameObject PawnInstance { get; set; }
+        public GameObject PawnInstance { get; protected set; }
         public Transform PawnInitialTransform { get; set; }
 
         public void CreatePawnOfType(GameObject inPawnType)
