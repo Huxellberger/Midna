@@ -1,13 +1,14 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
-using Assets.Scripts.Components.Character;
 using UnityEngine;
 
-namespace Assets.Scripts.Components.Spawn
+namespace Assets.Scripts.Components.Health.Damage
 {
-    public class ProximitySpawnComponent 
-        : SpawnComponent
+    public class ProximityHealthAdjustmentComponent
+        : MonoBehaviour
     {
+        public int HealthChangeOnContact;
+
         void OnTriggerEnter2D(Collider2D inCollider)
         {
             if (inCollider != null && inCollider.gameObject != null)
@@ -18,9 +19,10 @@ namespace Assets.Scripts.Components.Spawn
 
         protected void OnGameObjectCollides(GameObject inCollidingObject)
         {
-            if (inCollidingObject.GetComponent<MidnaCharacterComponent>() != null)
+            var healthComponentInterface = inCollidingObject.GetComponent<IHealthInterface>();
+            if (healthComponentInterface != null)
             {
-                TriggerSpawnUpdate(inCollidingObject.gameObject);
+                healthComponentInterface.AdjustHealth(HealthChangeOnContact);
             }
         }
     }
