@@ -9,6 +9,16 @@ namespace Assets.Scripts.Components.UnityEvent
     {
         public static UnityMessageEventHandle<TMessageType> RegisterActionWithDispatcher<TMessageType>
         (
+            GameObject inDispatcherObject, UnityAction<TMessageType> inAction
+        )
+            where TMessageType : UnityMessagePayload
+        {
+            return RegisterActionWithDispatcher(inDispatcherObject.GetComponent<IUnityMessageEventInterface>(),
+                inAction);
+        }
+
+        public static UnityMessageEventHandle<TMessageType> RegisterActionWithDispatcher<TMessageType>
+        (
             IUnityMessageEventInterface inDispatcherInterface, UnityAction<TMessageType> inAction
         )
             where TMessageType : UnityMessagePayload
@@ -19,6 +29,15 @@ namespace Assets.Scripts.Components.UnityEvent
             }
 
             return inDispatcherInterface.GetUnityMessageEventDispatcher().RegisterForMessageEvent(inAction);
+        }
+
+        public static void UnregisterActionWithDispatcher<TMessageType>
+        (
+            GameObject inDispatcherObject, UnityMessageEventHandle<TMessageType> inHandle
+        )
+            where TMessageType : UnityMessagePayload
+        {
+            UnregisterActionWithDispatcher(inDispatcherObject.GetComponent<IUnityMessageEventInterface>(), inHandle);
         }
 
         public static void UnregisterActionWithDispatcher<TMessageType>

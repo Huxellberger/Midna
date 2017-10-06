@@ -5,6 +5,7 @@ namespace Assets.Scripts.Components.Input
     public enum EInputKey
     {
         FireButton,
+        SelectButton,
         MoveXJoypadAnalog,
         VerticalAnalog,
         HorizontalAnalog
