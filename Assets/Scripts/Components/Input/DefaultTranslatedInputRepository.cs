@@ -1,6 +1,5 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts.Core;
@@ -67,6 +66,10 @@ namespace Assets.Scripts.Components.Input
                 {
                     new RawInput("Horizontal_Analog", EInputType.Analog),
                     new TranslatedInput(EInputKey.HorizontalAnalog, EInputType.Analog)
+                },
+                {
+                    new RawInput("Enter_Button", EInputType.Button),
+                    new TranslatedInput(EInputKey.SelectButton, EInputType.Button)
                 }
             };
         }

@@ -39,6 +39,7 @@ namespace Assets.Scripts.Components.Controller
 
         public void DestroyPawn()
         {
+            transform.parent = null;
             Destroy(PawnInstance);
         }
 
