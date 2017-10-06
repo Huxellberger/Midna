@@ -16,8 +16,8 @@ namespace Assets.Scripts.Components.Input
         public static readonly string InputManagerPath = "ProjectSettings/InputManager.asset";
         public static readonly string InputManagerProperties = "m_Axes";
         public static readonly string AnalogKey = "Analog";
-        public static readonly string ButtonKey = "ButtonKey";
-        public static readonly string MouseKey = "MouseKey";
+        public static readonly string ButtonKey = "Button";
+        public static readonly string MouseKey = "Mouse";
         public static readonly string InputManagerRelativeResourcePath = "Input/InputManagerRawInput.txt";
         public static readonly string InputManagerAbsoluteFilePath = Application.dataPath + @"/Resources/" + InputManagerRelativeResourcePath;
 
