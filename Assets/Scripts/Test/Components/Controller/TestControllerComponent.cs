@@ -2,6 +2,7 @@
 
 using Assets.Scripts.Components.Controller;
 using Assets.Scripts.Test.TestableMonobehaviour;
+using UnityEngine;
 
 namespace Assets.Scripts.Test.Components.Controller
 {
@@ -11,6 +12,11 @@ namespace Assets.Scripts.Test.Components.Controller
     {
         public void PrepareForTest(params object[] parameters)
         {
+        }
+
+        public void TestAwake()
+        {
+            Awake();
         }
     }
 }

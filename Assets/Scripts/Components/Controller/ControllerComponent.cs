@@ -1,6 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
 using Assets.Scripts.Components.Character;
+using Assets.Scripts.Components.HUD;
 using Assets.Scripts.UnityLayer.GameObjects;
 using UnityEngine;
 
@@ -9,8 +10,15 @@ namespace Assets.Scripts.Components.Controller
     public class ControllerComponent : MonoBehaviour
     {
         public int PerspectiveDistance = -10;
+        public GameObject HudObject;
+
         public GameObject PawnInstance { get; protected set; }
         public Transform PawnInitialTransform { get; set; }
+
+        protected void Awake()
+        {
+            Instantiate(HudObject);
+        }
 
         public void CreatePawnOfType(GameObject inPawnType)
         {
@@ -36,6 +44,15 @@ namespace Assets.Scripts.Components.Controller
             }
 
             UpdateTransformParent();
+
+            if (HudObject != null)
+            {
+                var hudComponent = HudObject.GetComponent<HUDComponent>();
+                if (hudComponent != null)
+                {
+                    hudComponent.SetPawn(PawnInstance);
+                }
+            }
         }
 
         public void DestroyPawn()

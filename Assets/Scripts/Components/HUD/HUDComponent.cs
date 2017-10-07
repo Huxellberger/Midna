@@ -1,5 +1,6 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+using Assets.Scripts.Components.UnityEvent;
 using UnityEngine;
 
 namespace Assets.Scripts.Components.HUD
@@ -7,34 +8,21 @@ namespace Assets.Scripts.Components.HUD
     public class HUDComponent 
         : MonoBehaviour
     {
-        private GameObject _canvas;
-        private GameObject _canvasChild;
-        private Canvas _canvasComponent;
-
-        void Start()
+        public void SetPawn(GameObject inPawn)
         {
-            InitialiseCanvas();
-            InitialiseElements();
-        }
+            IUnityMessageEventInterface messageEventInterface = null;
 
-        void OnDestroy()
-        {
-            Destroy(_canvas);
-        }
+            if (inPawn != null)
+            {
+                messageEventInterface = inPawn.GetComponent<IUnityMessageEventInterface>();
+            }
 
-        private void InitialiseCanvas()
-        {
-            _canvas = new GameObject();
+            var hudElements = GetComponents<HUDElementComponent>();
 
-            _canvasComponent = _canvas.AddComponent<Canvas>();
-            _canvasComponent.renderMode = RenderMode.ScreenSpaceOverlay;
-        }
-
-        private void InitialiseElements()
-        {
-            _canvasChild = new GameObject();
-
-            _canvasChild.transform.parent = _canvas.transform;
+            foreach (var hudElement in hudElements)
+            {
+                hudElement.SetMessageDispatcher(messageEventInterface);
+            }
         }
     }
 }

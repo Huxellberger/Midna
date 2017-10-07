@@ -1,8 +1,11 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
 using Assets.Editor.UnitTests.Helpers;
+using Assets.Scripts.Components.HUD;
+using Assets.Scripts.Components.UnityEvent;
 using Assets.Scripts.Test.Components.Character;
 using Assets.Scripts.Test.Components.Controller;
+using Assets.Scripts.Test.Components.HUD;
 using Assets.Scripts.Test.Components.TestHelpers;
 using NUnit.Framework;
 using UnityEngine;
@@ -102,6 +105,29 @@ namespace Assets.Editor.UnitTests.Components.Controller
             controllerComponent.SetPawn(characterComponent.gameObject);
 
             Assert.AreEqual(controllerComponent, characterComponent.GetControllerComponent());
+        }
+
+        [Test]
+        public void SetPawn_SetPawnCalledOnHudComponent()
+        {
+            var characterComponent = TestableMonobehaviourFunctions<TestMidnaCharacterComponent>
+                .PrepareMonobehaviourComponentForTest();
+            characterComponent.gameObject.AddComponent<UnityMessageEventDispatcherComponent>();
+
+            var controllerComponent = TestableMonobehaviourFunctions<TestControllerComponent>
+                .PrepareMonobehaviourComponentForTest();
+
+            var hudObject = new GameObject();
+            hudObject.AddComponent<HUDComponent>();
+            var hudElement =
+                TestableMonobehaviourFunctions<TestHUDElementComponent>.AddTestableMonobehaviourComponent(hudObject);
+
+            controllerComponent.HudObject = hudObject;
+            controllerComponent.TestAwake();
+
+            controllerComponent.SetPawn(characterComponent.gameObject);
+
+            Assert.IsTrue(hudElement.MessageInterfaceSetCalled);
         }
 
         [Test]
