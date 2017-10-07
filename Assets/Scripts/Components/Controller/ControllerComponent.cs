@@ -1,6 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
 using Assets.Scripts.Components.Character;
+using Assets.Scripts.UnityLayer.GameObjects;
 using UnityEngine;
 
 namespace Assets.Scripts.Components.Controller
@@ -40,7 +41,7 @@ namespace Assets.Scripts.Components.Controller
         public void DestroyPawn()
         {
             transform.parent = null;
-            Destroy(PawnInstance);
+            DestructionFunctions.DestroyGameObject(PawnInstance);
         }
 
         private void UpdateTransformParent()

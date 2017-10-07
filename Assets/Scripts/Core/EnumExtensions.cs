@@ -1,6 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
 using System;
+using UnityEngine;
 
 namespace Assets.Scripts.Core
 {
@@ -12,8 +13,9 @@ namespace Assets.Scripts.Core
             {
                 return new Optional<TEnumType>( (TEnumType)Enum.Parse(typeof(TEnumType), inputString));
             }
-            catch (Exception e)
+            catch (Exception exception)
             {
+                Debug.Log(exception.Message);
                 return new Optional<TEnumType>();
             }
         }
