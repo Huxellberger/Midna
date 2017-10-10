@@ -14,6 +14,11 @@ namespace Assets.Scripts.Test.Components.Controller
         {
         }
 
+        public GameObject GetHudInstance()
+        {
+            return HudInstance;
+        }
+
         public void TestAwake()
         {
             Awake();

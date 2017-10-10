@@ -5,6 +5,7 @@ using Assets.Scripts.Components.HUD;
 using Assets.Scripts.Test.Components.HUD;
 using Assets.Scripts.Test.UnityEvent;
 using NUnit.Framework;
+using UnityEngine;
 
 namespace Assets.Editor.UnitTests.Components.HUD
 {
@@ -21,7 +22,9 @@ namespace Assets.Editor.UnitTests.Components.HUD
                 .PrepareMonobehaviourComponentForTest();
 
             var otherHudElement = TestableMonobehaviourFunctions<TestHUDElementComponent>
-                .AddTestableMonobehaviourComponent(hudElement.gameObject);
+                .PrepareMonobehaviourComponentForTest();
+
+            otherHudElement.transform.parent = hudElement.gameObject.transform;
 
             var hud = hudElement.gameObject.AddComponent<HUDComponent>();
 

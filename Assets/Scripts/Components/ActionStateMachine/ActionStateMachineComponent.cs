@@ -28,6 +28,14 @@ namespace Assets.Scripts.Components.ActionStateMachine
             }
         }
 
+        protected void OnDestroy()
+        {
+            foreach (var actionState in _activeActionStates)
+            {
+                actionState.Value.End();
+            }
+        }
+
         // IActionStateMachineInterface
         public virtual void RequestActionState(EActionStateMachineTrack selectedTrack, ActionState newState)
         {

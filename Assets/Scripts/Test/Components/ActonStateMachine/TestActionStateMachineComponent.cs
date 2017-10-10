@@ -18,5 +18,10 @@ namespace Assets.Scripts.Test.Components.ActonStateMachine
         {
             Update();
         }
+
+        public void TestDestroy()
+        {
+            OnDestroy();
+        }
     }
 }

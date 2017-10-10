@@ -12,12 +12,13 @@ namespace Assets.Scripts.Components.Controller
         public int PerspectiveDistance = -10;
         public GameObject HudObject;
 
+        protected GameObject HudInstance { get; set; }
         public GameObject PawnInstance { get; protected set; }
         public Transform PawnInitialTransform { get; set; }
 
         protected void Awake()
         {
-            Instantiate(HudObject);
+            HudInstance = Instantiate(HudObject);
         }
 
         public void CreatePawnOfType(GameObject inPawnType)
@@ -45,9 +46,9 @@ namespace Assets.Scripts.Components.Controller
 
             UpdateTransformParent();
 
-            if (HudObject != null)
+            if (HudInstance != null)
             {
-                var hudComponent = HudObject.GetComponent<HUDComponent>();
+                var hudComponent = HudInstance.GetComponent<HUDComponent>();
                 if (hudComponent != null)
                 {
                     hudComponent.SetPawn(PawnInstance);

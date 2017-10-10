@@ -17,7 +17,7 @@ namespace Assets.Scripts.Components.HUD
                 messageEventInterface = inPawn.GetComponent<IUnityMessageEventInterface>();
             }
 
-            var hudElements = GetComponents<HUDElementComponent>();
+            var hudElements = GetComponentsInChildren<HUDElementComponent>();
 
             foreach (var hudElement in hudElements)
             {

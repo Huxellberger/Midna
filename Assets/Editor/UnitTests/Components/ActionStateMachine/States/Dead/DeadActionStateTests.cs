@@ -7,6 +7,7 @@ using Assets.Scripts.Components.ActionStateMachine;
 using Assets.Scripts.Components.ActionStateMachine.States.Dead;
 using Assets.Scripts.Components.GameMode;
 using Assets.Scripts.Components.UnityEvent;
+using Assets.Scripts.Test.Components.ActonStateMachine;
 using Assets.Scripts.Test.Components.Input;
 using Assets.Scripts.Test.UnityEvent;
 using NUnit.Framework;
@@ -19,6 +20,7 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine.States.Dead
     {
         private GameObject _gameMode;
         private GameObject _owner;
+        private MockActionStateMachineComponent _stateMachine;
 
         [SetUp]
         public void BeforeTest()
@@ -29,17 +31,19 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine.States.Dead
 
             _owner = TestableMonobehaviourFunctions<MockInputBinderComponent>
                 .PrepareMonobehaviourComponentForTest().gameObject;
-            TestableMonobehaviourFunctions<TestUnityMessageEventDispatcherComponent>
-                .AddTestableMonobehaviourComponent(_owner);
+
+            TestableMonobehaviourFunctions<TestUnityMessageEventDispatcherComponent>.AddTestableMonobehaviourComponent(_owner);
+            _stateMachine = TestableMonobehaviourFunctions<MockActionStateMachineComponent>.AddTestableMonobehaviourComponent(_owner);
         }
 
         [TearDown]
         public void AfterTest()
         {
+            _stateMachine = null;
+            _owner = null;
+
             MidnaGameMode.CurrentGameMode = null;
             _gameMode = null;
-
-            _owner = null;
         }
 
         [Test]
@@ -116,6 +120,20 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine.States.Dead
             Assert.IsTrue(messageCapture.ActionCalled);
 
             UnityMessageEventFunctions.UnregisterActionWithDispatcher(_gameMode, handle);
+        }
+
+        [Test]
+        public void Update_ButtonPressedAfterDelayComplete_TransitionsIntoNullActionState()
+        {
+            var deadActionState = new DeadActionState(new ActionStateInfo(_owner));
+
+            deadActionState.Start();
+            deadActionState.Update(deadActionState.DeathDelay + 0.1f);
+            _owner.GetComponent<MockInputBinderComponent>().RegisteredHandler
+                .HandleButtonInput(deadActionState.AcceptableInputs.First(), true);
+            deadActionState.Update(0.0f);
+
+            Assert.AreEqual(_stateMachine.RequestedState.ActionStateId, EActionStateId.Null);
         }
 
         [Test]

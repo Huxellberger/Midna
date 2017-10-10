@@ -127,7 +127,7 @@ namespace Assets.Editor.UnitTests.Components.Controller
 
             controllerComponent.SetPawn(characterComponent.gameObject);
 
-            Assert.IsTrue(hudElement.MessageInterfaceSetCalled);
+            Assert.IsTrue(controllerComponent.GetHudInstance().GetComponent<TestHUDElementComponent>().MessageInterfaceSetCalled);
         }
 
         [Test]

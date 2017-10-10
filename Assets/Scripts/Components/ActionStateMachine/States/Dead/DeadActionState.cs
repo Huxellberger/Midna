@@ -40,7 +40,8 @@ namespace Assets.Scripts.Components.ActionStateMachine.States.Dead
             {
                 if (MidnaGameMode.CurrentGameMode)
                 {
-                    UnityMessageEventFunctions.InvokeMessageEventWithDispatcher(GameMode.MidnaGameMode.CurrentGameMode, new RequestRespawnMessage(Info.Owner));
+                    NullActionStateHelpers.TransitionIntoNullActionState(Info.Owner);
+                    UnityMessageEventFunctions.InvokeMessageEventWithDispatcher(MidnaGameMode.CurrentGameMode, new RequestRespawnMessage(Info.Owner));
                 }
             }
         }

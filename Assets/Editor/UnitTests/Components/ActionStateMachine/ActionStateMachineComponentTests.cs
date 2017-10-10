@@ -1,6 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
 using System;
+using System.Collections.Generic;
 using Assets.Editor.UnitTests.Helpers;
 using Assets.Scripts.Components.ActionStateMachine;
 using Assets.Scripts.Test.Components.ActonStateMachine;
@@ -103,6 +104,27 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine
 
             Assert.IsTrue(actionState.OnUpdateCalled);
             Assert.AreEqual(actionState.OnUpdateValue, Time.deltaTime);
+        }
+
+        [Test]
+        public void Destroyed_CallsEndOnAllStates()
+        {
+            var actionStates = new List<TestActionState>();
+
+            var tracks = Enum.GetValues(typeof(EActionStateMachineTrack));
+            foreach (EActionStateMachineTrack track in tracks)
+            {
+                var actionState = new TestActionState(EActionStateId.Locomotion, new ActionStateInfo());
+                _actionStateMachineComponent.RequestActionState(track, actionState);
+                actionStates.Add(actionState);
+            }
+
+            _actionStateMachineComponent.TestDestroy();
+
+            foreach (var actionState in actionStates)
+            {
+                Assert.IsTrue(actionState.OnEndCalled);
+            }
         }
 
         TestActionStateMachineComponent _actionStateMachineComponent;
