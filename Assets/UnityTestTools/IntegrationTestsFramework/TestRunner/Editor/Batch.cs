@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Assets.UnityTestTools.IntegrationTestsFramework.TestRunner.Editor.PlatformRunner;
 using UnityEditor;
-using UnityEditor.SceneManagement;
 using UnityEditorInternal;
 using UnityEngine;
+using UnityTest.IntegrationTests;
+using UnityEditor.SceneManagement;
 
-namespace Assets.UnityTestTools.IntegrationTestsFramework.TestRunner.Editor
+namespace UnityTest
 {
     public static partial class Batch
     {
@@ -75,7 +75,7 @@ namespace Assets.UnityTestTools.IntegrationTestsFramework.TestRunner.Editor
                 EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTarget.StandaloneWindows);
             }
 
-            PlatformRunner.PlatformRunner.BuildAndRunInPlayer(config);
+            PlatformRunner.BuildAndRunInPlayer(config);
         }
 
         private static void RunInEditor(List<string> testScenes, List<string> otherBuildScenes)

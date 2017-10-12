@@ -1,10 +1,11 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace Assets.UnityTestTools.Common.Editor
+namespace UnityTest
 {
     public static class Icons
     {

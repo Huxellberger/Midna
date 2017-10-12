@@ -4,11 +4,12 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
-namespace Assets.UnityTestTools.IntegrationTestsFramework.TestRunner
+namespace UnityTest
 {
     public interface ITestComponent : IComparable<ITestComponent>
     {

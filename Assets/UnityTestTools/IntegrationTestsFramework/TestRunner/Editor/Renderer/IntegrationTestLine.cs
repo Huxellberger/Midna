@@ -1,8 +1,9 @@
+using System;
 using System.Collections.Generic;
-using Assets.UnityTestTools.Common.Editor;
+using UnityEditor;
 using UnityEngine;
 
-namespace Assets.UnityTestTools.IntegrationTestsFramework.TestRunner.Editor.Renderer
+namespace UnityTest
 {
     class IntegrationTestLine : IntegrationTestRendererBase
     {

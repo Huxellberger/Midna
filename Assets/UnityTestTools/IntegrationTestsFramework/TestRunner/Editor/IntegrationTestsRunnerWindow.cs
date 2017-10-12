@@ -2,14 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Assets.UnityTestTools.Common;
-using Assets.UnityTestTools.Common.Editor;
-using Assets.UnityTestTools.IntegrationTestsFramework.TestRunner.Editor.Renderer;
+using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
+using UnityTest.IntegrationTestRunner;
 using UnityEngine.SceneManagement;
 
-namespace Assets.UnityTestTools.IntegrationTestsFramework.TestRunner.Editor
+namespace UnityTest
 {
     [Serializable]
     public class IntegrationTestsRunnerWindow : EditorWindow, IHasCustomMenu

@@ -1,25 +1,25 @@
+using System;
+using System.Collections.Generic;
 using UnityEditor.Callbacks;
 using UnityEngine;
+using UnityTest;
 using Object = UnityEngine.Object;
 
-namespace Assets.UnityTestTools.Assertions.Editor
+public class AssertionStripper
 {
-    public class AssertionStripper
+    [PostProcessScene]
+    public static void OnPostprocessScene()
     {
-        [PostProcessScene]
-        public static void OnPostprocessScene()
-        {
-            if (Debug.isDebugBuild) return;
-            RemoveAssertionsFromGameObjects();
-        }
+        if (Debug.isDebugBuild) return;
+        RemoveAssertionsFromGameObjects();
+    }
 
-        private static void RemoveAssertionsFromGameObjects()
+    private static void RemoveAssertionsFromGameObjects()
+    {
+        var allAssertions = Resources.FindObjectsOfTypeAll(typeof(AssertionComponent)) as AssertionComponent[];
+        foreach (var assertion in allAssertions)
         {
-            var allAssertions = Resources.FindObjectsOfTypeAll(typeof(AssertionComponent)) as AssertionComponent[];
-            foreach (var assertion in allAssertions)
-            {
-                Object.DestroyImmediate(assertion);
-            }
+            Object.DestroyImmediate(assertion);
         }
     }
 }

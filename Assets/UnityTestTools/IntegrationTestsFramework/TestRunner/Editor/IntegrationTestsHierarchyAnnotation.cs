@@ -1,9 +1,8 @@
-﻿using Assets.UnityTestTools.Common.Editor;
-using Assets.UnityTestTools.IntegrationTestsFramework.TestRunner.Editor.Renderer;
+﻿using UnityEngine;
+using System.Collections;
 using UnityEditor;
-using UnityEngine;
 
-namespace Assets.UnityTestTools.IntegrationTestsFramework.TestRunner.Editor
+namespace UnityTest
 {
 
     [InitializeOnLoad]

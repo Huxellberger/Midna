@@ -2,15 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Assets.UnityTestTools.Assertions.Comparers;
 using UnityEditor;
-using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEditor.SceneManagement;
 
-namespace Assets.UnityTestTools.Assertions.Editor
+namespace UnityTest
 {
     [CustomEditor(typeof(AssertionComponent))]
-    public class AssertionComponentEditor : UnityEditor.Editor
+    public class AssertionComponentEditor : Editor
     {
         private readonly DropDownControl<Type> m_ComparerDropDown = new DropDownControl<Type>();
 

@@ -1,12 +1,13 @@
 using System;
-using System.Linq;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
+using System.Linq;
 
-namespace Assets.UnityTestTools.IntegrationTestsFramework.TestRunner.Editor.PlatformRunner
+namespace UnityTest.IntegrationTests
 {
     public class PlatformRunner
     {

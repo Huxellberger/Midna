@@ -3,9 +3,11 @@
 // ****************************************************************
 
 using System;
+using System.Collections.Generic;
 using System.IO;
+using UnityEngine;
 
-namespace Assets.UnityTestTools.Common.Editor.ResultWriter
+namespace UnityTest
 {
     /// <summary>
     /// Summary description for StackTraceFilter.

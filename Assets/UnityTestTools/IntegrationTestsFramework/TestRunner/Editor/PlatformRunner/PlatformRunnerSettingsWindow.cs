@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
-using Assets.UnityTestTools.Common.Editor;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
+using UnityEngine.SceneManagement;
 
-namespace Assets.UnityTestTools.IntegrationTestsFramework.TestRunner.Editor.PlatformRunner
+namespace UnityTest.IntegrationTests
 {
     [Serializable]
     public class PlatformRunnerSettingsWindow : EditorWindow

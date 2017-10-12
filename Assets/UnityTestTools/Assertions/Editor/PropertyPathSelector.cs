@@ -2,11 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Assets.UnityTestTools.Assertions.Comparers;
 using UnityEditor;
 using UnityEngine;
 
-namespace Assets.UnityTestTools.Assertions.Editor
+namespace UnityTest
 {
     public class PropertyPathSelector
     {

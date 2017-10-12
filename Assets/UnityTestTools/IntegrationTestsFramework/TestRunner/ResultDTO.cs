@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Assets.UnityTestTools.Common;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
-namespace Assets.UnityTestTools.IntegrationTestsFramework.TestRunner
+namespace UnityTest
 {
     [Serializable]
     public class ResultDTO

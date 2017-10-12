@@ -1,9 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace Assets.UnityTestTools.Assertions.Editor
+namespace UnityTest
 {
     public class GroupByGoRenderer : AssertionListRenderer<GameObject>
     {

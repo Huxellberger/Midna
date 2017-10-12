@@ -6,7 +6,7 @@ using System.Security;
 using System.Text;
 using UnityEngine;
 
-namespace Assets.UnityTestTools.Common.Editor.ResultWriter
+namespace UnityTest
 {
     public class XmlResultWriter
     {

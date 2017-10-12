@@ -1,4 +1,8 @@
-namespace Assets.UnityTestTools.Assertions.Comparers
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace UnityTest
 {
     public class ValueDoesNotChange : ActionBase
     {

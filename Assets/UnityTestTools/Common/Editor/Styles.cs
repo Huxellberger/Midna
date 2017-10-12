@@ -1,7 +1,9 @@
+using System;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace Assets.UnityTestTools.Common.Editor
+namespace UnityTest
 {
     public static class Styles
     {

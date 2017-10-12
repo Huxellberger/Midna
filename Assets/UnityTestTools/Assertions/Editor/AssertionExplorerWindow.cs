@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Assets.UnityTestTools.Assertions.Comparers;
-using Assets.UnityTestTools.Common.Editor;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,7 +8,7 @@ using UnityEngine;
 #warning Assertion component is not supported on Windows Store apps
 #endif
 
-namespace Assets.UnityTestTools.Assertions.Editor
+namespace UnityTest
 {
     [Serializable]
     public class AssertionExplorerWindow : EditorWindow

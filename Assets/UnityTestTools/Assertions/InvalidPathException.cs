@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
+using UnityEngine;
 
-namespace Assets.UnityTestTools.Assertions
+namespace UnityTest
 {
     public class InvalidPathException : Exception
     {

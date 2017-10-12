@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using Object = UnityEngine.Object;
+using UnityEditor.SceneManagement;
 
-namespace Assets.UnityTestTools.IntegrationTestsFramework.TestRunner.Editor
+namespace UnityTest
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(TestComponent))]
-    public class TestComponentEditor : UnityEditor.Editor
+    public class TestComponentEditor : Editor
     {
         private SerializedProperty m_ExpectException;
         private SerializedProperty m_ExpectedExceptionList;

@@ -3,13 +3,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using Assets.UnityTestTools.Assertions;
+using System.Reflection;
 using UnityEngine;
+using UnityTest.IntegrationTestRunner;
+using System.IO;
 using UnityEngine.SceneManagement;
 
-namespace Assets.UnityTestTools.IntegrationTestsFramework.TestRunner
+namespace UnityTest
 {
     [Serializable]
     public class TestRunner : MonoBehaviour

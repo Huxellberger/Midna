@@ -1,8 +1,9 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Object = System.Object;
 
-namespace Assets.UnityTestTools.Assertions.Comparers
+namespace UnityTest
 {
     public abstract class ComparerBase : ActionBase
     {
