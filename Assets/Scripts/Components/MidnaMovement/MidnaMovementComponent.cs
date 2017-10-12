@@ -1,5 +1,6 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Components.MidnaMovement
@@ -8,8 +9,17 @@ namespace Assets.Scripts.Components.MidnaMovement
         : MonoBehaviour
         , IMidnaMovementInterface
     {
+        private enum ESprintState
+        {
+            Sprinting,
+            NotSprinting,
+            Fatigued
+        }
+
         public float CharacterSpeed = 2.0f;
         public float SprintModifier = 2.0f;
+        public float FatigueModifier = 0.5f;
+        public float SprintMaxTimer = 5.0f;
 
         public float CurrentVerticalImpulse { get; private set; }
         public float CurrentHorizontalImpulse { get; private set; }
@@ -17,20 +27,75 @@ namespace Assets.Scripts.Components.MidnaMovement
         public readonly float MaxImpulse = 1.0f;
         public readonly float MinImpulse = -1.0f;
 
-        private bool Sprinting { get; set; }
+        private ESprintState SprintState { get; set; }
+        private float CurrentSprintTime { get; set; }
     
         protected void Start ()
         {
-            Sprinting = false;
+            SprintState = ESprintState.NotSprinting;
+            CurrentSprintTime = 0.0f;
+
             ResetImpulses();
         }
 	
         protected void Update ()
         {
-            transform.Translate(Vector3.right * CurrentHorizontalImpulse * CharacterSpeed * Time.deltaTime * (Sprinting ? SprintModifier : 1));
-            transform.Translate(Vector3.up * CurrentVerticalImpulse * CharacterSpeed * Time.deltaTime * (Sprinting ? SprintModifier : 1));
+            float deltaTime = GetDeltaTime();
+            UpdateSprintState(deltaTime);
+            var actualSprintModifier = GetSprintModifier();
+
+            transform.Translate(Vector3.right * CurrentHorizontalImpulse * CharacterSpeed * deltaTime * actualSprintModifier);
+            transform.Translate(Vector3.up * CurrentVerticalImpulse * CharacterSpeed * deltaTime * actualSprintModifier);
 
             ResetImpulses();
+        }
+
+        private void UpdateSprintState(float deltaTime)
+        {
+            if (
+                    (SprintState == ESprintState.Sprinting || SprintState == ESprintState.Fatigued)
+                    && IsMoving()
+                )
+            {
+                CurrentSprintTime += deltaTime;
+
+                if (CurrentSprintTime >= SprintMaxTimer)
+                {
+                    CurrentSprintTime = 0.0f;
+                    SprintState = (SprintState == ESprintState.Sprinting ? ESprintState.Fatigued : ESprintState.NotSprinting);
+                }
+            }
+            else
+            {
+                if (CurrentSprintTime > 0.0f)
+                {
+                    CurrentSprintTime = Mathf.Clamp(CurrentSprintTime - deltaTime, 0.0f, SprintMaxTimer);
+                }
+            }
+        }
+
+        private bool IsMoving()
+        {
+            return Math.Abs(CurrentVerticalImpulse) > 0.01f || Math.Abs(CurrentHorizontalImpulse) > 0.01f;
+        }
+
+        private float GetSprintModifier()
+        {
+            switch (SprintState)
+            {
+                case ESprintState.Sprinting:
+                    return SprintModifier;
+                case ESprintState.Fatigued:
+                    return FatigueModifier;
+                case ESprintState.NotSprinting:
+                default:
+                    return 1.0f;
+            }
+        }
+
+        protected virtual float GetDeltaTime()
+        {
+            return Time.deltaTime;
         }
 
         // IMidnaMovementInterface
@@ -46,7 +111,14 @@ namespace Assets.Scripts.Components.MidnaMovement
 
         public void ToggleSprint(bool enable)
         {
-            Sprinting = enable;
+            if (enable && SprintState == ESprintState.NotSprinting)
+            {
+                SprintState = ESprintState.Sprinting;
+            }
+            else if (SprintState == ESprintState.Sprinting)
+            {
+                SprintState = ESprintState.NotSprinting;
+            }
         }
         // ~IMidnaMovementInterface
 

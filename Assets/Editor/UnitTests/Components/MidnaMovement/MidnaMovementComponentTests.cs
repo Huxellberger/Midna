@@ -15,12 +15,29 @@ namespace Assets.Editor.UnitTests.Components.MidnaMovement
         {
             _midnaMovementComponent = TestableMonobehaviourFunctions<TestMidnaMovementComponent>
                 .PrepareMonobehaviourComponentForTest();
+
+            _midnaMovementComponent.DeltaTime = _midnaMovementComponent.SprintMaxTimer * 0.8f;
+            _startPosition = _midnaMovementComponent.transform.position;
         }
 
         [TearDown]
         public void AfterTest()
         {
             _midnaMovementComponent = null;
+        }
+
+        private void ExceedSprintTimer()
+        {
+            float CurrentTimer = _midnaMovementComponent.SprintMaxTimer;
+
+            while (CurrentTimer > 0.0f)
+            {
+                _midnaMovementComponent.AddHorizontalImpulse(1.0f);
+                _midnaMovementComponent.AddVerticalImpulse(1.0f);
+
+                _midnaMovementComponent.TestUpdate();
+                CurrentTimer -= _midnaMovementComponent.DeltaTime;
+            }
         }
 
         [Test]
@@ -122,10 +139,10 @@ namespace Assets.Editor.UnitTests.Components.MidnaMovement
 
             var expectedVector = new Vector3
             (
-                1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed * Time.deltaTime,
-                1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed * Time.deltaTime, 
+                1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime,
+                1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime, 
                 0.0f
-            );
+            ) +_startPosition;
 
             _midnaMovementComponent.TestUpdate();
 
@@ -161,17 +178,223 @@ namespace Assets.Editor.UnitTests.Components.MidnaMovement
             _midnaMovementComponent.ToggleSprint(true);
 
             var expectedVector = new Vector3
-            (
-                1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed * Time.deltaTime * _midnaMovementComponent.SprintModifier,
-                1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed * Time.deltaTime * _midnaMovementComponent.SprintModifier,
+            (  
+                1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime * _midnaMovementComponent.SprintModifier,
+                1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime * _midnaMovementComponent.SprintModifier,
                 0.0f
-            );
+            ) 
+            + _startPosition;
 
             _midnaMovementComponent.TestUpdate();
 
             Assert.AreEqual(expectedVector, _midnaMovementComponent.transform.position);
         }
 
+        [Test]
+        public void Update_SprintEnabledAndExceedMaxTime_AppliesFatigueModiferToTransform()
+        {
+            _midnaMovementComponent.PrepareForTest();
+
+            _midnaMovementComponent.ToggleSprint(true);
+            ExceedSprintTimer();
+            _startPosition = _midnaMovementComponent.transform.position;
+
+            const float horizontalImpulse = 0.3f;
+
+            const float verticalImpulse = 0.2f;
+
+            _midnaMovementComponent.AddHorizontalImpulse(horizontalImpulse);
+            _midnaMovementComponent.AddVerticalImpulse(verticalImpulse);
+
+            var expectedVector = new Vector3
+            (
+                1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime * _midnaMovementComponent.FatigueModifier,
+                1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime * _midnaMovementComponent.FatigueModifier,
+                0.0f
+            ) 
+            + _startPosition;
+
+            _midnaMovementComponent.TestUpdate();
+
+            Assert.AreEqual(expectedVector, _midnaMovementComponent.transform.position);
+        }
+
+        [Test]
+        public void Update_SprintEnabledAndExceedMaxTime_AppliesNormalModifierAfterSprintTransform()
+        {
+            _midnaMovementComponent.PrepareForTest();
+
+            _midnaMovementComponent.ToggleSprint(true);
+            ExceedSprintTimer();
+            ExceedSprintTimer();
+            _startPosition = _midnaMovementComponent.transform.position;
+
+            const float horizontalImpulse = 0.3f;
+
+            const float verticalImpulse = 0.2f;
+
+            _midnaMovementComponent.AddHorizontalImpulse(horizontalImpulse);
+            _midnaMovementComponent.AddVerticalImpulse(verticalImpulse);
+
+            var expectedVector = new Vector3
+            (
+                1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime,
+                1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime,
+                0.0f
+            ) 
+            + _startPosition;
+
+            _midnaMovementComponent.TestUpdate();
+
+            Assert.AreEqual(expectedVector, _midnaMovementComponent.transform.position);
+        }
+
+        [Test]
+        public void Update_SprintEnabledAndExceedMaxTime_TogglingSprintOffStopsFatigue()
+        {
+            _midnaMovementComponent.PrepareForTest();
+
+            _midnaMovementComponent.ToggleSprint(true);
+
+            _midnaMovementComponent.DeltaTime = _midnaMovementComponent.SprintMaxTimer * 0.6f;
+
+            const float horizontalImpulse = 0.3f;
+            const float verticalImpulse = 0.2f;
+
+            _midnaMovementComponent.AddHorizontalImpulse(horizontalImpulse);
+            _midnaMovementComponent.AddVerticalImpulse(verticalImpulse);
+
+            _midnaMovementComponent.TestUpdate();
+
+            _midnaMovementComponent.ToggleSprint(false);
+
+            _startPosition = _midnaMovementComponent.transform.position;
+            _midnaMovementComponent.AddHorizontalImpulse(horizontalImpulse);
+            _midnaMovementComponent.AddVerticalImpulse(verticalImpulse);
+
+            var expectedVector = new Vector3
+            (
+                1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime,
+                1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime,
+                0.0f
+            )
+            + _startPosition;
+
+            _midnaMovementComponent.TestUpdate();
+
+            Assert.AreEqual(expectedVector, _midnaMovementComponent.transform.position);
+        }
+
+        [Test]
+        public void Update_SprintEnabledAndExceedMaxTime_TogglingSprintOffDelaysFatigue()
+        {
+            _midnaMovementComponent.PrepareForTest();
+
+            _midnaMovementComponent.ToggleSprint(true);
+
+            _midnaMovementComponent.DeltaTime = _midnaMovementComponent.SprintMaxTimer * 0.6f;
+
+            const float horizontalImpulse = 0.3f;
+            const float verticalImpulse = 0.2f;
+
+            _midnaMovementComponent.AddHorizontalImpulse(horizontalImpulse);
+            _midnaMovementComponent.AddVerticalImpulse(verticalImpulse);
+
+            _midnaMovementComponent.TestUpdate();
+
+            _midnaMovementComponent.ToggleSprint(false);
+            _midnaMovementComponent.TestUpdate();
+
+            // We shouldn't become fatigued here
+            _midnaMovementComponent.ToggleSprint(true);
+            _startPosition = _midnaMovementComponent.transform.position;
+            _midnaMovementComponent.AddHorizontalImpulse(horizontalImpulse);
+            _midnaMovementComponent.AddVerticalImpulse(verticalImpulse);
+
+            var expectedVector = new Vector3
+            (
+                1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime * _midnaMovementComponent.SprintModifier,
+                1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime * _midnaMovementComponent.SprintModifier,
+                0.0f
+            )
+            + _startPosition;
+
+            _midnaMovementComponent.TestUpdate();
+
+            Assert.AreEqual(expectedVector, _midnaMovementComponent.transform.position);
+        }
+
+        [Test]
+        public void Update_SprintEnabledAndNoInput_DoesNotBecomeFatigued()
+        {
+            _midnaMovementComponent.PrepareForTest();
+
+            _midnaMovementComponent.ToggleSprint(true);
+
+            _midnaMovementComponent.DeltaTime = _midnaMovementComponent.SprintMaxTimer * 0.6f;
+
+            _midnaMovementComponent.TestUpdate();
+            _midnaMovementComponent.TestUpdate();
+
+            const float horizontalImpulse = 0.3f;
+            const float verticalImpulse = 0.2f;
+
+            _startPosition = _midnaMovementComponent.transform.position;
+            _midnaMovementComponent.AddHorizontalImpulse(horizontalImpulse);
+            _midnaMovementComponent.AddVerticalImpulse(verticalImpulse);
+
+            var expectedVector = new Vector3
+            (
+                1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime * _midnaMovementComponent.SprintModifier,
+                1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime * _midnaMovementComponent.SprintModifier,
+                0.0f
+            )
+            + _startPosition;
+
+            _midnaMovementComponent.TestUpdate();
+
+            Assert.AreEqual(expectedVector, _midnaMovementComponent.transform.position);
+        }
+
+        [Test]
+        public void Update_SprintToggled_DoesNotResetSprintTimer()
+        {
+            _midnaMovementComponent.PrepareForTest();
+
+            _midnaMovementComponent.ToggleSprint(true);
+
+            _midnaMovementComponent.DeltaTime = _midnaMovementComponent.SprintMaxTimer * 0.6f;
+
+            const float horizontalImpulse = 0.3f;
+            const float verticalImpulse = 0.2f;
+
+            _midnaMovementComponent.AddHorizontalImpulse(horizontalImpulse);
+            _midnaMovementComponent.AddVerticalImpulse(verticalImpulse);
+
+            _midnaMovementComponent.TestUpdate();
+
+            _midnaMovementComponent.ToggleSprint(false);
+
+            // We will become fatigued since the threshold won't have reset
+            _midnaMovementComponent.ToggleSprint(true);
+            _startPosition = _midnaMovementComponent.transform.position;
+            _midnaMovementComponent.AddHorizontalImpulse(horizontalImpulse);
+            _midnaMovementComponent.AddVerticalImpulse(verticalImpulse);
+
+            var expectedVector = new Vector3
+            (
+                1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime * _midnaMovementComponent.FatigueModifier,
+                1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime * _midnaMovementComponent.FatigueModifier,
+                0.0f
+            )
+            + _startPosition;
+
+            _midnaMovementComponent.TestUpdate();
+
+            Assert.AreEqual(expectedVector, _midnaMovementComponent.transform.position);
+        }
+
+        private Vector3 _startPosition;
         private TestMidnaMovementComponent _midnaMovementComponent;
     }
 }

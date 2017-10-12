@@ -9,6 +9,7 @@ namespace Assets.Scripts.Test.Components.MidnaMovement
         : MidnaMovementComponent
         , ITestableMonobehaviour
     {
+        public float DeltaTime { get; set; }
 
         public void PrepareForTest(params object[] parameters)
         {
@@ -18,6 +19,11 @@ namespace Assets.Scripts.Test.Components.MidnaMovement
         public void TestUpdate()
         {
             Update();
+        }
+
+        protected override float GetDeltaTime()
+        {
+            return DeltaTime;
         }
     }
 }
