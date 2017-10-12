@@ -1,8 +1,6 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
-using System.Runtime.InteropServices;
 using Assets.Editor.UnitTests.Helpers;
-using Assets.Scripts.Core;
 using Assets.Scripts.Test.Components.MidnaMovement;
 using NUnit.Framework;
 using UnityEngine;
@@ -146,6 +144,32 @@ namespace Assets.Editor.UnitTests.Components.MidnaMovement
 
             Assert.AreEqual(0.0f, _midnaMovementComponent.CurrentHorizontalImpulse);
             Assert.AreEqual(0.0f, _midnaMovementComponent.CurrentVerticalImpulse);
+        }
+
+        [Test]
+        public void Update_SprintEnabled_AppliesModiferToTransform()
+        {
+            _midnaMovementComponent.PrepareForTest();
+
+            const float horizontalImpulse = 0.3f;
+
+            const float verticalImpulse = 0.2f;
+
+            _midnaMovementComponent.AddHorizontalImpulse(horizontalImpulse);
+            _midnaMovementComponent.AddVerticalImpulse(verticalImpulse);
+
+            _midnaMovementComponent.ToggleSprint(true);
+
+            var expectedVector = new Vector3
+            (
+                1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed * Time.deltaTime * _midnaMovementComponent.SprintModifier,
+                1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed * Time.deltaTime * _midnaMovementComponent.SprintModifier,
+                0.0f
+            );
+
+            _midnaMovementComponent.TestUpdate();
+
+            Assert.AreEqual(expectedVector, _midnaMovementComponent.transform.position);
         }
 
         private TestMidnaMovementComponent _midnaMovementComponent;

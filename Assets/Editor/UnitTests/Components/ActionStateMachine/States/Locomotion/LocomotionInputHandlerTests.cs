@@ -72,5 +72,36 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotio
 
             Assert.AreEqual(EInputHandlerResult.Unhandled, locomotionInputHandler.HandleAnalogInput(EInputKey.VerticalAnalog, 1.0f));
         }
+
+        [Test]
+        public void OnSprintButton_MovementInterfaceNull_Unhandled()
+        {
+            const IMidnaMovementInterface mockMidnaMovementInterface = null;
+            var locomotionInputHandler = new LocomotionInputHandler(mockMidnaMovementInterface);
+
+            Assert.AreEqual(EInputHandlerResult.Unhandled, locomotionInputHandler.HandleButtonInput(EInputKey.SprintButton, true));
+        }
+
+        [Test]
+        public void OnSprintButton_MovementInterfaceExists_Handled()
+        {
+            var mockMidnaMovementInterface = Substitute.For<IMidnaMovementInterface>();
+            var locomotionInputHandler = new LocomotionInputHandler(mockMidnaMovementInterface);
+
+            Assert.AreEqual(EInputHandlerResult.Handled, locomotionInputHandler.HandleButtonInput(EInputKey.SprintButton, true));
+        }
+
+        [Test]
+        public void OnSprintButton_MovementInterfaceExists_CallsToggleSprintWithInputValue()
+        {
+            const bool expectedSprint = true;
+
+            var mockMidnaMovementInterface = Substitute.For<IMidnaMovementInterface>();
+            var locomotionInputHandler = new LocomotionInputHandler(mockMidnaMovementInterface);
+
+            locomotionInputHandler.HandleButtonInput(EInputKey.SprintButton, expectedSprint);
+
+            mockMidnaMovementInterface.Received().ToggleSprint(Arg.Is(expectedSprint));
+        }
     }
 }

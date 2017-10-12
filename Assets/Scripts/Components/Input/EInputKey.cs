@@ -6,6 +6,7 @@ namespace Assets.Scripts.Components.Input
     {
         FireButton,
         SelectButton,
+        SprintButton,
         MoveXJoypadAnalog,
         VerticalAnalog,
         HorizontalAnalog

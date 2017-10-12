@@ -6,5 +6,6 @@ namespace Assets.Scripts.Components.MidnaMovement
     {
         void AddVerticalImpulse(float inVertImpulse);
         void AddHorizontalImpulse(float inHorImpulse);
+        void ToggleSprint(bool enable);
     }
 }

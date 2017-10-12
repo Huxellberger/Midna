@@ -17,6 +17,7 @@ namespace Assets.Scripts.Components.ActionStateMachine.States.Locomotion
 
             AnalogResponses.Add(EInputKey.HorizontalAnalog, OnHorizontalInput);
             AnalogResponses.Add(EInputKey.VerticalAnalog, OnVerticalInput);
+            ButtonResponses.Add(EInputKey.SprintButton, OnSprintInput);
         }
 
         private EInputHandlerResult OnHorizontalInput(float analogValue)
@@ -38,6 +39,17 @@ namespace Assets.Scripts.Components.ActionStateMachine.States.Locomotion
             }
 
             _midnaMovementInterface.AddVerticalImpulse(analogValue);
+            return EInputHandlerResult.Handled;
+        }
+
+        private EInputHandlerResult OnSprintInput(bool isPressed)
+        {
+            if (_midnaMovementInterface == null)
+            {
+                return EInputHandlerResult.Unhandled;
+            }
+
+            _midnaMovementInterface.ToggleSprint(isPressed);
             return EInputHandlerResult.Handled;
         }
     }

@@ -9,22 +9,26 @@ namespace Assets.Scripts.Components.MidnaMovement
         , IMidnaMovementInterface
     {
         public float CharacterSpeed = 2.0f;
+        public float SprintModifier = 2.0f;
 
         public float CurrentVerticalImpulse { get; private set; }
         public float CurrentHorizontalImpulse { get; private set; }
 
         public readonly float MaxImpulse = 1.0f;
         public readonly float MinImpulse = -1.0f;
+
+        private bool Sprinting { get; set; }
     
         protected void Start ()
         {
+            Sprinting = false;
             ResetImpulses();
         }
 	
         protected void Update ()
         {
-            transform.Translate(Vector3.right * CurrentHorizontalImpulse * CharacterSpeed * Time.deltaTime);
-            transform.Translate(Vector3.up * CurrentVerticalImpulse * CharacterSpeed * Time.deltaTime);
+            transform.Translate(Vector3.right * CurrentHorizontalImpulse * CharacterSpeed * Time.deltaTime * (Sprinting ? SprintModifier : 1));
+            transform.Translate(Vector3.up * CurrentVerticalImpulse * CharacterSpeed * Time.deltaTime * (Sprinting ? SprintModifier : 1));
 
             ResetImpulses();
         }
@@ -38,6 +42,11 @@ namespace Assets.Scripts.Components.MidnaMovement
         public void AddHorizontalImpulse(float inHorImpulse)
         {
             CurrentHorizontalImpulse = Mathf.Clamp(CurrentHorizontalImpulse + inHorImpulse, MinImpulse, MaxImpulse);
+        }
+
+        public void ToggleSprint(bool enable)
+        {
+            Sprinting = enable;
         }
         // ~IMidnaMovementInterface
 

@@ -70,6 +70,10 @@ namespace Assets.Scripts.Components.Input
                 {
                     new RawInput("Enter_Button", EInputType.Button),
                     new TranslatedInput(EInputKey.SelectButton, EInputType.Button)
+                },
+                {
+                    new RawInput("LeftShift_Button", EInputType.Button),
+                    new TranslatedInput(EInputKey.SprintButton, EInputType.Button)
                 }
             };
         }
