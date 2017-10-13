@@ -15,7 +15,7 @@ namespace Assets.Scripts.Components.ActionStateMachine.States.Dead
     {
         // Need to parameterize these ideally, still debating method here
         public readonly float DeathDelay = 5.0f;
-        public readonly float FadeDelay = 3.0f;
+        public readonly float FadeDelay = 5.0f;
         public readonly List<EInputKey> AcceptableInputs = new List<EInputKey>{EInputKey.SelectButton};
 
         private IUnityMessageEventInterface DispatcherInterface { get; set; }

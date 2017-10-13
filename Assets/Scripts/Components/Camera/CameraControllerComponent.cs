@@ -42,6 +42,7 @@ namespace Assets.Scripts.Components.Camera
 
         protected void Start ()
         {
+            CurrentFade = new Optional<FadeInformation>();
             StartingAlpha = 0.0f;
             CameraComponent = GetComponent<UnityEngine.Camera>();
             UnityMessageEventInterface = GetComponent<IUnityMessageEventInterface>();
