@@ -80,6 +80,7 @@ namespace Assets.Editor.UnitTests.Components.Health
             _healthComponent.AdjustHealth(-expectedHealthChange);
 
             Assert.AreEqual(_healthComponent.GetMaxHealth() - expectedHealthChange, eventCapture.MessagePayload.NewHealth);
+            Assert.AreEqual(-expectedHealthChange, eventCapture.MessagePayload.HealthChange);
 
             _dispatcherComponent.GetUnityMessageEventDispatcher().UnregisterForMessageEvent(handle);
         }

@@ -56,10 +56,11 @@ namespace Assets.Scripts.Components.Health
         {
             if (CanAdjustHealth())
             {
+                var healthChange = newHealth - _currentHealth;
                 _currentHealth = newHealth;
                 _currentHealth = Mathf.Clamp(_currentHealth, 0, GetMaxHealth());
 
-                UnityMessageEventFunctions.InvokeMessageEventWithDispatcher(gameObject, new HealthChangedMessage(_currentHealth));
+                UnityMessageEventFunctions.InvokeMessageEventWithDispatcher(gameObject, new HealthChangedMessage(healthChange, _currentHealth));
 
                 if (_currentHealth <= 0)
                 {

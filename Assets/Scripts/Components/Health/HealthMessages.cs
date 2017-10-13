@@ -8,11 +8,13 @@ namespace Assets.Scripts.Components.Health
     public class HealthChangedMessage
         : UnityMessagePayload
     {
-        public HealthChangedMessage(int inNewHealth)
+        public HealthChangedMessage(int inHealthChange, int inNewHealth)
         {
+            HealthChange = inHealthChange;
             NewHealth = inNewHealth;
         }
 
+        public readonly int HealthChange;
         public readonly int NewHealth;
     }
 }
