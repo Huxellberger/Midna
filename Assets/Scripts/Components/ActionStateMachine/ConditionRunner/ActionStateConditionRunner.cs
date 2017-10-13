@@ -16,7 +16,10 @@ namespace Assets.Scripts.Components.ActionStateMachine.ConditionRunner
 
         public void AddCondition(ActionStateCondition inCondition)
         {
-            inCondition.Start();
+            if (ConditionTracks.Count == 1)
+            {
+                inCondition.Start();
+            }
             ConditionTracks[ConditionTracks.Count-1].Add(inCondition);
         }
 
@@ -51,6 +54,13 @@ namespace Assets.Scripts.Components.ActionStateMachine.ConditionRunner
                 if (trackComplete)
                 {
                     ConditionTracks.RemoveAt(0);
+                    if (ConditionTracks.Count >= 1)
+                    {
+                        foreach (var condition in ConditionTracks[0])
+                        {
+                            condition.Start();
+                        }
+                    }
                 }
             }
         }

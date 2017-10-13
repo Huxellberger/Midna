@@ -3,6 +3,7 @@
 using System.Collections.Generic;
 using Assets.Scripts.Components.ActionStateMachine.ConditionRunner;
 using Assets.Scripts.Components.ActionStateMachine.ConditionRunner.Conditions;
+using Assets.Scripts.Components.Character;
 using Assets.Scripts.Components.GameMode;
 using Assets.Scripts.Components.Input;
 using Assets.Scripts.Components.UnityEvent;
@@ -14,6 +15,7 @@ namespace Assets.Scripts.Components.ActionStateMachine.States.Dead
     {
         // Need to parameterize these ideally, still debating method here
         public readonly float DeathDelay = 5.0f;
+        public readonly float FadeDelay = 3.0f;
         public readonly List<EInputKey> AcceptableInputs = new List<EInputKey>{EInputKey.SelectButton};
 
         private IUnityMessageEventInterface DispatcherInterface { get; set; }
@@ -56,6 +58,14 @@ namespace Assets.Scripts.Components.ActionStateMachine.States.Dead
             DeadActionStateConditions.AddCondition(new DelayActionStateCondition(DeathDelay));
             DeadActionStateConditions.PushNewTrack();
             DeadActionStateConditions.AddCondition(new InputReceivedActionStateCondition(AcceptableInputs, Info.Owner.GetComponent<IInputBinderInterface>()));
+
+            var characterComponent = Info.Owner.GetComponent<MidnaCharacterComponent>();
+            if (characterComponent != null)
+            {
+                var controller = characterComponent.CurrentControllerComponent;
+                DeadActionStateConditions.PushNewTrack();
+                DeadActionStateConditions.AddCondition(new CameraFadeCompleteCondition(1.0f, FadeDelay, controller.GetComponent<IUnityMessageEventInterface>()));
+            }
         }
     }
 }

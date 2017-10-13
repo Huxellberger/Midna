@@ -56,7 +56,7 @@ namespace Assets.Editor.UnitTests.Components.Controller
             Assert.AreEqual
             (
                 controllerComponent, 
-                controllerComponent.PawnInstance.GetComponent<TestMidnaCharacterComponent>().GetControllerComponent()
+                controllerComponent.PawnInstance.GetComponent<TestMidnaCharacterComponent>().CurrentControllerComponent
             );
         }
 
@@ -104,7 +104,7 @@ namespace Assets.Editor.UnitTests.Components.Controller
 
             controllerComponent.SetPawn(characterComponent.gameObject);
 
-            Assert.AreEqual(controllerComponent, characterComponent.GetControllerComponent());
+            Assert.AreEqual(controllerComponent, characterComponent.CurrentControllerComponent);
         }
 
         [Test]

@@ -29,7 +29,7 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner
         }
 
         [Test]
-        public void AddActionStateCondition_CallsStart()
+        public void AddActionStateCondition_CallsStartIfOneTrack()
         {
             var conditionRunner = new ActionStateConditionRunner();
 
@@ -38,6 +38,19 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner
             conditionRunner.AddCondition(condition);
 
             Assert.IsTrue(condition.StartCalled);
+        }
+
+        [Test]
+        public void AddActionStateCondition_DoesNotCallStartIfNotOnRunningTrack()
+        {
+            var conditionRunner = new ActionStateConditionRunner();
+
+            var condition = new TestActionStateCondition();
+
+            conditionRunner.PushNewTrack();
+            conditionRunner.AddCondition(condition);
+
+            Assert.IsFalse(condition.StartCalled);
         }
 
         [Test]
@@ -194,6 +207,24 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner
             conditionRunner.Update(1.0f);
 
             Assert.IsTrue(conditionRunner.IsComplete());
+        }
+
+        [Test]
+        public void Update_CallsStartOnConditionsOnceTheirTrackIsRunning()
+        {
+            var conditionRunner = new ActionStateConditionRunner();
+
+            var firstCondition = new TestActionStateCondition();
+            var secondCondition = new TestActionStateCondition();
+
+            conditionRunner.AddCondition(firstCondition);
+            conditionRunner.PushNewTrack();
+            conditionRunner.AddCondition(secondCondition);
+            firstCondition.ForceComplete();
+            conditionRunner.Update(1.0f);
+            conditionRunner.Update(1.0f);
+
+            Assert.IsTrue(secondCondition.StartCalled);
         }
     }
 }

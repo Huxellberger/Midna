@@ -15,11 +15,6 @@ namespace Assets.Scripts.Test.Components.Character
             Start();
         }
 
-        public ControllerComponent GetControllerComponent()
-        {
-            return CurrentControllerComponent;
-        }
-
         public void TestDestroy()
         {
             OnDestroy();

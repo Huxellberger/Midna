@@ -13,7 +13,7 @@ namespace Assets.Scripts.Components.Character
     public class MidnaCharacterComponent 
         : MonoBehaviour
     {
-        public ControllerComponent CurrentControllerComponent { protected get; set; }
+        public ControllerComponent CurrentControllerComponent { get; set; }
         private UnityMessageEventHandle<TriggerSpawnUpdateMessage> SpawnUpdateHandle { get; set; }
         protected void Start ()
         {
