@@ -6,6 +6,7 @@ namespace Assets.Scripts.Components.ActionStateMachine
     {
         Locomotion,
         Dead,
+        AwaitingSpawn,
 
         Null
     }
