@@ -1,5 +1,6 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+using System;
 using Assets.Scripts.Components.UnityEvent;
 using Assets.Scripts.Core;
 using UnityEngine;
@@ -58,13 +59,27 @@ namespace Assets.Scripts.Components.Camera
                 var currentFadeValue = CurrentFade.Get();
                 currentFadeValue.FadeTimePassed += deltaTime;
 
-                // Current alpha = Our previous alpha + How far along our new alpha change has come
-                var currentAlpha = Mathf.Clamp
-                (
-                    StartingAlpha + 
-                    (currentFadeValue.AlphaDiff * Mathf.Clamp((currentFadeValue.FadeTimePassed / currentFadeValue.TimeDelay), 0.0f, 1.0f)),
-                    0.0f, 1.0f
-                );
+                var currentAlpha = StartingAlpha;
+
+                if (Math.Abs(StartingAlpha - currentFadeValue.TargetAlpha) > 0.01f)
+                {
+                    // Current alpha = Our previous alpha + How far along our new alpha change has come
+                    currentAlpha = Mathf.Clamp
+                    (
+                        StartingAlpha +
+                        (currentFadeValue.AlphaDiff * Mathf.Clamp((currentFadeValue.FadeTimePassed / currentFadeValue.TimeDelay), 0.0f, 1.0f)),
+                        0.0f, 1.0f
+                    );
+
+                    if (Math.Abs(currentAlpha - currentFadeValue.TargetAlpha) < 0.01f)
+                    {
+                        StartingAlpha = currentAlpha;
+                        if (Math.Abs(StartingAlpha) < 0.01f)
+                        {
+                            CurrentFade = new Optional<FadeInformation>();
+                        }
+                    }
+                }
 
                 GUI.backgroundColor = new Color(currentFadeValue.FadeColour.r, currentFadeValue.FadeColour.g, currentFadeValue.FadeColour.b, currentAlpha);
                 GUI.depth = DrawDepth;
