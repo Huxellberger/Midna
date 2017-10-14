@@ -12,6 +12,7 @@ namespace Assets.Scripts.Test.Components.Health
         , IHealthInterface
     {
         public int AdjustHealthResult { get; private set; }
+        public bool ? SetHealthChangeEnabledResult { get; private set; }
         
         // ITestableMonobehaviour
         public void PrepareForTest(params object[] parameters)
@@ -28,6 +29,7 @@ namespace Assets.Scripts.Test.Components.Health
 
         public void SetHealthChangedEnabled(bool isEnabled)
         {
+            SetHealthChangeEnabledResult = isEnabled;
         }
 
         public void ReplenishHealth()

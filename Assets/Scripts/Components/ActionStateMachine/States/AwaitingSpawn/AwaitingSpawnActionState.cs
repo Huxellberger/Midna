@@ -3,6 +3,7 @@
 using Assets.Scripts.Components.ActionStateMachine.ConditionRunner;
 using Assets.Scripts.Components.ActionStateMachine.ConditionRunner.Conditions;
 using Assets.Scripts.Components.ActionStateMachine.States.Locomotion;
+using Assets.Scripts.Components.Health;
 using Assets.Scripts.Components.UnityEvent;
 
 namespace Assets.Scripts.Components.ActionStateMachine.States.AwaitingSpawn
@@ -19,6 +20,7 @@ namespace Assets.Scripts.Components.ActionStateMachine.States.AwaitingSpawn
 
         protected override void OnStart()
         {
+            SetHealthChangeEnabled(false);
             InitialiseConditions();
         }
 
@@ -34,6 +36,16 @@ namespace Assets.Scripts.Components.ActionStateMachine.States.AwaitingSpawn
 
         protected override void OnEnd()
         {
+            SetHealthChangeEnabled(true);
+        }
+
+        private void SetHealthChangeEnabled(bool enable)
+        {
+            var healthInterface = Info.Owner.GetComponent<IHealthInterface>();
+            if (healthInterface != null)
+            {
+                healthInterface.SetHealthChangedEnabled(enable);
+            }
         }
 
         private void InitialiseConditions()
