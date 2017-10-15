@@ -9,6 +9,8 @@ namespace Assets.Scripts.Components.Input
         SprintButton,
         MoveXJoypadAnalog,
         VerticalAnalog,
-        HorizontalAnalog
+        HorizontalAnalog,
+        UsePrimaryEquipment,
+        UseSecondaryEquipment
     }
 }
