@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Editor/IntegrationTests/Components/Camera/CameraController_AfterFadeRequested_FadeCompletes.unity
+  isLoaded: 1
+  isActive: 1
