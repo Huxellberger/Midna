@@ -2,7 +2,7 @@
 
 using Assets.Scripts.Components.ActionStateMachine.States.Dead;
 using Assets.Scripts.Components.UnityEvent;
-using UnityEngine.UI;
+using Text = UnityEngine.UI.Text;
 
 namespace Assets.Scripts.Components.HUD.NotificationDisplayUIController
 {

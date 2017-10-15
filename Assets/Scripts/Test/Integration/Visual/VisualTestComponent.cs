@@ -48,7 +48,7 @@ namespace Assets.Scripts.Test.Integration.Visual
         {
             var applicationPath = Application.dataPath + @"/" + AfterPath + TestName + ".png";
 
-            Application.CaptureScreenshot(applicationPath);
+            ScreenCapture.CaptureScreenshot(applicationPath);
             if (ImagesAreEqual())
             {
                 Passed = true;
