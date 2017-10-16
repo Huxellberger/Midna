@@ -11,13 +11,12 @@ namespace Assets.Scripts.Test.Components.Health
         , ITestableMonobehaviour
         , IHealthInterface
     {
-        public int AdjustHealthResult { get; private set; }
+        public int ? AdjustHealthResult { get; private set; }
         public bool ? SetHealthChangeEnabledResult { get; private set; }
         
         // ITestableMonobehaviour
         public void PrepareForTest(params object[] parameters)
         {
-            AdjustHealthResult = 0;
         }
         // ~ITestableMonobehaviour
 
