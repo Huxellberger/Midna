@@ -73,5 +73,22 @@ namespace Assets.Editor.UnitTests.Components.Equipment
             Assert.IsTrue(_primaryItem.StopUsingItemCalled);
             Assert.IsFalse(_secondaryItem.StopUsingItemCalled);
         }
+
+        [Test]
+        public void SetEquipmentItemInSlot_OwnerIsEquipmentComponentGameObject()
+        {
+            _equipmentComponent.SetEquipmentItemInSlot(_primaryItem, EEquipmentSlot.PrimarySlot);
+
+            Assert.AreSame(_equipmentComponent.gameObject, _primaryItem.Owner);
+        }
+
+        [Test]
+        public void SetEquipmentItemInSlot_OldItemNoLongerHasEquipmentComponentGameObjectAsOwner()
+        {
+            _equipmentComponent.SetEquipmentItemInSlot(_primaryItem, EEquipmentSlot.PrimarySlot);
+            _equipmentComponent.SetEquipmentItemInSlot(_secondaryItem, EEquipmentSlot.PrimarySlot);
+
+            Assert.IsNull(_primaryItem.Owner);
+        }
     }
 }

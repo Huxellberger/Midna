@@ -94,5 +94,16 @@ namespace Assets.Editor.UnitTests.Components.Equipment.EquipmentItem
 
             Assert.IsNull(_healthComponent.AdjustHealthResult);
         }
+
+        [Test]
+        public void Collision_OwnerCollides_DoesNotReduceHealthByPokeDamage()
+        {
+            _cane.UseItem();
+            _cane.Owner = _healthComponent.gameObject;
+
+            _cane.TestCollide(_healthComponent.gameObject);
+
+            Assert.IsNull(_healthComponent.AdjustHealthResult);
+        }
     }
 }

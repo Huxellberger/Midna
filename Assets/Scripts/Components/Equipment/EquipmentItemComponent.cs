@@ -7,6 +7,7 @@ namespace Assets.Scripts.Components.Equipment
     public abstract class EquipmentItemComponent 
         : MonoBehaviour
     {
+        public GameObject Owner { get; set; }
         public void UseItem()
         {
             OnUseItem();

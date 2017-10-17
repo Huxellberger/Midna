@@ -68,6 +68,11 @@ namespace Assets.Scripts.Components.Equipment.EquipmentItem
                 return;
             }
 
+            if (inCollidingObject == Owner)
+            {
+                return;
+            }
+
             var healthInterface = inCollidingObject.GetComponent<IHealthInterface>();
             if (healthInterface != null)
             {

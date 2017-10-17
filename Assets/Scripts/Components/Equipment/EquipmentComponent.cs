@@ -37,7 +37,13 @@ namespace Assets.Scripts.Components.Equipment
         {
             if (inEquipmentItem != null)
             {
-                ItemSlots.Remove(inSlot);
+                if (ItemSlots.ContainsKey(inSlot))
+                {
+                    ItemSlots[inSlot].Owner = null;
+                    ItemSlots.Remove(inSlot);
+                }
+
+                inEquipmentItem.Owner = gameObject;
                 ItemSlots.Add(inSlot, inEquipmentItem);
             }
         }
