@@ -15,6 +15,7 @@ namespace Assets.Editor.UnitTests.Components.Equipment.EquipmentItem
     public class CaneTestFixture
     {
         private TestCane _cane;
+        private SpriteRenderer _spriteRenderer;
         private MockHealthComponent _healthComponent;
 
         [SetUp]
@@ -22,6 +23,7 @@ namespace Assets.Editor.UnitTests.Components.Equipment.EquipmentItem
         {
             var gameObject = new GameObject();
             gameObject.AddComponent<BoxCollider2D>();
+            _spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
 
             TestableMonobehaviourFunctions<TestUnityMessageEventDispatcherComponent>
                 .AddTestableMonobehaviourComponent(gameObject);
@@ -38,6 +40,13 @@ namespace Assets.Editor.UnitTests.Components.Equipment.EquipmentItem
             _healthComponent = null;
 
             _cane = null;
+            _spriteRenderer = null;
+        }
+
+        [Test]
+        public void Start_SpriteDisabled()
+        {
+            Assert.IsFalse(_spriteRenderer.enabled);
         }
 
         [Test]
@@ -51,6 +60,25 @@ namespace Assets.Editor.UnitTests.Components.Equipment.EquipmentItem
             Assert.IsTrue(eventCapture.ActionCalled);
 
             UnityMessageEventFunctions.UnregisterActionWithDispatcher(_cane.gameObject, handle);
+        }
+
+        [Test]
+        public void UseItem_SpriteEnabled()
+        {
+            _cane.UseItem();
+
+            Assert.IsTrue(_spriteRenderer.enabled);
+        }
+
+        [Test]
+        public void UseItem_TimesOut_SpriteDisabled()
+        {
+            _cane.UseItem();
+
+            _cane.deltaTime = _cane.PokeDuration + 0.1f;
+            _cane.TestUpdate();
+
+            Assert.IsFalse(_spriteRenderer.enabled);
         }
 
         [Test]

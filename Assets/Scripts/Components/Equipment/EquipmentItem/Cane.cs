@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Components.Equipment.EquipmentItem
 {
-    [RequireComponent(typeof(Collider2D)), RequireComponent(typeof(UnityMessageEventDispatcherComponent))]
+    [RequireComponent(typeof(Collider2D)), RequireComponent(typeof(UnityMessageEventDispatcherComponent)), RequireComponent(typeof(SpriteRenderer))]
     public class Cane 
         : EquipmentItemComponent
     {
@@ -15,9 +15,13 @@ namespace Assets.Scripts.Components.Equipment.EquipmentItem
 
         private bool UsingItem { get; set; }
         private float CurrentPokeTime { get; set; }
+        private SpriteRenderer SpriteComponent { get; set; }
 
         protected void Start()
         {
+            SpriteComponent = gameObject.GetComponent<SpriteRenderer>();
+            SpriteComponent.enabled = false;
+
             UsingItem = false;
             CurrentPokeTime = 0.0f;
         }
@@ -29,6 +33,7 @@ namespace Assets.Scripts.Components.Equipment.EquipmentItem
             CurrentPokeTime += deltaTime;
             if (CurrentPokeTime >= PokeDuration)
             {
+                SpriteComponent.enabled = false;
                 CurrentPokeTime = 0.0f;
                 UsingItem = false;
             }
@@ -45,6 +50,7 @@ namespace Assets.Scripts.Components.Equipment.EquipmentItem
             UnityMessageEventFunctions.InvokeMessageEventWithDispatcher(gameObject, new CaneActivatedMessage());
 
             UsingItem = true;
+            SpriteComponent.enabled = true;
         }
 
         protected override void OnStopUsingItem()
