@@ -16,13 +16,14 @@ namespace Assets.Editor.UnitTests.Components.Equipment.EquipmentItem
     {
         private TestCane _cane;
         private SpriteRenderer _spriteRenderer;
+        private BoxCollider2D _collider2D;
         private MockHealthComponent _healthComponent;
 
         [SetUp]
         public void BeforeTest()
         {
             var gameObject = new GameObject();
-            gameObject.AddComponent<BoxCollider2D>();
+            _collider2D = gameObject.AddComponent<BoxCollider2D>();
             _spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
 
             TestableMonobehaviourFunctions<TestUnityMessageEventDispatcherComponent>
@@ -50,6 +51,12 @@ namespace Assets.Editor.UnitTests.Components.Equipment.EquipmentItem
         }
 
         [Test]
+        public void Start_ColliderDisabled()
+        {
+            Assert.IsFalse(_collider2D.enabled);
+        }
+
+        [Test]
         public void UseItem_FiresCaneActivatedMessage()
         {
             var eventCapture = new UnityTestMessageHandleResponseObject<CaneActivatedMessage>();
@@ -71,6 +78,14 @@ namespace Assets.Editor.UnitTests.Components.Equipment.EquipmentItem
         }
 
         [Test]
+        public void UseItem_ColliderEnabled()
+        {
+            _cane.UseItem();
+
+            Assert.IsTrue(_collider2D.enabled);
+        }
+
+        [Test]
         public void UseItem_TimesOut_SpriteDisabled()
         {
             _cane.UseItem();
@@ -79,6 +94,17 @@ namespace Assets.Editor.UnitTests.Components.Equipment.EquipmentItem
             _cane.TestUpdate();
 
             Assert.IsFalse(_spriteRenderer.enabled);
+        }
+
+        [Test]
+        public void UseItem_TimesOut_ColliderDisabled()
+        {
+            _cane.UseItem();
+
+            _cane.deltaTime = _cane.PokeDuration + 0.1f;
+            _cane.TestUpdate();
+
+            Assert.IsFalse(_collider2D.enabled);
         }
 
         [Test]

@@ -16,11 +16,15 @@ namespace Assets.Scripts.Components.Equipment.EquipmentItem
         private bool UsingItem { get; set; }
         private float CurrentPokeTime { get; set; }
         private SpriteRenderer SpriteComponent { get; set; }
+        private Collider2D ColliderComponent { get; set; }
 
         protected void Start()
         {
             SpriteComponent = gameObject.GetComponent<SpriteRenderer>();
             SpriteComponent.enabled = false;
+
+            ColliderComponent = gameObject.GetComponent<Collider2D>();
+            ColliderComponent.enabled = false;
 
             UsingItem = false;
             CurrentPokeTime = 0.0f;
@@ -34,6 +38,7 @@ namespace Assets.Scripts.Components.Equipment.EquipmentItem
             if (CurrentPokeTime >= PokeDuration)
             {
                 SpriteComponent.enabled = false;
+                ColliderComponent.enabled = false;
                 CurrentPokeTime = 0.0f;
                 UsingItem = false;
             }
@@ -51,6 +56,7 @@ namespace Assets.Scripts.Components.Equipment.EquipmentItem
 
             UsingItem = true;
             SpriteComponent.enabled = true;
+            ColliderComponent.enabled = true;
         }
 
         protected override void OnStopUsingItem()

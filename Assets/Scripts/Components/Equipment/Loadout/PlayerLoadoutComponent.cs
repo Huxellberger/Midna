@@ -26,6 +26,7 @@ namespace Assets.Scripts.Components.Equipment.Loadout
             {
                 var item = Instantiate(inItemType);
                 item.transform.parent = gameObject.transform;
+                item.transform.position = gameObject.transform.position;
 
                 return item.GetComponent<EquipmentItemComponent>();
             }
