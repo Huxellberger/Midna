@@ -74,7 +74,16 @@ namespace Assets.Scripts.Components.Input
                 {
                     new RawInput("LeftShift_Button", EInputType.Button),
                     new TranslatedInput(EInputKey.SprintButton, EInputType.Button)
-                }
+                },
+                {
+                    new RawInput("Mouse0_Button", EInputType.Button),
+                    new TranslatedInput(EInputKey.UsePrimaryEquipment, EInputType.Button)
+                },
+                {
+                    new RawInput("Mouse1_Button", EInputType.Button),
+                    new TranslatedInput(EInputKey.UseSecondaryEquipment, EInputType.Button)
+                },
+
             };
         }
     }

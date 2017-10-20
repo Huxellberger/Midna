@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/InteractionTestScene.unity
+- path: Assets/YarnSpinner/Examples/YarnSpinnerBasicExample.unity
   isLoaded: 1
   isActive: 1
