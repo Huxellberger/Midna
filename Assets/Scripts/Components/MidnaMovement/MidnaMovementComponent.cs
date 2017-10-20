@@ -55,8 +55,8 @@ namespace Assets.Scripts.Components.MidnaMovement
             UpdateRotation();
             var actualSprintModifier = GetSprintModifier();
 
-            transform.Translate(Vector3.right * CurrentHorizontalImpulse * CharacterSpeed * deltaTime * actualSprintModifier);
-            transform.Translate(Vector3.up * CurrentVerticalImpulse * CharacterSpeed * deltaTime * actualSprintModifier);
+            transform.position += (Vector3.right * CurrentHorizontalImpulse * CharacterSpeed * deltaTime * actualSprintModifier);
+            transform.position += (Vector3.up * CurrentVerticalImpulse * CharacterSpeed * deltaTime * actualSprintModifier);
 
             ResetImpulses();
         }
