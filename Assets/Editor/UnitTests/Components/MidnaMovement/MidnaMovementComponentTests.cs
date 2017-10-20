@@ -138,11 +138,13 @@ namespace Assets.Editor.UnitTests.Components.MidnaMovement
             _midnaMovementComponent.AddVerticalImpulse(verticalImpulse);
 
             var expectedVector = new Vector3
-            (
-                1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime,
-                1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime, 
-                0.0f
-            ) +_startPosition;
+                                 (
+                                     1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed *
+                                     _midnaMovementComponent.DeltaTime,
+                                     1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed *
+                                     _midnaMovementComponent.DeltaTime,
+                                     0.0f
+                                 ) + _startPosition;
 
             _midnaMovementComponent.TestUpdate();
 
@@ -178,12 +180,14 @@ namespace Assets.Editor.UnitTests.Components.MidnaMovement
             _midnaMovementComponent.ToggleSprint(true);
 
             var expectedVector = new Vector3
-            (  
-                1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime * _midnaMovementComponent.SprintModifier,
-                1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime * _midnaMovementComponent.SprintModifier,
-                0.0f
-            ) 
-            + _startPosition;
+                                 (
+                                     1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed *
+                                     _midnaMovementComponent.DeltaTime * _midnaMovementComponent.SprintModifier,
+                                     1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed *
+                                     _midnaMovementComponent.DeltaTime * _midnaMovementComponent.SprintModifier,
+                                     0.0f
+                                 )
+                                 + _startPosition;
 
             _midnaMovementComponent.TestUpdate();
 
@@ -207,12 +211,14 @@ namespace Assets.Editor.UnitTests.Components.MidnaMovement
             _midnaMovementComponent.AddVerticalImpulse(verticalImpulse);
 
             var expectedVector = new Vector3
-            (
-                1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime * _midnaMovementComponent.FatigueModifier,
-                1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime * _midnaMovementComponent.FatigueModifier,
-                0.0f
-            ) 
-            + _startPosition;
+                                 (
+                                     1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed *
+                                     _midnaMovementComponent.DeltaTime * _midnaMovementComponent.FatigueModifier,
+                                     1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed *
+                                     _midnaMovementComponent.DeltaTime * _midnaMovementComponent.FatigueModifier,
+                                     0.0f
+                                 )
+                                 + _startPosition;
 
             _midnaMovementComponent.TestUpdate();
 
@@ -237,12 +243,14 @@ namespace Assets.Editor.UnitTests.Components.MidnaMovement
             _midnaMovementComponent.AddVerticalImpulse(verticalImpulse);
 
             var expectedVector = new Vector3
-            (
-                1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime,
-                1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime,
-                0.0f
-            ) 
-            + _startPosition;
+                                 (
+                                     1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed *
+                                     _midnaMovementComponent.DeltaTime,
+                                     1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed *
+                                     _midnaMovementComponent.DeltaTime,
+                                     0.0f
+                                 )
+                                 + _startPosition;
 
             _midnaMovementComponent.TestUpdate();
 
@@ -273,12 +281,14 @@ namespace Assets.Editor.UnitTests.Components.MidnaMovement
             _midnaMovementComponent.AddVerticalImpulse(verticalImpulse);
 
             var expectedVector = new Vector3
-            (
-                1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime,
-                1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime,
-                0.0f
-            )
-            + _startPosition;
+                                 (
+                                     1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed *
+                                     _midnaMovementComponent.DeltaTime,
+                                     1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed *
+                                     _midnaMovementComponent.DeltaTime,
+                                     0.0f
+                                 )
+                                 + _startPosition;
 
             _midnaMovementComponent.TestUpdate();
 
@@ -312,12 +322,14 @@ namespace Assets.Editor.UnitTests.Components.MidnaMovement
             _midnaMovementComponent.AddVerticalImpulse(verticalImpulse);
 
             var expectedVector = new Vector3
-            (
-                1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime * _midnaMovementComponent.SprintModifier,
-                1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime * _midnaMovementComponent.SprintModifier,
-                0.0f
-            )
-            + _startPosition;
+                                 (
+                                     1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed *
+                                     _midnaMovementComponent.DeltaTime * _midnaMovementComponent.SprintModifier,
+                                     1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed *
+                                     _midnaMovementComponent.DeltaTime * _midnaMovementComponent.SprintModifier,
+                                     0.0f
+                                 )
+                                 + _startPosition;
 
             _midnaMovementComponent.TestUpdate();
 
@@ -344,12 +356,14 @@ namespace Assets.Editor.UnitTests.Components.MidnaMovement
             _midnaMovementComponent.AddVerticalImpulse(verticalImpulse);
 
             var expectedVector = new Vector3
-            (
-                1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime * _midnaMovementComponent.SprintModifier,
-                1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime * _midnaMovementComponent.SprintModifier,
-                0.0f
-            )
-            + _startPosition;
+                                 (
+                                     1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed *
+                                     _midnaMovementComponent.DeltaTime * _midnaMovementComponent.SprintModifier,
+                                     1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed *
+                                     _midnaMovementComponent.DeltaTime * _midnaMovementComponent.SprintModifier,
+                                     0.0f
+                                 )
+                                 + _startPosition;
 
             _midnaMovementComponent.TestUpdate();
 
@@ -382,12 +396,14 @@ namespace Assets.Editor.UnitTests.Components.MidnaMovement
             _midnaMovementComponent.AddVerticalImpulse(verticalImpulse);
 
             var expectedVector = new Vector3
-            (
-                1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime * _midnaMovementComponent.FatigueModifier,
-                1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed * _midnaMovementComponent.DeltaTime * _midnaMovementComponent.FatigueModifier,
-                0.0f
-            )
-            + _startPosition;
+                                 (
+                                     1 * horizontalImpulse * _midnaMovementComponent.CharacterSpeed *
+                                     _midnaMovementComponent.DeltaTime * _midnaMovementComponent.FatigueModifier,
+                                     1 * verticalImpulse * _midnaMovementComponent.CharacterSpeed *
+                                     _midnaMovementComponent.DeltaTime * _midnaMovementComponent.FatigueModifier,
+                                     0.0f
+                                 )
+                                 + _startPosition;
 
             _midnaMovementComponent.TestUpdate();
 
@@ -396,5 +412,130 @@ namespace Assets.Editor.UnitTests.Components.MidnaMovement
 
         private Vector3 _startPosition;
         private TestMidnaMovementComponent _midnaMovementComponent;
+
+        [Test]
+        public void Update_NoMovement_RotationDoesNotChange()
+        {
+            _midnaMovementComponent.PrepareForTest();
+
+            _midnaMovementComponent.DeltaTime = 1.0f;
+
+            var priorRotation = _midnaMovementComponent.gameObject.transform.rotation;
+
+            _midnaMovementComponent.TestUpdate();
+
+            Assert.AreEqual(priorRotation, _midnaMovementComponent.gameObject.transform.rotation);
+        }
+
+        [Test]
+        public void Update_PositiveVertical_NoChange()
+        {
+            _midnaMovementComponent.PrepareForTest();
+
+            _midnaMovementComponent.DeltaTime = 1.0f;
+
+            _midnaMovementComponent.AddVerticalImpulse(1.0f);
+
+            var priorRotation = _midnaMovementComponent.gameObject.transform.rotation;
+
+            _midnaMovementComponent.TestUpdate();
+
+            Assert.AreEqual(priorRotation, _midnaMovementComponent.gameObject.transform.rotation);
+        }
+
+        [Test]
+        public void Update_NegativeVertical_ChangesBy180DegreesInBackAxis()
+        {
+            var expectedRotationObject = new GameObject();
+            _midnaMovementComponent.PrepareForTest();
+
+            _midnaMovementComponent.DeltaTime = 1.0f;
+
+            _midnaMovementComponent.AddVerticalImpulse(-1.0f);
+
+            expectedRotationObject.transform.Rotate(Vector3.back, 180.0f, Space.World);
+            var expectedRotation = expectedRotationObject.transform.rotation;
+
+            _midnaMovementComponent.TestUpdate();
+
+            Assert.AreEqual(expectedRotation, _midnaMovementComponent.gameObject.transform.rotation);
+        }
+
+        [Test]
+        public void Update_PositiveHorizontal_ChangesBy45DegreesInBackAxis()
+        {
+            var expectedRotationObject = new GameObject();
+            _midnaMovementComponent.PrepareForTest();
+
+            _midnaMovementComponent.DeltaTime = 1.0f;
+
+            _midnaMovementComponent.AddHorizontalImpulse(1.0f);
+
+            expectedRotationObject.transform.Rotate(Vector3.back, 45.0f, Space.World);
+            var expectedRotation = expectedRotationObject.transform.rotation;
+
+            _midnaMovementComponent.TestUpdate();
+
+            Assert.AreEqual(expectedRotation, _midnaMovementComponent.gameObject.transform.rotation);
+        }
+
+        [Test]
+        public void Update_NegativeHorizontal_ChangesBy270DegreesInBackAxis()
+        {
+            var expectedRotationObject = new GameObject();
+            _midnaMovementComponent.PrepareForTest();
+
+            _midnaMovementComponent.DeltaTime = 1.0f;
+
+            _midnaMovementComponent.AddHorizontalImpulse(-1.0f);
+
+            expectedRotationObject.transform.Rotate(Vector3.back, 270.0f, Space.World);
+            var expectedRotation = expectedRotationObject.transform.rotation;
+
+            _midnaMovementComponent.TestUpdate();
+
+            Assert.AreEqual(expectedRotation, _midnaMovementComponent.gameObject.transform.rotation);
+        }
+
+        [Test]
+        public void Update_HorizontalAndVerticalInput_PrioritisesVertical()
+        {
+            var expectedRotationObject = new GameObject();
+            _midnaMovementComponent.PrepareForTest();
+
+            _midnaMovementComponent.DeltaTime = 1.0f;
+
+            _midnaMovementComponent.AddHorizontalImpulse(-1.0f);
+            _midnaMovementComponent.AddVerticalImpulse(-1.0f);
+
+            expectedRotationObject.transform.Rotate(Vector3.back, 180.0f, Space.World);
+            var expectedRotation = expectedRotationObject.transform.rotation;
+
+            _midnaMovementComponent.TestUpdate();
+
+            Assert.AreEqual(expectedRotation, _midnaMovementComponent.gameObject.transform.rotation);
+        }
+
+        [Test]
+        public void Update_NonStartingPosition_SetsCorrectFinalRotation()
+        {
+            var expectedRotationObject = new GameObject();
+            _midnaMovementComponent.PrepareForTest();
+
+            _midnaMovementComponent.DeltaTime = 1.0f;
+
+            _midnaMovementComponent.AddHorizontalImpulse(-1.0f);
+
+            _midnaMovementComponent.TestUpdate();
+
+            _midnaMovementComponent.AddVerticalImpulse(-1.0f);
+
+            expectedRotationObject.transform.Rotate(Vector3.back, 180.0f, Space.World);
+            var expectedRotation = expectedRotationObject.transform.rotation;
+
+            _midnaMovementComponent.TestUpdate();
+
+            Assert.AreEqual(expectedRotation, _midnaMovementComponent.gameObject.transform.rotation);
+        }
     }
 }

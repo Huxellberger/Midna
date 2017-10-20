@@ -16,6 +16,14 @@ namespace Assets.Scripts.Components.MidnaMovement
             Fatigued
         }
 
+        private enum EOrientation
+        {
+            Right,
+            Left,
+            Down,
+            Up
+        }
+
         public float CharacterSpeed = 2.0f;
         public float SprintModifier = 2.0f;
         public float FatigueModifier = 0.5f;
@@ -28,10 +36,12 @@ namespace Assets.Scripts.Components.MidnaMovement
         public readonly float MinImpulse = -1.0f;
 
         private ESprintState SprintState { get; set; }
+        private EOrientation PriorOrientation { get; set; }
         private float CurrentSprintTime { get; set; }
     
         protected void Start ()
         {
+            PriorOrientation = EOrientation.Up;
             SprintState = ESprintState.NotSprinting;
             CurrentSprintTime = 0.0f;
 
@@ -42,12 +52,67 @@ namespace Assets.Scripts.Components.MidnaMovement
         {
             float deltaTime = GetDeltaTime();
             UpdateSprintState(deltaTime);
+            UpdateRotation();
             var actualSprintModifier = GetSprintModifier();
 
             transform.Translate(Vector3.right * CurrentHorizontalImpulse * CharacterSpeed * deltaTime * actualSprintModifier);
             transform.Translate(Vector3.up * CurrentVerticalImpulse * CharacterSpeed * deltaTime * actualSprintModifier);
 
             ResetImpulses();
+        }
+
+        private void UpdateRotation()
+        {
+            var currentOrientation = GetCurrentOrientation();
+            if (currentOrientation != PriorOrientation)
+            {
+                var priorAngle = GetAngleForOrientation(PriorOrientation);
+                var currentAngle = GetAngleForOrientation(currentOrientation);
+
+                gameObject.transform.Rotate(Vector3.back, currentAngle - priorAngle, Space.World);
+
+                PriorOrientation = currentOrientation;
+            }
+        }
+
+        private EOrientation GetCurrentOrientation()
+        {
+            if (CurrentVerticalImpulse > 0.0f)
+            {
+                return EOrientation.Up;
+            }
+            if (CurrentVerticalImpulse < 0.0f)
+            {
+                return EOrientation.Down;
+            }
+
+            if (CurrentHorizontalImpulse > 0.0f)
+            {
+                return EOrientation.Right;
+            }
+            if (CurrentHorizontalImpulse < 0.0f)
+            {
+                return EOrientation.Left;
+            }
+
+            return PriorOrientation;
+        }
+
+        private float GetAngleForOrientation(EOrientation currentOrientation)
+        {
+            switch (currentOrientation)
+            {
+                case EOrientation.Down:
+                    return 180f;
+                case EOrientation.Up:
+                    return 0f;
+                case EOrientation.Right:
+                    return 45f;
+                case EOrientation.Left:
+                    return 270f;
+                default:
+                    return 0f;
+            }
         }
 
         private void UpdateSprintState(float deltaTime)
