@@ -34,5 +34,18 @@ namespace Assets.Editor.UnitTests.Components.Equipment.Loadout
             Assert.AreSame(primaryEquipmentItem, equipmentInterface.SetEquipmentItemInSlotResults[EEquipmentSlot.PrimarySlot]);
             Assert.AreEqual(secondaryEquipmentItem, equipmentInterface.SetEquipmentItemInSlotResults[EEquipmentSlot.SecondarySlot]);
         }
+
+        [Test]
+        public void Start_NullItems_NoExceptionsThrown()
+        {
+            var equipmentInterface = TestableMonobehaviourFunctions<MockEquipmentComponent>
+                .PrepareMonobehaviourComponentForTest();
+
+            var loadoutComponent =
+                TestableMonobehaviourFunctions<TestLoadoutComponent>.AddTestableMonobehaviourComponent(
+                    equipmentInterface.gameObject);
+
+            loadoutComponent.TestStart();
+        }
     }
 }

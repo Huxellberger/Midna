@@ -22,10 +22,15 @@ namespace Assets.Scripts.Components.Equipment.Loadout
 
         private EquipmentItemComponent InstantiateItemOfType(GameObject inItemType)
         {
-            var item = Instantiate(inItemType);
-            item.transform.parent = gameObject.transform;
+            if (inItemType != null)
+            {
+                var item = Instantiate(inItemType);
+                item.transform.parent = gameObject.transform;
 
-            return item.GetComponent<EquipmentItemComponent>();
+                return item.GetComponent<EquipmentItemComponent>();
+            }
+
+            return null;
         }
     }
 }
