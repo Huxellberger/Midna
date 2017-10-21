@@ -13,10 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: -948
-    y: 149
+    x: 358
+    y: 274
     width: 869
-    height: 683
+    height: 643
   m_ShowMode: 0
   m_Title: 
   m_RootView: {fileID: 4}
@@ -42,7 +42,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 9}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -61,7 +61,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 869
-    height: 683
+    height: 643
   m_MinSize: {x: 100, y: 122}
   m_MaxSize: {x: 4000, y: 4022}
   m_ActualView: {fileID: 15}
@@ -87,11 +87,11 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 869
-    height: 683
+    height: 643
   m_MinSize: {x: 100, y: 122}
   m_MaxSize: {x: 4000, y: 4022}
   vertical: 0
-  controlID: 11
+  controlID: 973
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -112,10 +112,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 679, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 167
+  controlID: 11
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -277,10 +277,10 @@ MonoBehaviour:
     y: 0
     width: 1368
     height: 947
-  m_MinSize: {x: 404, y: 492}
+  m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 168
+  controlID: 12
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -301,10 +301,10 @@ MonoBehaviour:
     y: 0
     width: 1368
     height: 595
-  m_MinSize: {x: 404, y: 221}
-  m_MaxSize: {x: 8004, y: 4021}
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 169
+  controlID: 13
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -323,8 +323,8 @@ MonoBehaviour:
     y: 0
     width: 805
     height: 595
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 22}
@@ -354,10 +354,10 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: -948
-    y: 171
+    x: 358
+    y: 296
     width: 869
-    height: 661
+    height: 621
   m_TestTypeToolbarIndex: 1
   m_PlayModeTestListGUI:
     m_Window: {fileID: 0}
@@ -412,7 +412,7 @@ MonoBehaviour:
       name: Assembly-CSharp-Editor.dll
       fullName: F:/Midna/Midna/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
       resultStatus: 2
-      duration: 0.0310399
+      duration: 7.669153
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -424,7 +424,7 @@ MonoBehaviour:
       name: Assets
       fullName: Assets
       resultStatus: 2
-      duration: 7.2214913
+      duration: 7.62424
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -436,7 +436,7 @@ MonoBehaviour:
       name: Editor
       fullName: Assets.Editor
       resultStatus: 1
-      duration: 6.6061864
+      duration: 7.015984
       messages: 
       output: 
       stacktrace: 
@@ -448,7 +448,7 @@ MonoBehaviour:
       name: UnitTests
       fullName: Assets.Editor.UnitTests
       resultStatus: 1
-      duration: 6.5960603
+      duration: 7.006053
       messages: 
       output: 
       stacktrace: 
@@ -460,7 +460,7 @@ MonoBehaviour:
       name: Components
       fullName: Assets.Editor.UnitTests.Components
       resultStatus: 1
-      duration: 6.1621156
+      duration: 6.580235
       messages: 
       output: 
       stacktrace: 
@@ -472,7 +472,7 @@ MonoBehaviour:
       name: ActionStateMachine
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine
       resultStatus: 1
-      duration: 1.8386753
+      duration: 1.8305416
       messages: 
       output: 
       stacktrace: 
@@ -484,7 +484,7 @@ MonoBehaviour:
       name: ActionStateMachineComponentTestFixture
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ActionStateMachineComponentTestFixture
       resultStatus: 1
-      duration: 0.2001668
+      duration: 0.1988081
       messages: 
       output: 
       stacktrace: 
@@ -496,7 +496,7 @@ MonoBehaviour:
       name: Destroyed_CallsEndOnAllStates
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ActionStateMachineComponentTestFixture.Destroyed_CallsEndOnAllStates
       resultStatus: 1
-      duration: 0.0184898
+      duration: 0.0175487
       messages: 
       output: 
       stacktrace: 
@@ -508,7 +508,7 @@ MonoBehaviour:
       name: IsActionStateActiveOnTrack_CorrectTrackWrongId_False
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ActionStateMachineComponentTestFixture.IsActionStateActiveOnTrack_CorrectTrackWrongId_False
       resultStatus: 1
-      duration: 0.0149746
+      duration: 0.0161687
       messages: 
       output: 
       stacktrace: 
@@ -520,7 +520,7 @@ MonoBehaviour:
       name: IsActionStateActiveOnTrack_WrongTrackCorrectId_False
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ActionStateMachineComponentTestFixture.IsActionStateActiveOnTrack_WrongTrackCorrectId_False
       resultStatus: 1
-      duration: 0.0162936
+      duration: 0.0183046
       messages: 
       output: 
       stacktrace: 
@@ -532,7 +532,7 @@ MonoBehaviour:
       name: RequestActionState_SetsCallsEndOnPriorActionStateAndStartOnNewOne
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ActionStateMachineComponentTestFixture.RequestActionState_SetsCallsEndOnPriorActionStateAndStartOnNewOne
       resultStatus: 1
-      duration: 0.0180276
+      duration: 0.0159723
       messages: 
       output: 
       stacktrace: 
@@ -544,7 +544,7 @@ MonoBehaviour:
       name: RequestActionState_SetsTrackToNewIdAndIsActionStateActiveReturnsTrue
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ActionStateMachineComponentTestFixture.RequestActionState_SetsTrackToNewIdAndIsActionStateActiveReturnsTrue
       resultStatus: 1
-      duration: 0.0138244
+      duration: 0.0171327
       messages: 
       output: 
       stacktrace: 
@@ -556,7 +556,7 @@ MonoBehaviour:
       name: Update_CallsUpdateOnActionState
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ActionStateMachineComponentTestFixture.Update_CallsUpdateOnActionState
       resultStatus: 1
-      duration: 0.0180417
+      duration: 0.0176245
       messages: 
       output: 
       stacktrace: 
@@ -568,7 +568,7 @@ MonoBehaviour:
       name: WhenCreated_AllTracksHaveNullActionStateId
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ActionStateMachineComponentTestFixture.WhenCreated_AllTracksHaveNullActionStateId
       resultStatus: 1
-      duration: 0.0153384
+      duration: 0.0154658
       messages: 
       output: 
       stacktrace: 
@@ -580,7 +580,7 @@ MonoBehaviour:
       name: ActionStateTestFixture
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ActionStateTestFixture
       resultStatus: 1
-      duration: 0.0528977
+      duration: 0.0503351
       messages: 
       output: 
       stacktrace: 
@@ -592,7 +592,7 @@ MonoBehaviour:
       name: ActionState_End_OnEndCalled
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ActionStateTestFixture.ActionState_End_OnEndCalled
       resultStatus: 1
-      duration: 0.0056841
+      duration: 0.0050182
       messages: 
       output: 
       stacktrace: 
@@ -604,7 +604,7 @@ MonoBehaviour:
       name: ActionState_Start_OnStartCalled
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ActionStateTestFixture.ActionState_Start_OnStartCalled
       resultStatus: 1
-      duration: 0.0051806
+      duration: 0.0057743
       messages: 
       output: 
       stacktrace: 
@@ -616,7 +616,7 @@ MonoBehaviour:
       name: ActionState_Update_OnUpdateCalledWithDeltaTime
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ActionStateTestFixture.ActionState_Update_OnUpdateCalledWithDeltaTime
       resultStatus: 1
-      duration: 0.0049017
+      duration: 0.0051689
       messages: 
       output: 
       stacktrace: 
@@ -628,7 +628,7 @@ MonoBehaviour:
       name: ConditionRunner
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner
       resultStatus: 1
-      duration: 0.5188842
+      duration: 0.5384358
       messages: 
       output: 
       stacktrace: 
@@ -640,7 +640,7 @@ MonoBehaviour:
       name: ActionStateConditionRunnerTests
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.ActionStateConditionRunnerTests
       resultStatus: 1
-      duration: 0.236847
+      duration: 0.2526947
       messages: 
       output: 
       stacktrace: 
@@ -652,7 +652,7 @@ MonoBehaviour:
       name: AddActionStateCondition_CallsStartIfOneTrack
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.ActionStateConditionRunnerTests.AddActionStateCondition_CallsStartIfOneTrack
       resultStatus: 1
-      duration: 0.00583
+      duration: 0.0054386
       messages: 
       output: 
       stacktrace: 
@@ -664,7 +664,7 @@ MonoBehaviour:
       name: AddActionStateCondition_DoesNotCallStartIfNotOnRunningTrack
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.ActionStateConditionRunnerTests.AddActionStateCondition_DoesNotCallStartIfNotOnRunningTrack
       resultStatus: 1
-      duration: 0.0048349
+      duration: 0.0047272
       messages: 
       output: 
       stacktrace: 
@@ -676,7 +676,7 @@ MonoBehaviour:
       name: Complete_IncompleteCondition_False
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.ActionStateConditionRunnerTests.Complete_IncompleteCondition_False
       resultStatus: 1
-      duration: 0.0045099
+      duration: 0.0046341
       messages: 
       output: 
       stacktrace: 
@@ -688,7 +688,7 @@ MonoBehaviour:
       name: Complete_NoConditions_False
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.ActionStateConditionRunnerTests.Complete_NoConditions_False
       resultStatus: 1
-      duration: 0.004377
+      duration: 0.0049886
       messages: 
       output: 
       stacktrace: 
@@ -700,7 +700,7 @@ MonoBehaviour:
       name: ConditionCompletes_NeedsUpdateToBeNotified
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.ActionStateConditionRunnerTests.ConditionCompletes_NeedsUpdateToBeNotified
       resultStatus: 1
-      duration: 0.0044714
+      duration: 0.0052565
       messages: 
       output: 
       stacktrace: 
@@ -712,7 +712,7 @@ MonoBehaviour:
       name: ConditionCompletes_NeedsUpdateToCallEnd
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.ActionStateConditionRunnerTests.ConditionCompletes_NeedsUpdateToCallEnd
       resultStatus: 1
-      duration: 0.0051394
+      duration: 0.0058976
       messages: 
       output: 
       stacktrace: 
@@ -724,7 +724,7 @@ MonoBehaviour:
       name: PushNewTrack_DoesNotUpdateNewTrackUntilPriorComplete
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.ActionStateConditionRunnerTests.PushNewTrack_DoesNotUpdateNewTrackUntilPriorComplete
       resultStatus: 1
-      duration: 0.00646
+      duration: 0.0065466
       messages: 
       output: 
       stacktrace: 
@@ -736,7 +736,7 @@ MonoBehaviour:
       name: PushNewTrack_UpdateAfterPriorCompletesTrack
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.ActionStateConditionRunnerTests.PushNewTrack_UpdateAfterPriorCompletesTrack
       resultStatus: 1
-      duration: 0.0044042
+      duration: 0.0046393
       messages: 
       output: 
       stacktrace: 
@@ -748,7 +748,7 @@ MonoBehaviour:
       name: Update_CallsStartOnConditionsOnceTheirTrackIsRunning
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.ActionStateConditionRunnerTests.Update_CallsStartOnConditionsOnceTheirTrackIsRunning
       resultStatus: 1
-      duration: 0.0048639
+      duration: 0.0053507
       messages: 
       output: 
       stacktrace: 
@@ -760,7 +760,7 @@ MonoBehaviour:
       name: Update_CallsUpdateWithFloat
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.ActionStateConditionRunnerTests.Update_CallsUpdateWithFloat
       resultStatus: 1
-      duration: 0.0044388
+      duration: 0.004493
       messages: 
       output: 
       stacktrace: 
@@ -772,7 +772,7 @@ MonoBehaviour:
       name: Update_ConditionDoesComplete_CallsEnd
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.ActionStateConditionRunnerTests.Update_ConditionDoesComplete_CallsEnd
       resultStatus: 1
-      duration: 0.0052934
+      duration: 0.0049048
       messages: 
       output: 
       stacktrace: 
@@ -784,7 +784,7 @@ MonoBehaviour:
       name: Update_ConditionDoesComplete_CompleteTrue
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.ActionStateConditionRunnerTests.Update_ConditionDoesComplete_CompleteTrue
       resultStatus: 1
-      duration: 0.0043118
+      duration: 0.0057855
       messages: 
       output: 
       stacktrace: 
@@ -796,7 +796,7 @@ MonoBehaviour:
       name: Update_ConditionDoesNotComplete_CompleteFalse
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.ActionStateConditionRunnerTests.Update_ConditionDoesNotComplete_CompleteFalse
       resultStatus: 1
-      duration: 0.0044213
+      duration: 0.0051467
       messages: 
       output: 
       stacktrace: 
@@ -808,7 +808,7 @@ MonoBehaviour:
       name: Update_NeedsAllConditionsToComplete
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.ActionStateConditionRunnerTests.Update_NeedsAllConditionsToComplete
       resultStatus: 1
-      duration: 0.0042275
+      duration: 0.0052301
       messages: 
       output: 
       stacktrace: 
@@ -820,7 +820,7 @@ MonoBehaviour:
       name: Update_OnlyEndsConditionOnceOnCompletion
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.ActionStateConditionRunnerTests.Update_OnlyEndsConditionOnceOnCompletion
       resultStatus: 1
-      duration: 0.0047588
+      duration: 0.0048328
       messages: 
       output: 
       stacktrace: 
@@ -832,7 +832,7 @@ MonoBehaviour:
       name: Conditions
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.Conditions
       resultStatus: 1
-      duration: 0.2591135
+      duration: 0.2623188
       messages: 
       output: 
       stacktrace: 
@@ -844,7 +844,7 @@ MonoBehaviour:
       name: CameraFadeCompleteConditionTestFixture
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.Conditions.CameraFadeCompleteConditionTestFixture
       resultStatus: 1
-      duration: 0.0806534
+      duration: 0.0840032
       messages: 
       output: 
       stacktrace: 
@@ -856,7 +856,7 @@ MonoBehaviour:
       name: Start_FiresCameraFadeEvent
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.Conditions.CameraFadeCompleteConditionTestFixture.Start_FiresCameraFadeEvent
       resultStatus: 1
-      duration: 0.0157913
+      duration: 0.0154506
       messages: 
       output: 
       stacktrace: 
@@ -868,7 +868,7 @@ MonoBehaviour:
       name: Update_FadeTimeNotPassed_DoesNotComplete
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.Conditions.CameraFadeCompleteConditionTestFixture.Update_FadeTimeNotPassed_DoesNotComplete
       resultStatus: 1
-      duration: 0.0145516
+      duration: 0.016137
       messages: 
       output: 
       stacktrace: 
@@ -880,7 +880,7 @@ MonoBehaviour:
       name: Update_FadeTimePassed_Completes
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.Conditions.CameraFadeCompleteConditionTestFixture.Update_FadeTimePassed_Completes
       resultStatus: 1
-      duration: 0.0145998
+      duration: 0.0158894
       messages: 
       output: 
       stacktrace: 
@@ -892,7 +892,7 @@ MonoBehaviour:
       name: DelayActionStateConditionTestFixture
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.Conditions.DelayActionStateConditionTestFixture
       resultStatus: 1
-      duration: 0.0675246
+      duration: 0.0699274
       messages: 
       output: 
       stacktrace: 
@@ -904,7 +904,7 @@ MonoBehaviour:
       name: ConstructedWithDelay_CompletesAfterUpdateTimeExceedsFullDelay
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.Conditions.DelayActionStateConditionTestFixture.ConstructedWithDelay_CompletesAfterUpdateTimeExceedsFullDelay
       resultStatus: 1
-      duration: 0.0048089
+      duration: 0.004779
       messages: 
       output: 
       stacktrace: 
@@ -916,7 +916,7 @@ MonoBehaviour:
       name: ConstructedWithDelay_NotCompleted
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.Conditions.DelayActionStateConditionTestFixture.ConstructedWithDelay_NotCompleted
       resultStatus: 1
-      duration: 0.0047093
+      duration: 0.0049225
       messages: 
       output: 
       stacktrace: 
@@ -928,7 +928,7 @@ MonoBehaviour:
       name: ConstructedWithDelay_UpdateLessThanDelay_DoesNotComplete
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.Conditions.DelayActionStateConditionTestFixture.ConstructedWithDelay_UpdateLessThanDelay_DoesNotComplete
       resultStatus: 1
-      duration: 0.0041759
+      duration: 0.0071769
       messages: 
       output: 
       stacktrace: 
@@ -940,7 +940,7 @@ MonoBehaviour:
       name: ConstructedWithZeroDelay_CompletesAfterFirstUpdate
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.Conditions.DelayActionStateConditionTestFixture.ConstructedWithZeroDelay_CompletesAfterFirstUpdate
       resultStatus: 1
-      duration: 0.0047705
+      duration: 0.0045401
       messages: 
       output: 
       stacktrace: 
@@ -952,7 +952,7 @@ MonoBehaviour:
       name: InputReceivedActionStateConditionTestFixture
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.Conditions.InputReceivedActionStateConditionTestFixture
       resultStatus: 1
-      duration: 0.0773505
+      duration: 0.0744762
       messages: 
       output: 
       stacktrace: 
@@ -964,7 +964,7 @@ MonoBehaviour:
       name: End_UnregistersHandler
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.Conditions.InputReceivedActionStateConditionTestFixture.End_UnregistersHandler
       resultStatus: 1
-      duration: 0.0106142
+      duration: 0.0101678
       messages: 
       output: 
       stacktrace: 
@@ -976,7 +976,7 @@ MonoBehaviour:
       name: ReceivesCorrectInput_Completes
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.Conditions.InputReceivedActionStateConditionTestFixture.ReceivesCorrectInput_Completes
       resultStatus: 1
-      duration: 0.0061725
+      duration: 0.0063355
       messages: 
       output: 
       stacktrace: 
@@ -988,7 +988,7 @@ MonoBehaviour:
       name: ReceivesWrongInput_DoesNotComplete
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.Conditions.InputReceivedActionStateConditionTestFixture.ReceivesWrongInput_DoesNotComplete
       resultStatus: 1
-      duration: 0.0057583
+      duration: 0.0052377
       messages: 
       output: 
       stacktrace: 
@@ -1000,7 +1000,7 @@ MonoBehaviour:
       name: Start_RegistersHandler
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.Conditions.InputReceivedActionStateConditionTestFixture.Start_RegistersHandler
       resultStatus: 1
-      duration: 0.0049485
+      duration: 0.0048378
       messages: 
       output: 
       stacktrace: 
@@ -1012,7 +1012,7 @@ MonoBehaviour:
       name: NullActionStateHelpersTestFixture
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.NullActionStateHelpersTestFixture
       resultStatus: 1
-      duration: 0.0226423
+      duration: 0.0206321
       messages: 
       output: 
       stacktrace: 
@@ -1024,7 +1024,7 @@ MonoBehaviour:
       name: TransitionIntoNullActionState_SetsNullActionStateActive
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.NullActionStateHelpersTestFixture.TransitionIntoNullActionState_SetsNullActionStateActive
       resultStatus: 1
-      duration: 0.0069239
+      duration: 0.0062441
       messages: 
       output: 
       stacktrace: 
@@ -1036,7 +1036,7 @@ MonoBehaviour:
       name: NullActionStateTestFixture
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.NullActionStateTestFixture
       resultStatus: 1
-      duration: 0.0183768
+      duration: 0.0177226
       messages: 
       output: 
       stacktrace: 
@@ -1048,7 +1048,7 @@ MonoBehaviour:
       name: NullActionState_Initialised_HasNullId
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.NullActionStateTestFixture.NullActionState_Initialised_HasNullId
       resultStatus: 1
-      duration: 0.0049763
+      duration: 0.0042386
       messages: 
       output: 
       stacktrace: 
@@ -1060,7 +1060,7 @@ MonoBehaviour:
       name: States
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States
       resultStatus: 1
-      duration: 0.9561073
+      duration: 0.9382963
       messages: 
       output: 
       stacktrace: 
@@ -1072,7 +1072,7 @@ MonoBehaviour:
       name: AwaitingSpawn
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.AwaitingSpawn
       resultStatus: 1
-      duration: 0.1808023
+      duration: 0.1828112
       messages: 
       output: 
       stacktrace: 
@@ -1084,7 +1084,7 @@ MonoBehaviour:
       name: AwaitingSpawnActionStateHelpersTestFixture
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.AwaitingSpawn.AwaitingSpawnActionStateHelpersTestFixture
       resultStatus: 1
-      duration: 0.0207091
+      duration: 0.0204369
       messages: 
       output: 
       stacktrace: 
@@ -1096,7 +1096,7 @@ MonoBehaviour:
       name: TransitionIntoAwaitingSpawnActionState_SetsAwaitingSpawnActionStateActive
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.AwaitingSpawn.AwaitingSpawnActionStateHelpersTestFixture.TransitionIntoAwaitingSpawnActionState_SetsAwaitingSpawnActionStateActive
       resultStatus: 1
-      duration: 0.0056873
+      duration: 0.0053258
       messages: 
       output: 
       stacktrace: 
@@ -1108,7 +1108,7 @@ MonoBehaviour:
       name: AwaitingSpawnActionStateTestFixture
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.AwaitingSpawn.AwaitingSpawnActionStateTestFixture
       resultStatus: 1
-      duration: 0.1371089
+      duration: 0.1401881
       messages: 
       output: 
       stacktrace: 
@@ -1120,7 +1120,7 @@ MonoBehaviour:
       name: End_EnablesHealthChanges
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.AwaitingSpawn.AwaitingSpawnActionStateTestFixture.End_EnablesHealthChanges
       resultStatus: 1
-      duration: 0.0172881
+      duration: 0.0138903
       messages: 
       output: 
       stacktrace: 
@@ -1132,7 +1132,7 @@ MonoBehaviour:
       name: GetId_ReturnsAwaitingSpawn
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.AwaitingSpawn.AwaitingSpawnActionStateTestFixture.GetId_ReturnsAwaitingSpawn
       resultStatus: 1
-      duration: 0.014135
+      duration: 0.0173024
       messages: 
       output: 
       stacktrace: 
@@ -1144,7 +1144,7 @@ MonoBehaviour:
       name: Start_DisablesHealthChanges
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.AwaitingSpawn.AwaitingSpawnActionStateTestFixture.Start_DisablesHealthChanges
       resultStatus: 1
-      duration: 0.0187703
+      duration: 0.0166209
       messages: 
       output: 
       stacktrace: 
@@ -1156,7 +1156,7 @@ MonoBehaviour:
       name: Update_FadeTimeNotPassed_DoesNotEnterLocomotion
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.AwaitingSpawn.AwaitingSpawnActionStateTestFixture.Update_FadeTimeNotPassed_DoesNotEnterLocomotion
       resultStatus: 1
-      duration: 0.0150603
+      duration: 0.016342
       messages: 
       output: 
       stacktrace: 
@@ -1168,7 +1168,7 @@ MonoBehaviour:
       name: Update_FadeTimePassed_EntersLocomotion
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.AwaitingSpawn.AwaitingSpawnActionStateTestFixture.Update_FadeTimePassed_EntersLocomotion
       resultStatus: 1
-      duration: 0.0154842
+      duration: 0.0165949
       messages: 
       output: 
       stacktrace: 
@@ -1180,7 +1180,7 @@ MonoBehaviour:
       name: Dead
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Dead
       resultStatus: 1
-      duration: 0.2299164
+      duration: 0.241719
       messages: 
       output: 
       stacktrace: 
@@ -1192,7 +1192,7 @@ MonoBehaviour:
       name: DeadActionStateHelpersTestFixture
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Dead.DeadActionStateHelpersTestFixture
       resultStatus: 1
-      duration: 0.0187697
+      duration: 0.021121
       messages: 
       output: 
       stacktrace: 
@@ -1204,7 +1204,7 @@ MonoBehaviour:
       name: TransitionIntoDeadActionState_SetsDeadActionStateActive
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Dead.DeadActionStateHelpersTestFixture.TransitionIntoDeadActionState_SetsDeadActionStateActive
       resultStatus: 1
-      duration: 0.0046768
+      duration: 0.0049178
       messages: 
       output: 
       stacktrace: 
@@ -1216,7 +1216,7 @@ MonoBehaviour:
       name: DeadActionStateTestFixture
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Dead.DeadActionStateTestFixture
       resultStatus: 1
-      duration: 0.1885889
+      duration: 0.1983327
       messages: 
       output: 
       stacktrace: 
@@ -1228,7 +1228,7 @@ MonoBehaviour:
       name: End_LeftDeadActionStateMessageFired
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Dead.DeadActionStateTestFixture.End_LeftDeadActionStateMessageFired
       resultStatus: 1
-      duration: 0.0147231
+      duration: 0.0171742
       messages: 
       output: 
       stacktrace: 
@@ -1240,7 +1240,7 @@ MonoBehaviour:
       name: GetActionStateId_Dead
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Dead.DeadActionStateTestFixture.GetActionStateId_Dead
       resultStatus: 1
-      duration: 0.0140001
+      duration: 0.0181447
       messages: 
       output: 
       stacktrace: 
@@ -1252,7 +1252,7 @@ MonoBehaviour:
       name: Start_EnterDeadActionStateMessageFired
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Dead.DeadActionStateTestFixture.Start_EnterDeadActionStateMessageFired
       resultStatus: 1
-      duration: 0.0159726
+      duration: 0.0172571
       messages: 
       output: 
       stacktrace: 
@@ -1264,7 +1264,7 @@ MonoBehaviour:
       name: Update_ConditionsComplete_RespawnRequestSubmitted
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Dead.DeadActionStateTestFixture.Update_ConditionsComplete_RespawnRequestSubmitted
       resultStatus: 1
-      duration: 0.0160744
+      duration: 0.0155357
       messages: 
       output: 
       stacktrace: 
@@ -1276,7 +1276,7 @@ MonoBehaviour:
       name: Update_ConditionsComplete_TransitionsIntoNullActionState
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Dead.DeadActionStateTestFixture.Update_ConditionsComplete_TransitionsIntoNullActionState
       resultStatus: 1
-      duration: 0.0160618
+      duration: 0.0142556
       messages: 
       output: 
       stacktrace: 
@@ -1288,7 +1288,7 @@ MonoBehaviour:
       name: Update_DoesNotWaitFullCameraDelay_NoRespawnRequestSubmitted
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Dead.DeadActionStateTestFixture.Update_DoesNotWaitFullCameraDelay_NoRespawnRequestSubmitted
       resultStatus: 1
-      duration: 0.0162302
+      duration: 0.0173247
       messages: 
       output: 
       stacktrace: 
@@ -1300,7 +1300,7 @@ MonoBehaviour:
       name: Update_NoButtonPressedAfterDelayComplete_NoRespawnRequestSubmitted
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Dead.DeadActionStateTestFixture.Update_NoButtonPressedAfterDelayComplete_NoRespawnRequestSubmitted
       resultStatus: 1
-      duration: 0.0161523
+      duration: 0.0177129
       messages: 
       output: 
       stacktrace: 
@@ -1312,7 +1312,7 @@ MonoBehaviour:
       name: Locomotion
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion
       resultStatus: 1
-      duration: 0.5107014
+      duration: 0.4793401
       messages: 
       output: 
       stacktrace: 
@@ -1324,7 +1324,7 @@ MonoBehaviour:
       name: LocomotionActionStateHelpersTestFixture
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionActionStateHelpersTestFixture
       resultStatus: 1
-      duration: 0.0199072
+      duration: 0.0205487
       messages: 
       output: 
       stacktrace: 
@@ -1336,7 +1336,7 @@ MonoBehaviour:
       name: TransitionIntoLocomotionActionState_SetsLocomotionActionStateActive
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionActionStateHelpersTestFixture.TransitionIntoLocomotionActionState_SetsLocomotionActionStateActive
       resultStatus: 1
-      duration: 0.005375
+      duration: 0.0051715
       messages: 
       output: 
       stacktrace: 
@@ -1348,7 +1348,7 @@ MonoBehaviour:
       name: LocomotionActionStateTestFixture
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionActionStateTestFixture
       resultStatus: 1
-      duration: 0.0544435
+      duration: 0.0514337
       messages: 
       output: 
       stacktrace: 
@@ -1360,7 +1360,7 @@ MonoBehaviour:
       name: End_UnregistersInputHandler
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionActionStateTestFixture.End_UnregistersInputHandler
       resultStatus: 1
-      duration: 0.0058592
+      duration: 0.0053413
       messages: 
       output: 
       stacktrace: 
@@ -1372,7 +1372,7 @@ MonoBehaviour:
       name: GetId_ReturnsLocomotionId
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionActionStateTestFixture.GetId_ReturnsLocomotionId
       resultStatus: 1
-      duration: 0.0052849
+      duration: 0.0045117
       messages: 
       output: 
       stacktrace: 
@@ -1384,7 +1384,7 @@ MonoBehaviour:
       name: Start_RegistersInputHandler
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionActionStateTestFixture.Start_RegistersInputHandler
       resultStatus: 1
-      duration: 0.0053759
+      duration: 0.0050317
       messages: 
       output: 
       stacktrace: 
@@ -1396,7 +1396,7 @@ MonoBehaviour:
       name: LocomotionInputHandlerTestFixture
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionInputHandlerTestFixture
       resultStatus: 1
-      duration: 0.401144
+      duration: 0.3733131
       messages: 
       output: 
       stacktrace: 
@@ -1408,7 +1408,7 @@ MonoBehaviour:
       name: OnHorizontalAnalog_MovementInterfaceExists_AddsHorizontalImpulseOfAnalogValue
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionInputHandlerTestFixture.OnHorizontalAnalog_MovementInterfaceExists_AddsHorizontalImpulseOfAnalogValue
       resultStatus: 1
-      duration: 0.1240491
+      duration: 0.1045855
       messages: 
       output: 
       stacktrace: 
@@ -1420,7 +1420,7 @@ MonoBehaviour:
       name: OnHorizontalAnalog_MovementInterfaceExists_Handled
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionInputHandlerTestFixture.OnHorizontalAnalog_MovementInterfaceExists_Handled
       resultStatus: 1
-      duration: 0.005466
+      duration: 0.0055202
       messages: 
       output: 
       stacktrace: 
@@ -1432,7 +1432,7 @@ MonoBehaviour:
       name: OnHorizontalAnalog_MovementInterfaceNull_Unhandled
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionInputHandlerTestFixture.OnHorizontalAnalog_MovementInterfaceNull_Unhandled
       resultStatus: 1
-      duration: 0.0049048
+      duration: 0.0045023
       messages: 
       output: 
       stacktrace: 
@@ -1444,7 +1444,7 @@ MonoBehaviour:
       name: OnSprintButton_MovementInterfaceExists_CallsToggleSprintWithInputValue
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionInputHandlerTestFixture.OnSprintButton_MovementInterfaceExists_CallsToggleSprintWithInputValue
       resultStatus: 1
-      duration: 0.0060794
+      duration: 0.0052017
       messages: 
       output: 
       stacktrace: 
@@ -1456,7 +1456,7 @@ MonoBehaviour:
       name: OnSprintButton_MovementInterfaceExists_Handled
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionInputHandlerTestFixture.OnSprintButton_MovementInterfaceExists_Handled
       resultStatus: 1
-      duration: 0.0053774
+      duration: 0.0046611
       messages: 
       output: 
       stacktrace: 
@@ -1468,7 +1468,7 @@ MonoBehaviour:
       name: OnSprintButton_MovementInterfaceNull_Unhandled
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionInputHandlerTestFixture.OnSprintButton_MovementInterfaceNull_Unhandled
       resultStatus: 1
-      duration: 0.0046567
+      duration: 0.0045504
       messages: 
       output: 
       stacktrace: 
@@ -1480,7 +1480,7 @@ MonoBehaviour:
       name: OnUsePrimaryEquipmentButton_EquipmentInterface_PressesButton_UseEquipmentInSlotWithPrimarySlot
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionInputHandlerTestFixture.OnUsePrimaryEquipmentButton_EquipmentInterface_PressesButton_UseEquipmentInSlotWithPrimarySlot
       resultStatus: 1
-      duration: 0.0071794
+      duration: 0.0065571
       messages: 
       output: 
       stacktrace: 
@@ -1492,7 +1492,7 @@ MonoBehaviour:
       name: OnUsePrimaryEquipmentButton_EquipmentInterface_ReleasesButton_StopUsingEquipmentInSlotWithPrimarySlot
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionInputHandlerTestFixture.OnUsePrimaryEquipmentButton_EquipmentInterface_ReleasesButton_StopUsingEquipmentInSlotWithPrimarySlot
       resultStatus: 1
-      duration: 0.0052772
+      duration: 0.0056768
       messages: 
       output: 
       stacktrace: 
@@ -1504,7 +1504,7 @@ MonoBehaviour:
       name: OnUsePrimaryEquipmentButton_EquipmentInterfaceExists_Handled
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionInputHandlerTestFixture.OnUsePrimaryEquipmentButton_EquipmentInterfaceExists_Handled
       resultStatus: 1
-      duration: 0.0051022
+      duration: 0.0053009
       messages: 
       output: 
       stacktrace: 
@@ -1516,7 +1516,7 @@ MonoBehaviour:
       name: OnUsePrimaryEquipmentButton_EquipmentInterfaceNull_Unhandled
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionInputHandlerTestFixture.OnUsePrimaryEquipmentButton_EquipmentInterfaceNull_Unhandled
       resultStatus: 1
-      duration: 0.0052471
+      duration: 0.0047222
       messages: 
       output: 
       stacktrace: 
@@ -1528,7 +1528,7 @@ MonoBehaviour:
       name: OnUseSecondaryEquipmentButton_EquipmentInterface_PressesButtton_UseEquipmentInSlotWithSecondarySlot
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionInputHandlerTestFixture.OnUseSecondaryEquipmentButton_EquipmentInterface_PressesButtton_UseEquipmentInSlotWithSecondarySlot
       resultStatus: 1
-      duration: 0.0054087
+      duration: 0.0049274
       messages: 
       output: 
       stacktrace: 
@@ -1540,7 +1540,7 @@ MonoBehaviour:
       name: OnUseSecondaryEquipmentButton_EquipmentInterface_ReleasesButton_StopUsingEquipmentInSlotWithSecondarySlot
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionInputHandlerTestFixture.OnUseSecondaryEquipmentButton_EquipmentInterface_ReleasesButton_StopUsingEquipmentInSlotWithSecondarySlot
       resultStatus: 1
-      duration: 0.0052498
+      duration: 0.0048261
       messages: 
       output: 
       stacktrace: 
@@ -1552,7 +1552,7 @@ MonoBehaviour:
       name: OnUseSecondaryEquipmentButton_EquipmentInterfaceExists_Handled
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionInputHandlerTestFixture.OnUseSecondaryEquipmentButton_EquipmentInterfaceExists_Handled
       resultStatus: 1
-      duration: 0.0054398
+      duration: 0.004719
       messages: 
       output: 
       stacktrace: 
@@ -1564,7 +1564,7 @@ MonoBehaviour:
       name: OnUseSecondaryEquipmentButton_EquipmentInterfaceNull_Unhandled
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionInputHandlerTestFixture.OnUseSecondaryEquipmentButton_EquipmentInterfaceNull_Unhandled
       resultStatus: 1
-      duration: 0.0058223
+      duration: 0.0044906
       messages: 
       output: 
       stacktrace: 
@@ -1576,7 +1576,7 @@ MonoBehaviour:
       name: OnVerticalAnalog_MovementInterfaceExists_AddsVeticalImpulseOfAnalogValue
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionInputHandlerTestFixture.OnVerticalAnalog_MovementInterfaceExists_AddsVeticalImpulseOfAnalogValue
       resultStatus: 1
-      duration: 0.0060916
+      duration: 0.0050246
       messages: 
       output: 
       stacktrace: 
@@ -1588,7 +1588,7 @@ MonoBehaviour:
       name: OnVerticalAnalog_MovementInterfaceExists_Handled
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionInputHandlerTestFixture.OnVerticalAnalog_MovementInterfaceExists_Handled
       resultStatus: 1
-      duration: 0.0054111
+      duration: 0.0047735
       messages: 
       output: 
       stacktrace: 
@@ -1600,7 +1600,7 @@ MonoBehaviour:
       name: OnVerticalAnalog_MovementInterfaceNull_Unhandled
       fullName: Assets.Editor.UnitTests.Components.ActionStateMachine.States.Locomotion.LocomotionInputHandlerTestFixture.OnVerticalAnalog_MovementInterfaceNull_Unhandled
       resultStatus: 1
-      duration: 0.0055138
+      duration: 0.0046926
       messages: 
       output: 
       stacktrace: 
@@ -1612,7 +1612,7 @@ MonoBehaviour:
       name: Character
       fullName: Assets.Editor.UnitTests.Components.Character
       resultStatus: 1
-      duration: 0.1079495
+      duration: 0.106806
       messages: 
       output: 
       stacktrace: 
@@ -1624,7 +1624,7 @@ MonoBehaviour:
       name: MidnaCharacterComponentTestFixture
       fullName: Assets.Editor.UnitTests.Components.Character.MidnaCharacterComponentTestFixture
       resultStatus: 1
-      duration: 0.0973956
+      duration: 0.096868
       messages: 
       output: 
       stacktrace: 
@@ -1636,7 +1636,7 @@ MonoBehaviour:
       name: ReceivesTriggerSpawnMessage_UpdatesControllerInitialTransformToMatch
       fullName: Assets.Editor.UnitTests.Components.Character.MidnaCharacterComponentTestFixture.ReceivesTriggerSpawnMessage_UpdatesControllerInitialTransformToMatch
       resultStatus: 1
-      duration: 0.0281875
+      duration: 0.0262314
       messages: 
       output: 
       stacktrace: 
@@ -1648,7 +1648,7 @@ MonoBehaviour:
       name: Start_SetsInputInterfaceUsingGameModeObject
       fullName: Assets.Editor.UnitTests.Components.Character.MidnaCharacterComponentTestFixture.Start_SetsInputInterfaceUsingGameModeObject
       resultStatus: 1
-      duration: 0.0170759
+      duration: 0.0173487
       messages: 
       output: 
       stacktrace: 
@@ -1660,7 +1660,7 @@ MonoBehaviour:
       name: Start_TransitionsCharacterIntoLocomotionActionState
       fullName: Assets.Editor.UnitTests.Components.Character.MidnaCharacterComponentTestFixture.Start_TransitionsCharacterIntoLocomotionActionState
       resultStatus: 1
-      duration: 0.0156344
+      duration: 0.0167462
       messages: 
       output: 
       stacktrace: 
@@ -1672,7 +1672,7 @@ MonoBehaviour:
       name: Controller
       fullName: Assets.Editor.UnitTests.Components.Controller
       resultStatus: 1
-      duration: 0.1823886
+      duration: 0.1704944
       messages: 
       output: 
       stacktrace: 
@@ -1684,7 +1684,7 @@ MonoBehaviour:
       name: ControllerComponentTestFixture
       fullName: Assets.Editor.UnitTests.Components.Controller.ControllerComponentTestFixture
       resultStatus: 1
-      duration: 0.1717917
+      duration: 0.159935
       messages: 
       output: 
       stacktrace: 
@@ -1696,7 +1696,7 @@ MonoBehaviour:
       name: CreatePawnOfType_InstantiatesPawnOfType
       fullName: Assets.Editor.UnitTests.Components.Controller.ControllerComponentTestFixture.CreatePawnOfType_InstantiatesPawnOfType
       resultStatus: 1
-      duration: 0.0060085
+      duration: 0.0053797
       messages: 
       output: 
       stacktrace: 
@@ -1708,7 +1708,7 @@ MonoBehaviour:
       name: CreatePawnOfType_PawnIsCharacter_UpdatesControllerReference
       fullName: Assets.Editor.UnitTests.Components.Controller.ControllerComponentTestFixture.CreatePawnOfType_PawnIsCharacter_UpdatesControllerReference
       resultStatus: 1
-      duration: 0.0055711
+      duration: 0.0054872
       messages: 
       output: 
       stacktrace: 
@@ -1720,7 +1720,7 @@ MonoBehaviour:
       name: CreatePawnOfType_SetInitialTransform_UsedOnCreation
       fullName: Assets.Editor.UnitTests.Components.Controller.ControllerComponentTestFixture.CreatePawnOfType_SetInitialTransform_UsedOnCreation
       resultStatus: 1
-      duration: 0.0053206
+      duration: 0.008313
       messages: 
       output: 
       stacktrace: 
@@ -1732,7 +1732,7 @@ MonoBehaviour:
       name: CreatePawnOfType_SetsTransformCorrectly
       fullName: Assets.Editor.UnitTests.Components.Controller.ControllerComponentTestFixture.CreatePawnOfType_SetsTransformCorrectly
       resultStatus: 1
-      duration: 0.0048627
+      duration: 0.0052772
       messages: 
       output: 
       stacktrace: 
@@ -1744,7 +1744,7 @@ MonoBehaviour:
       name: SetPawn_DoesNotDestroyPriorPawn
       fullName: Assets.Editor.UnitTests.Components.Controller.ControllerComponentTestFixture.SetPawn_DoesNotDestroyPriorPawn
       resultStatus: 1
-      duration: 0.0055035
+      duration: 0.0055773
       messages: 
       output: 
       stacktrace: 
@@ -1756,7 +1756,7 @@ MonoBehaviour:
       name: SetPawn_OverridesCurrentPawn
       fullName: Assets.Editor.UnitTests.Components.Controller.ControllerComponentTestFixture.SetPawn_OverridesCurrentPawn
       resultStatus: 1
-      duration: 0.0049125
+      duration: 0.0046587
       messages: 
       output: 
       stacktrace: 
@@ -1768,7 +1768,7 @@ MonoBehaviour:
       name: SetPawn_PawnIsCharacter_UpdatesControllerReference
       fullName: Assets.Editor.UnitTests.Components.Controller.ControllerComponentTestFixture.SetPawn_PawnIsCharacter_UpdatesControllerReference
       resultStatus: 1
-      duration: 0.0051075
+      duration: 0.0051405
       messages: 
       output: 
       stacktrace: 
@@ -1780,7 +1780,7 @@ MonoBehaviour:
       name: SetPawn_SetPawnCalledOnHudComponent
       fullName: Assets.Editor.UnitTests.Components.Controller.ControllerComponentTestFixture.SetPawn_SetPawnCalledOnHudComponent
       resultStatus: 1
-      duration: 0.0081522
+      duration: 0.0088729
       messages: 
       output: 
       stacktrace: 
@@ -1792,7 +1792,7 @@ MonoBehaviour:
       name: SetPawn_SetsTransformCorrectly
       fullName: Assets.Editor.UnitTests.Components.Controller.ControllerComponentTestFixture.SetPawn_SetsTransformCorrectly
       resultStatus: 1
-      duration: 0.0052647
+      duration: 0.005168
       messages: 
       output: 
       stacktrace: 
@@ -1804,7 +1804,7 @@ MonoBehaviour:
       name: Equipment
       fullName: Assets.Editor.UnitTests.Components.Equipment
       resultStatus: 1
-      duration: 0.7213461
+      duration: 0.893985
       messages: 
       output: 
       stacktrace: 
@@ -1816,7 +1816,7 @@ MonoBehaviour:
       name: EquipmentComponentTestFixture
       fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentComponentTestFixture
       resultStatus: 1
-      duration: 0.1672627
+      duration: 0.1765228
       messages: 
       output: 
       stacktrace: 
@@ -1828,7 +1828,7 @@ MonoBehaviour:
       name: SetEquipmentItemInSlot_OldItemNoLongerHasEquipmentComponentGameObjectAsOwner
       fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentComponentTestFixture.SetEquipmentItemInSlot_OldItemNoLongerHasEquipmentComponentGameObjectAsOwner
       resultStatus: 1
-      duration: 0.0159582
+      duration: 0.0197585
       messages: 
       output: 
       stacktrace: 
@@ -1840,7 +1840,7 @@ MonoBehaviour:
       name: SetEquipmentItemInSlot_OwnerIsEquipmentComponentGameObject
       fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentComponentTestFixture.SetEquipmentItemInSlot_OwnerIsEquipmentComponentGameObject
       resultStatus: 1
-      duration: 0.0152377
+      duration: 0.0177492
       messages: 
       output: 
       stacktrace: 
@@ -1852,7 +1852,7 @@ MonoBehaviour:
       name: StopUsingEquipmentInSlot_Item_StopsUsingCorrectItem
       fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentComponentTestFixture.StopUsingEquipmentInSlot_Item_StopsUsingCorrectItem
       resultStatus: 1
-      duration: 0.0149922
+      duration: 0.016738
       messages: 
       output: 
       stacktrace: 
@@ -1864,7 +1864,7 @@ MonoBehaviour:
       name: StopUsingEquipmentInSlot_NoItem_DoesNotStopUsing
       fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentComponentTestFixture.StopUsingEquipmentInSlot_NoItem_DoesNotStopUsing
       resultStatus: 1
-      duration: 0.0154049
+      duration: 0.0159705
       messages: 
       output: 
       stacktrace: 
@@ -1876,7 +1876,7 @@ MonoBehaviour:
       name: UseEquipmentInSlot_Item_UsesCorrectItem
       fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentComponentTestFixture.UseEquipmentInSlot_Item_UsesCorrectItem
       resultStatus: 1
-      duration: 0.0146666
+      duration: 0.0159436
       messages: 
       output: 
       stacktrace: 
@@ -1888,7 +1888,7 @@ MonoBehaviour:
       name: UseEquipmentInSlot_NoItem_DoesNotUse
       fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentComponentTestFixture.UseEquipmentInSlot_NoItem_DoesNotUse
       resultStatus: 1
-      duration: 0.0187645
+      duration: 0.0191476
       messages: 
       output: 
       stacktrace: 
@@ -1900,7 +1900,7 @@ MonoBehaviour:
       name: EquipmentItem
       fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentItem
       resultStatus: 1
-      duration: 0.3441504
+      duration: 0.4240123
       messages: 
       output: 
       stacktrace: 
@@ -1912,7 +1912,7 @@ MonoBehaviour:
       name: CaneTestFixture
       fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentItem.CaneTestFixture
       resultStatus: 1
-      duration: 0.3338046
+      duration: 0.4131877
       messages: 
       output: 
       stacktrace: 
@@ -1924,7 +1924,7 @@ MonoBehaviour:
       name: Collision_NotUsingItem_NoHealthChange
       fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentItem.CaneTestFixture.Collision_NotUsingItem_NoHealthChange
       resultStatus: 1
-      duration: 0.0207363
+      duration: 0.0146651
       messages: 
       output: 
       stacktrace: 
@@ -1936,7 +1936,7 @@ MonoBehaviour:
       name: Collision_OwnerCollides_DoesNotReduceHealthByPokeDamage
       fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentItem.CaneTestFixture.Collision_OwnerCollides_DoesNotReduceHealthByPokeDamage
       resultStatus: 1
-      duration: 0.0267165
+      duration: 0.0256199
       messages: 
       output: 
       stacktrace: 
@@ -1948,7 +1948,7 @@ MonoBehaviour:
       name: Collision_UsedItemAfterPokeDuration_DoesNotReduceHealthByPokeDamage
       fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentItem.CaneTestFixture.Collision_UsedItemAfterPokeDuration_DoesNotReduceHealthByPokeDamage
       resultStatus: 1
-      duration: 0.027148
+      duration: 0.0255373
       messages: 
       output: 
       stacktrace: 
@@ -1960,7 +1960,7 @@ MonoBehaviour:
       name: Collision_UsedItemBeforePokeDuration_ReducesHealthByPokeDamage
       fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentItem.CaneTestFixture.Collision_UsedItemBeforePokeDuration_ReducesHealthByPokeDamage
       resultStatus: 1
-      duration: 0.0293172
+      duration: 0.0262042
       messages: 
       output: 
       stacktrace: 
@@ -1972,7 +1972,19 @@ MonoBehaviour:
       name: Collision_UsingItem_ReducesHealthByPokeDamage
       fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentItem.CaneTestFixture.Collision_UsingItem_ReducesHealthByPokeDamage
       resultStatus: 1
-      duration: 0.0279612
+      duration: 0.0253788
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp-Editor][Assets.Editor.UnitTests.Components.Equipment.EquipmentItem.CaneTestFixture.Start_ColliderDisabled]'
+      name: Start_ColliderDisabled
+      fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentItem.CaneTestFixture.Start_ColliderDisabled
+      resultStatus: 1
+      duration: 0.016409
       messages: 
       output: 
       stacktrace: 
@@ -1984,7 +1996,19 @@ MonoBehaviour:
       name: Start_SpriteDisabled
       fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentItem.CaneTestFixture.Start_SpriteDisabled
       resultStatus: 1
-      duration: 0.0149811
+      duration: 0.0161435
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp-Editor][Assets.Editor.UnitTests.Components.Equipment.EquipmentItem.CaneTestFixture.UseItem_ColliderEnabled]'
+      name: UseItem_ColliderEnabled
+      fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentItem.CaneTestFixture.UseItem_ColliderEnabled
+      resultStatus: 1
+      duration: 0.0250653
       messages: 
       output: 
       stacktrace: 
@@ -1996,7 +2020,7 @@ MonoBehaviour:
       name: UseItem_FiresCaneActivatedMessage
       fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentItem.CaneTestFixture.UseItem_FiresCaneActivatedMessage
       resultStatus: 1
-      duration: 0.0281907
+      duration: 0.0274524
       messages: 
       output: 
       stacktrace: 
@@ -2008,7 +2032,19 @@ MonoBehaviour:
       name: UseItem_SpriteEnabled
       fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentItem.CaneTestFixture.UseItem_SpriteEnabled
       resultStatus: 1
-      duration: 0.0285707
+      duration: 0.0258353
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp-Editor][Assets.Editor.UnitTests.Components.Equipment.EquipmentItem.CaneTestFixture.UseItem_TimesOut_ColliderDisabled]'
+      name: UseItem_TimesOut_ColliderDisabled
+      fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentItem.CaneTestFixture.UseItem_TimesOut_ColliderDisabled
+      resultStatus: 1
+      duration: 0.0253336
       messages: 
       output: 
       stacktrace: 
@@ -2020,7 +2056,7 @@ MonoBehaviour:
       name: UseItem_TimesOut_SpriteDisabled
       fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentItem.CaneTestFixture.UseItem_TimesOut_SpriteDisabled
       resultStatus: 1
-      duration: 0.026946
+      duration: 0.0249743
       messages: 
       output: 
       stacktrace: 
@@ -2032,7 +2068,7 @@ MonoBehaviour:
       name: EquipmentItemComponentTestFixture
       fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentItemComponentTestFixture
       resultStatus: 1
-      duration: 0.0376805
+      duration: 0.03871
       messages: 
       output: 
       stacktrace: 
@@ -2044,7 +2080,7 @@ MonoBehaviour:
       name: StopUsingItem_OnStopUsingItemCalled
       fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentItemComponentTestFixture.StopUsingItem_OnStopUsingItemCalled
       resultStatus: 1
-      duration: 0.0049915
+      duration: 0.0048636
       messages: 
       output: 
       stacktrace: 
@@ -2056,7 +2092,7 @@ MonoBehaviour:
       name: UseItem_OnUseItemCalled
       fullName: Assets.Editor.UnitTests.Components.Equipment.EquipmentItemComponentTestFixture.UseItem_OnUseItemCalled
       resultStatus: 1
-      duration: 0.0060138
+      duration: 0.0063981
       messages: 
       output: 
       stacktrace: 
@@ -2068,7 +2104,7 @@ MonoBehaviour:
       name: Loadout
       fullName: Assets.Editor.UnitTests.Components.Equipment.Loadout
       resultStatus: 1
-      duration: 0.1251416
+      duration: 0.2081817
       messages: 
       output: 
       stacktrace: 
@@ -2080,7 +2116,7 @@ MonoBehaviour:
       name: LoadoutComponentTestFixture
       fullName: Assets.Editor.UnitTests.Components.Equipment.Loadout.LoadoutComponentTestFixture
       resultStatus: 1
-      duration: 0.0241567
+      duration: 0.0368368
       messages: 
       output: 
       stacktrace: 
@@ -2092,7 +2128,19 @@ MonoBehaviour:
       name: Start_AssignsCorrectItemsToSlots
       fullName: Assets.Editor.UnitTests.Components.Equipment.Loadout.LoadoutComponentTestFixture.Start_AssignsCorrectItemsToSlots
       resultStatus: 1
-      duration: 0.006127
+      duration: 0.0067181
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp-Editor][Assets.Editor.UnitTests.Components.Equipment.Loadout.LoadoutComponentTestFixture.Start_NullItems_NoExceptionsThrown]'
+      name: Start_NullItems_NoExceptionsThrown
+      fullName: Assets.Editor.UnitTests.Components.Equipment.Loadout.LoadoutComponentTestFixture.Start_NullItems_NoExceptionsThrown
+      resultStatus: 1
+      duration: 0.004863
       messages: 
       output: 
       stacktrace: 
@@ -2104,7 +2152,7 @@ MonoBehaviour:
       name: PlayerLoadoutComponentTestFixture
       fullName: Assets.Editor.UnitTests.Components.Equipment.Loadout.PlayerLoadoutComponentTestFixture
       resultStatus: 1
-      duration: 0.0804523
+      duration: 0.1478925
       messages: 
       output: 
       stacktrace: 
@@ -2116,7 +2164,19 @@ MonoBehaviour:
       name: GetPrimaryItem_ReturnsPrimaryItemWithComponentAsParent
       fullName: Assets.Editor.UnitTests.Components.Equipment.Loadout.PlayerLoadoutComponentTestFixture.GetPrimaryItem_ReturnsPrimaryItemWithComponentAsParent
       resultStatus: 1
-      duration: 0.0279834
+      duration: 0.0276602
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp-Editor][Assets.Editor.UnitTests.Components.Equipment.Loadout.PlayerLoadoutComponentTestFixture.GetPrimaryItem_ReturnsPrimaryItemWithComponentLocationSameAsOwner]'
+      name: GetPrimaryItem_ReturnsPrimaryItemWithComponentLocationSameAsOwner
+      fullName: Assets.Editor.UnitTests.Components.Equipment.Loadout.PlayerLoadoutComponentTestFixture.GetPrimaryItem_ReturnsPrimaryItemWithComponentLocationSameAsOwner
+      resultStatus: 1
+      duration: 0.0255747
       messages: 
       output: 
       stacktrace: 
@@ -2128,7 +2188,19 @@ MonoBehaviour:
       name: GetSecondaryItem_ReturnsPrimaryItemWithComponentAsParent
       fullName: Assets.Editor.UnitTests.Components.Equipment.Loadout.PlayerLoadoutComponentTestFixture.GetSecondaryItem_ReturnsPrimaryItemWithComponentAsParent
       resultStatus: 1
-      duration: 0.0275646
+      duration: 0.0250507
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp-Editor][Assets.Editor.UnitTests.Components.Equipment.Loadout.PlayerLoadoutComponentTestFixture.GetSecondaryItem_ReturnsPrimaryItemWithComponentLocationSameAsOwner]'
+      name: GetSecondaryItem_ReturnsPrimaryItemWithComponentLocationSameAsOwner
+      fullName: Assets.Editor.UnitTests.Components.Equipment.Loadout.PlayerLoadoutComponentTestFixture.GetSecondaryItem_ReturnsPrimaryItemWithComponentLocationSameAsOwner
+      resultStatus: 1
+      duration: 0.0256037
       messages: 
       output: 
       stacktrace: 
@@ -2140,7 +2212,7 @@ MonoBehaviour:
       name: GameMode
       fullName: Assets.Editor.UnitTests.Components.GameMode
       resultStatus: 1
-      duration: 0.2732332
+      duration: 0.2726954
       messages: 
       output: 
       stacktrace: 
@@ -2152,7 +2224,7 @@ MonoBehaviour:
       name: MidnaGameModeComponentTestFixture
       fullName: Assets.Editor.UnitTests.Components.GameMode.MidnaGameModeComponentTestFixture
       resultStatus: 1
-      duration: 0.1982833
+      duration: 0.1936198
       messages: 
       output: 
       stacktrace: 
@@ -2164,7 +2236,7 @@ MonoBehaviour:
       name: Creation_ControllerInitialisedWithPawn
       fullName: Assets.Editor.UnitTests.Components.GameMode.MidnaGameModeComponentTestFixture.Creation_ControllerInitialisedWithPawn
       resultStatus: 1
-      duration: 0.0301415
+      duration: 0.0266971
       messages: 
       output: "An empty string is not considered a valid value.\r\n"
       stacktrace: 
@@ -2176,7 +2248,7 @@ MonoBehaviour:
       name: Creation_InputComponentSetUp
       fullName: Assets.Editor.UnitTests.Components.GameMode.MidnaGameModeComponentTestFixture.Creation_InputComponentSetUp
       resultStatus: 1
-      duration: 0.0268974
+      duration: 0.0291128
       messages: 
       output: "An empty string is not considered a valid value.\r\n"
       stacktrace: 
@@ -2188,7 +2260,7 @@ MonoBehaviour:
       name: Creation_InvalidControllerType_ThrowsException
       fullName: Assets.Editor.UnitTests.Components.GameMode.MidnaGameModeComponentTestFixture.Creation_InvalidControllerType_ThrowsException
       resultStatus: 1
-      duration: 0.0272764
+      duration: 0.025806
       messages: 
       output: "An empty string is not considered a valid value.\r\n"
       stacktrace: 
@@ -2200,7 +2272,7 @@ MonoBehaviour:
       name: Creation_RegistersAsGameMode
       fullName: Assets.Editor.UnitTests.Components.GameMode.MidnaGameModeComponentTestFixture.Creation_RegistersAsGameMode
       resultStatus: 1
-      duration: 0.0262835
+      duration: 0.0273312
       messages: 
       output: "An empty string is not considered a valid value.\r\n"
       stacktrace: 
@@ -2212,7 +2284,7 @@ MonoBehaviour:
       name: ReceivesRequestRespawnMessage_DestroysAndRecreatesPawn
       fullName: Assets.Editor.UnitTests.Components.GameMode.MidnaGameModeComponentTestFixture.ReceivesRequestRespawnMessage_DestroysAndRecreatesPawn
       resultStatus: 1
-      duration: 0.0269586
+      duration: 0.0266494
       messages: 
       output: "An empty string is not considered a valid value.\r\n"
       stacktrace: 
@@ -2224,7 +2296,7 @@ MonoBehaviour:
       name: MidnaGameModeTests
       fullName: Assets.Editor.UnitTests.Components.GameMode.MidnaGameModeTests
       resultStatus: 1
-      duration: 0.0537801
+      duration: 0.0565813
       messages: 
       output: 
       stacktrace: 
@@ -2236,7 +2308,7 @@ MonoBehaviour:
       name: SetGameMode_InvokesEvent
       fullName: Assets.Editor.UnitTests.Components.GameMode.MidnaGameModeTests.SetGameMode_InvokesEvent
       resultStatus: 1
-      duration: 0.0143344
+      duration: 0.0142436
       messages: 
       output: 
       stacktrace: 
@@ -2248,7 +2320,7 @@ MonoBehaviour:
       name: SetGameMode_SetGameObjectToBeGameMode
       fullName: Assets.Editor.UnitTests.Components.GameMode.MidnaGameModeTests.SetGameMode_SetGameObjectToBeGameMode
       resultStatus: 1
-      duration: 0.0146903
+      duration: 0.0156291
       messages: 
       output: 
       stacktrace: 
@@ -2260,7 +2332,7 @@ MonoBehaviour:
       name: Health
       fullName: Assets.Editor.UnitTests.Components.Health
       resultStatus: 1
-      duration: 0.3255455
+      duration: 0.3314095
       messages: 
       output: 
       stacktrace: 
@@ -2272,7 +2344,7 @@ MonoBehaviour:
       name: Damage
       fullName: Assets.Editor.UnitTests.Components.Health.Damage
       resultStatus: 1
-      duration: 0.029385
+      duration: 0.0294334
       messages: 
       output: 
       stacktrace: 
@@ -2284,7 +2356,7 @@ MonoBehaviour:
       name: ProximityHealthAdjustmentComponentTestFixture
       fullName: Assets.Editor.UnitTests.Components.Health.Damage.ProximityHealthAdjustmentComponentTestFixture
       resultStatus: 1
-      duration: 0.0217651
+      duration: 0.0188803
       messages: 
       output: 
       stacktrace: 
@@ -2296,7 +2368,7 @@ MonoBehaviour:
       name: OnCollision_AdjustsHealthBySpecifiedAmount
       fullName: Assets.Editor.UnitTests.Components.Health.Damage.ProximityHealthAdjustmentComponentTestFixture.OnCollision_AdjustsHealthBySpecifiedAmount
       resultStatus: 1
-      duration: 0.0057269
+      duration: 0.0054204
       messages: 
       output: 
       stacktrace: 
@@ -2308,7 +2380,7 @@ MonoBehaviour:
       name: HealthComponentTestFixture
       fullName: Assets.Editor.UnitTests.Components.Health.HealthComponentTestFixture
       resultStatus: 1
-      duration: 0.2729226
+      duration: 0.2795255
       messages: 
       output: 
       stacktrace: 
@@ -2320,7 +2392,7 @@ MonoBehaviour:
       name: AdjustHealth_ChangesHealth
       fullName: Assets.Editor.UnitTests.Components.Health.HealthComponentTestFixture.AdjustHealth_ChangesHealth
       resultStatus: 1
-      duration: 0.0163326
+      duration: 0.0153607
       messages: 
       output: 
       stacktrace: 
@@ -2332,7 +2404,7 @@ MonoBehaviour:
       name: AdjustHealth_ClampedToMax
       fullName: Assets.Editor.UnitTests.Components.Health.HealthComponentTestFixture.AdjustHealth_ClampedToMax
       resultStatus: 1
-      duration: 0.0152026
+      duration: 0.0173725
       messages: 
       output: 
       stacktrace: 
@@ -2344,7 +2416,7 @@ MonoBehaviour:
       name: AdjustHealth_FiresHealthChangedMessage
       fullName: Assets.Editor.UnitTests.Components.Health.HealthComponentTestFixture.AdjustHealth_FiresHealthChangedMessage
       resultStatus: 1
-      duration: 0.015354
+      duration: 0.0146479
       messages: 
       output: 
       stacktrace: 
@@ -2356,7 +2428,7 @@ MonoBehaviour:
       name: AdjustHealth_HealthChangeDisabled_NoEffect
       fullName: Assets.Editor.UnitTests.Components.Health.HealthComponentTestFixture.AdjustHealth_HealthChangeDisabled_NoEffect
       resultStatus: 1
-      duration: 0.0152961
+      duration: 0.016587
       messages: 
       output: 
       stacktrace: 
@@ -2368,7 +2440,7 @@ MonoBehaviour:
       name: AdjustHealth_HealthChangeDisabled_NoEventFired
       fullName: Assets.Editor.UnitTests.Components.Health.HealthComponentTestFixture.AdjustHealth_HealthChangeDisabled_NoEventFired
       resultStatus: 1
-      duration: 0.0149306
+      duration: 0.0168965
       messages: 
       output: 
       stacktrace: 
@@ -2380,7 +2452,7 @@ MonoBehaviour:
       name: AdjustHealth_ReachesZero_EntersDeadActionState
       fullName: Assets.Editor.UnitTests.Components.Health.HealthComponentTestFixture.AdjustHealth_ReachesZero_EntersDeadActionState
       resultStatus: 1
-      duration: 0.0150554
+      duration: 0.0176016
       messages: 
       output: 
       stacktrace: 
@@ -2392,7 +2464,7 @@ MonoBehaviour:
       name: ReplenishHealth_HealthChangeDisabled_NoEffect
       fullName: Assets.Editor.UnitTests.Components.Health.HealthComponentTestFixture.ReplenishHealth_HealthChangeDisabled_NoEffect
       resultStatus: 1
-      duration: 0.0185024
+      duration: 0.0163794
       messages: 
       output: 
       stacktrace: 
@@ -2404,7 +2476,7 @@ MonoBehaviour:
       name: ReplenishHealth_SetsToMax
       fullName: Assets.Editor.UnitTests.Components.Health.HealthComponentTestFixture.ReplenishHealth_SetsToMax
       resultStatus: 1
-      duration: 0.0154125
+      duration: 0.0169974
       messages: 
       output: 
       stacktrace: 
@@ -2416,7 +2488,7 @@ MonoBehaviour:
       name: Start_DefaultMaxHealthGreaterThanZero
       fullName: Assets.Editor.UnitTests.Components.Health.HealthComponentTestFixture.Start_DefaultMaxHealthGreaterThanZero
       resultStatus: 1
-      duration: 0.0169436
+      duration: 0.0177638
       messages: 
       output: 
       stacktrace: 
@@ -2428,7 +2500,7 @@ MonoBehaviour:
       name: Start_HasMaxHealth
       fullName: Assets.Editor.UnitTests.Components.Health.HealthComponentTestFixture.Start_HasMaxHealth
       resultStatus: 1
-      duration: 0.0154222
+      duration: 0.0163961
       messages: 
       output: 
       stacktrace: 
@@ -2440,7 +2512,7 @@ MonoBehaviour:
       name: HUD
       fullName: Assets.Editor.UnitTests.Components.HUD
       resultStatus: 1
-      duration: 0.2241912
+      duration: 0.228648
       messages: 
       output: 
       stacktrace: 
@@ -2452,7 +2524,7 @@ MonoBehaviour:
       name: HUDComponentTestFixture
       fullName: Assets.Editor.UnitTests.Components.HUD.HUDComponentTestFixture
       resultStatus: 1
-      duration: 0.0223886
+      duration: 0.0223988
       messages: 
       output: 
       stacktrace: 
@@ -2464,7 +2536,7 @@ MonoBehaviour:
       name: SetPawn_SetMessageDispatcherOnHUDElements
       fullName: Assets.Editor.UnitTests.Components.HUD.HUDComponentTestFixture.SetPawn_SetMessageDispatcherOnHUDElements
       resultStatus: 1
-      duration: 0.005039
+      duration: 0.005036
       messages: 
       output: 
       stacktrace: 
@@ -2476,7 +2548,7 @@ MonoBehaviour:
       name: HUDElementComponentTests
       fullName: Assets.Editor.UnitTests.Components.HUD.HUDElementComponentTests
       resultStatus: 1
-      duration: 0.0965563
+      duration: 0.0872099
       messages: 
       output: 
       stacktrace: 
@@ -2488,7 +2560,7 @@ MonoBehaviour:
       name: SetMessageDispatcher_ExistingDispatcherAndNewIsNullDispatcher_OnMessageInterfaceRemovedCalled
       fullName: Assets.Editor.UnitTests.Components.HUD.HUDElementComponentTests.SetMessageDispatcher_ExistingDispatcherAndNewIsNullDispatcher_OnMessageInterfaceRemovedCalled
       resultStatus: 1
-      duration: 0.0057444
+      duration: 0.0062122
       messages: 
       output: 
       stacktrace: 
@@ -2500,7 +2572,7 @@ MonoBehaviour:
       name: SetMessageDispatcher_NullDispatcher_OnMessageInterfaceSetNotCalled
       fullName: Assets.Editor.UnitTests.Components.HUD.HUDElementComponentTests.SetMessageDispatcher_NullDispatcher_OnMessageInterfaceSetNotCalled
       resultStatus: 1
-      duration: 0.0049093
+      duration: 0.00488
       messages: 
       output: 
       stacktrace: 
@@ -2512,7 +2584,7 @@ MonoBehaviour:
       name: SetMessageDispatcher_OnMessageInterfaceSetCalled
       fullName: Assets.Editor.UnitTests.Components.HUD.HUDElementComponentTests.SetMessageDispatcher_OnMessageInterfaceSetCalled
       resultStatus: 1
-      duration: 0.0057535
+      duration: 0.0048159
       messages: 
       output: 
       stacktrace: 
@@ -2524,7 +2596,7 @@ MonoBehaviour:
       name: SetMessageDispatcher_PriorDispatcherWasNull_OnMessageInterfaceRemovedNotCalled
       fullName: Assets.Editor.UnitTests.Components.HUD.HUDElementComponentTests.SetMessageDispatcher_PriorDispatcherWasNull_OnMessageInterfaceRemovedNotCalled
       resultStatus: 1
-      duration: 0.0054807
+      duration: 0.0049813
       messages: 
       output: 
       stacktrace: 
@@ -2536,7 +2608,7 @@ MonoBehaviour:
       name: SetMessageDispatcher_PriorNotNullNorNew_OnMessageInterfaceRemovedCalled
       fullName: Assets.Editor.UnitTests.Components.HUD.HUDElementComponentTests.SetMessageDispatcher_PriorNotNullNorNew_OnMessageInterfaceRemovedCalled
       resultStatus: 1
-      duration: 0.0058868
+      duration: 0.0052936
       messages: 
       output: 
       stacktrace: 
@@ -2548,7 +2620,7 @@ MonoBehaviour:
       name: NotificationDisplayUIController
       fullName: Assets.Editor.UnitTests.Components.HUD.NotificationDisplayUIController
       resultStatus: 1
-      duration: 0.0750384
+      duration: 0.0873542
       messages: 
       output: 
       stacktrace: 
@@ -2560,7 +2632,7 @@ MonoBehaviour:
       name: NotificationDisplayUIControllerComponentTestFixture
       fullName: Assets.Editor.UnitTests.Components.HUD.NotificationDisplayUIController.NotificationDisplayUIControllerComponentTestFixture
       resultStatus: 1
-      duration: 0.064591
+      duration: 0.0768931
       messages: 
       output: 
       stacktrace: 
@@ -2572,7 +2644,7 @@ MonoBehaviour:
       name: DeathMessage_SetsTextToDeathMessage
       fullName: Assets.Editor.UnitTests.Components.HUD.NotificationDisplayUIController.NotificationDisplayUIControllerComponentTestFixture.DeathMessage_SetsTextToDeathMessage
       resultStatus: 1
-      duration: 0.0176291
+      duration: 0.0351204
       messages: 
       output: 
       stacktrace: 
@@ -2584,7 +2656,7 @@ MonoBehaviour:
       name: EndDeathMessage_SetsTextToEmpty
       fullName: Assets.Editor.UnitTests.Components.HUD.NotificationDisplayUIController.NotificationDisplayUIControllerComponentTestFixture.EndDeathMessage_SetsTextToEmpty
       resultStatus: 1
-      duration: 0.0199772
+      duration: 0.0160993
       messages: 
       output: 
       stacktrace: 
@@ -2596,7 +2668,7 @@ MonoBehaviour:
       name: Input
       fullName: Assets.Editor.UnitTests.Components.Input
       resultStatus: 1
-      duration: 1.185165
+      duration: 1.218761
       messages: 
       output: 
       stacktrace: 
@@ -2608,7 +2680,7 @@ MonoBehaviour:
       name: DefaultInputMappingProviderTestFixture
       fullName: Assets.Editor.UnitTests.Components.Input.DefaultInputMappingProviderTestFixture
       resultStatus: 1
-      duration: 0.0876989
+      duration: 0.0850208
       messages: 
       output: 
       stacktrace: 
@@ -2620,7 +2692,7 @@ MonoBehaviour:
       name: DefaultInputMappingProvider_GetTranslatedInput_ReturnsCorrectlyMappedTranslatedInput
       fullName: Assets.Editor.UnitTests.Components.Input.DefaultInputMappingProviderTestFixture.DefaultInputMappingProvider_GetTranslatedInput_ReturnsCorrectlyMappedTranslatedInput
       resultStatus: 1
-      duration: 0.027419
+      duration: 0.0251716
       messages: 
       output: 
       stacktrace: 
@@ -2632,7 +2704,7 @@ MonoBehaviour:
       name: DefaultInputMappingProvider_GetTranslatedInputWithNone_ThrowsException
       fullName: Assets.Editor.UnitTests.Components.Input.DefaultInputMappingProviderTestFixture.DefaultInputMappingProvider_GetTranslatedInputWithNone_ThrowsException
       resultStatus: 1
-      duration: 0.0063466
+      duration: 0.0056687
       messages: 
       output: 
       stacktrace: 
@@ -2644,7 +2716,7 @@ MonoBehaviour:
       name: DefaultInputMappingProviderCreated_RawInputsAreOnesProvided
       fullName: Assets.Editor.UnitTests.Components.Input.DefaultInputMappingProviderTestFixture.DefaultInputMappingProviderCreated_RawInputsAreOnesProvided
       resultStatus: 1
-      duration: 0.0050293
+      duration: 0.0050483
       messages: 
       output: 
       stacktrace: 
@@ -2656,7 +2728,7 @@ MonoBehaviour:
       name: DefaultInputMappingProviderCreated_UsesProvidedRawInputsToRetrieveMapping
       fullName: Assets.Editor.UnitTests.Components.Input.DefaultInputMappingProviderTestFixture.DefaultInputMappingProviderCreated_UsesProvidedRawInputsToRetrieveMapping
       resultStatus: 1
-      duration: 0.0050916
+      duration: 0.0050468
       messages: 
       output: 
       stacktrace: 
@@ -2668,7 +2740,7 @@ MonoBehaviour:
       name: DefaultTranslatedInputRepositoryTestFixture
       fullName: Assets.Editor.UnitTests.Components.Input.DefaultTranslatedInputRepositoryTestFixture
       resultStatus: 1
-      duration: 0.0939108
+      duration: 0.0946678
       messages: 
       output: 
       stacktrace: 
@@ -2680,7 +2752,7 @@ MonoBehaviour:
       name: DefaultTranslatedInputRepository_RetrieveMappingsForRawInputs_NoMappingsReturnsDefaultMappings
       fullName: Assets.Editor.UnitTests.Components.Input.DefaultTranslatedInputRepositoryTestFixture.DefaultTranslatedInputRepository_RetrieveMappingsForRawInputs_NoMappingsReturnsDefaultMappings
       resultStatus: 1
-      duration: 0.0157826
+      duration: 0.0166681
       messages: 
       output: 
       stacktrace: 
@@ -2692,7 +2764,7 @@ MonoBehaviour:
       name: DefaultTranslatedInputRepository_RetrieveMappingsForRawInputs_NoRawInputsReturnsDefaultMappings
       fullName: Assets.Editor.UnitTests.Components.Input.DefaultTranslatedInputRepositoryTestFixture.DefaultTranslatedInputRepository_RetrieveMappingsForRawInputs_NoRawInputsReturnsDefaultMappings
       resultStatus: 1
-      duration: 0.0048654
+      duration: 0.005625
       messages: 
       output: 
       stacktrace: 
@@ -2704,7 +2776,7 @@ MonoBehaviour:
       name: DefaultTranslatedInputRepository_RetrieveMappingsForRawInputs_NullRawInputsReturnsDefaultMappings
       fullName: Assets.Editor.UnitTests.Components.Input.DefaultTranslatedInputRepositoryTestFixture.DefaultTranslatedInputRepository_RetrieveMappingsForRawInputs_NullRawInputsReturnsDefaultMappings
       resultStatus: 1
-      duration: 0.0050352
+      duration: 0.0057111
       messages: 
       output: 
       stacktrace: 
@@ -2716,7 +2788,7 @@ MonoBehaviour:
       name: DefaultTranslatedInputRepository_RetrieveMappingsForRawInputs_ReturnsExpectedMappings
       fullName: Assets.Editor.UnitTests.Components.Input.DefaultTranslatedInputRepositoryTestFixture.DefaultTranslatedInputRepository_RetrieveMappingsForRawInputs_ReturnsExpectedMappings
       resultStatus: 1
-      duration: 0.0053838
+      duration: 0.0064616
       messages: 
       output: 
       stacktrace: 
@@ -2728,7 +2800,7 @@ MonoBehaviour:
       name: DefaultTranslatedInputRepository_RetrieveMappingsForRawInputs_UsesInRawInputs
       fullName: Assets.Editor.UnitTests.Components.Input.DefaultTranslatedInputRepositoryTestFixture.DefaultTranslatedInputRepository_RetrieveMappingsForRawInputs_UsesInRawInputs
       resultStatus: 1
-      duration: 0.006188
+      duration: 0.0053631
       messages: 
       output: 
       stacktrace: 
@@ -2740,7 +2812,7 @@ MonoBehaviour:
       name: Handlers
       fullName: Assets.Editor.UnitTests.Components.Input.Handlers
       resultStatus: 1
-      duration: 0.1352658
+      duration: 0.1406077
       messages: 
       output: 
       stacktrace: 
@@ -2752,7 +2824,7 @@ MonoBehaviour:
       name: CustomInputHandlerTestFixture
       fullName: Assets.Editor.UnitTests.Components.Input.Handlers.CustomInputHandlerTestFixture
       resultStatus: 1
-      duration: 0.1251364
+      duration: 0.1284446
       messages: 
       output: 
       stacktrace: 
@@ -2764,7 +2836,7 @@ MonoBehaviour:
       name: ConstructWithAnalogInputs_PressingAnalogInvokesDelegate
       fullName: Assets.Editor.UnitTests.Components.Input.Handlers.CustomInputHandlerTestFixture.ConstructWithAnalogInputs_PressingAnalogInvokesDelegate
       resultStatus: 1
-      duration: 0.0086825
+      duration: 0.0098083
       messages: 
       output: 
       stacktrace: 
@@ -2776,7 +2848,7 @@ MonoBehaviour:
       name: ConstructWithAnalogInputs_PressingWrongAnalogInvokesNothing
       fullName: Assets.Editor.UnitTests.Components.Input.Handlers.CustomInputHandlerTestFixture.ConstructWithAnalogInputs_PressingWrongAnalogInvokesNothing
       resultStatus: 1
-      duration: 0.0091081
+      duration: 0.0095729
       messages: 
       output: 
       stacktrace: 
@@ -2788,7 +2860,7 @@ MonoBehaviour:
       name: ConstructWithButtonInputs_PressingButtonInvokesDelegate
       fullName: Assets.Editor.UnitTests.Components.Input.Handlers.CustomInputHandlerTestFixture.ConstructWithButtonInputs_PressingButtonInvokesDelegate
       resultStatus: 1
-      duration: 0.0094828
+      duration: 0.0100264
       messages: 
       output: 
       stacktrace: 
@@ -2800,7 +2872,7 @@ MonoBehaviour:
       name: ConstructWithButtonInputs_PressingWrongButtonInvokesNothing
       fullName: Assets.Editor.UnitTests.Components.Input.Handlers.CustomInputHandlerTestFixture.ConstructWithButtonInputs_PressingWrongButtonInvokesNothing
       resultStatus: 1
-      duration: 0.009466
+      duration: 0.0090498
       messages: 
       output: 
       stacktrace: 
@@ -2812,7 +2884,7 @@ MonoBehaviour:
       name: ConstructWithMouseInputs_PressingMouseInvokesDelegate
       fullName: Assets.Editor.UnitTests.Components.Input.Handlers.CustomInputHandlerTestFixture.ConstructWithMouseInputs_PressingMouseInvokesDelegate
       resultStatus: 1
-      duration: 0.009782
+      duration: 0.0102974
       messages: 
       output: 
       stacktrace: 
@@ -2824,7 +2896,7 @@ MonoBehaviour:
       name: ConstructWithMouseInputs_PressingWrongMouseInvokesNothing
       fullName: Assets.Editor.UnitTests.Components.Input.Handlers.CustomInputHandlerTestFixture.ConstructWithMouseInputs_PressingWrongMouseInvokesNothing
       resultStatus: 1
-      duration: 0.0092182
+      duration: 0.0102246
       messages: 
       output: 
       stacktrace: 
@@ -2836,7 +2908,7 @@ MonoBehaviour:
       name: InputBinderComponentTests
       fullName: Assets.Editor.UnitTests.Components.Input.InputBinderComponentTests
       resultStatus: 1
-      duration: 0.2144453
+      duration: 0.2250957
       messages: 
       output: 
       stacktrace: 
@@ -2848,7 +2920,7 @@ MonoBehaviour:
       name: ReceiveAnalogEvent_ExectutesUntilResponseHandled
       fullName: Assets.Editor.UnitTests.Components.Input.InputBinderComponentTests.ReceiveAnalogEvent_ExectutesUntilResponseHandled
       resultStatus: 1
-      duration: 0.0178317
+      duration: 0.0159717
       messages: 
       output: 
       stacktrace: 
@@ -2860,7 +2932,7 @@ MonoBehaviour:
       name: ReceiveButtonEvent_ExectutesUntilResponseHandled
       fullName: Assets.Editor.UnitTests.Components.Input.InputBinderComponentTests.ReceiveButtonEvent_ExectutesUntilResponseHandled
       resultStatus: 1
-      duration: 0.015222
+      duration: 0.017608
       messages: 
       output: 
       stacktrace: 
@@ -2872,7 +2944,7 @@ MonoBehaviour:
       name: ReceiveMouseEvent_ExectutesUntilResponseHandled
       fullName: Assets.Editor.UnitTests.Components.Input.InputBinderComponentTests.ReceiveMouseEvent_ExectutesUntilResponseHandled
       resultStatus: 1
-      duration: 0.0147243
+      duration: 0.0171473
       messages: 
       output: 
       stacktrace: 
@@ -2884,7 +2956,7 @@ MonoBehaviour:
       name: RegisterHandlerAlreadyRegistered_ThrowsException
       fullName: Assets.Editor.UnitTests.Components.Input.InputBinderComponentTests.RegisterHandlerAlreadyRegistered_ThrowsException
       resultStatus: 1
-      duration: 0.0153864
+      duration: 0.0169693
       messages: 
       output: 
       stacktrace: 
@@ -2896,7 +2968,7 @@ MonoBehaviour:
       name: RegisterNullHandler_ThrowsException
       fullName: Assets.Editor.UnitTests.Components.Input.InputBinderComponentTests.RegisterNullHandler_ThrowsException
       resultStatus: 1
-      duration: 0.0157524
+      duration: 0.0143999
       messages: 
       output: 
       stacktrace: 
@@ -2908,7 +2980,7 @@ MonoBehaviour:
       name: SetNullInputInterface_ThrowsException
       fullName: Assets.Editor.UnitTests.Components.Input.InputBinderComponentTests.SetNullInputInterface_ThrowsException
       resultStatus: 1
-      duration: 0.0153762
+      duration: 0.0166042
       messages: 
       output: 
       stacktrace: 
@@ -2920,7 +2992,7 @@ MonoBehaviour:
       name: UnregisterHandler_DoesNotReceiveResponse
       fullName: Assets.Editor.UnitTests.Components.Input.InputBinderComponentTests.UnregisterHandler_DoesNotReceiveResponse
       resultStatus: 1
-      duration: 0.015462
+      duration: 0.0160894
       messages: 
       output: 
       stacktrace: 
@@ -2932,7 +3004,7 @@ MonoBehaviour:
       name: UnregisterHandlerNotRegistered_ThrowsException
       fullName: Assets.Editor.UnitTests.Components.Input.InputBinderComponentTests.UnregisterHandlerNotRegistered_ThrowsException
       resultStatus: 1
-      duration: 0.0148438
+      duration: 0.0174435
       messages: 
       output: 
       stacktrace: 
@@ -2944,7 +3016,7 @@ MonoBehaviour:
       name: InputComponentTestFixture
       fullName: Assets.Editor.UnitTests.Components.Input.InputComponentTestFixture
       resultStatus: 1
-      duration: 0.2213314
+      duration: 0.2275503
       messages: 
       output: 
       stacktrace: 
@@ -2956,7 +3028,7 @@ MonoBehaviour:
       name: InputComponent_Update_AnalogInputCallsAnalogInputEvent
       fullName: Assets.Editor.UnitTests.Components.Input.InputComponentTestFixture.InputComponent_Update_AnalogInputCallsAnalogInputEvent
       resultStatus: 1
-      duration: 0.0219179
+      duration: 0.020522
       messages: 
       output: 
       stacktrace: 
@@ -2968,7 +3040,7 @@ MonoBehaviour:
       name: InputComponent_Update_ButtonInputCallsButtonInputEvent
       fullName: Assets.Editor.UnitTests.Components.Input.InputComponentTestFixture.InputComponent_Update_ButtonInputCallsButtonInputEvent
       resultStatus: 1
-      duration: 0.0163511
+      duration: 0.0169067
       messages: 
       output: 
       stacktrace: 
@@ -2980,7 +3052,7 @@ MonoBehaviour:
       name: InputComponent_Update_GetsRawInputsFromMappingProvider
       fullName: Assets.Editor.UnitTests.Components.Input.InputComponentTestFixture.InputComponent_Update_GetsRawInputsFromMappingProvider
       resultStatus: 1
-      duration: 0.0133602
+      duration: 0.0175522
       messages: 
       output: 
       stacktrace: 
@@ -2992,7 +3064,7 @@ MonoBehaviour:
       name: InputComponent_Update_GetsTranslatedInputWithRawInput
       fullName: Assets.Editor.UnitTests.Components.Input.InputComponentTestFixture.InputComponent_Update_GetsTranslatedInputWithRawInput
       resultStatus: 1
-      duration: 0.0153543
+      duration: 0.0139523
       messages: 
       output: 
       stacktrace: 
@@ -3004,7 +3076,7 @@ MonoBehaviour:
       name: InputComponent_Update_MouseInputCallsMouseInputEvent
       fullName: Assets.Editor.UnitTests.Components.Input.InputComponentTestFixture.InputComponent_Update_MouseInputCallsMouseInputEvent
       resultStatus: 1
-      duration: 0.0158253
+      duration: 0.0181344
       messages: 
       output: 
       stacktrace: 
@@ -3016,7 +3088,7 @@ MonoBehaviour:
       name: InputComponent_UpdateNoChange_AnalogInputCallsAnalogInputEvent
       fullName: Assets.Editor.UnitTests.Components.Input.InputComponentTestFixture.InputComponent_UpdateNoChange_AnalogInputCallsAnalogInputEvent
       resultStatus: 1
-      duration: 0.0156095
+      duration: 0.0170943
       messages: 
       output: 
       stacktrace: 
@@ -3028,7 +3100,7 @@ MonoBehaviour:
       name: InputComponent_UpdateNoChange_ButtonInputDoesNotCallButtonInputEvent
       fullName: Assets.Editor.UnitTests.Components.Input.InputComponentTestFixture.InputComponent_UpdateNoChange_ButtonInputDoesNotCallButtonInputEvent
       resultStatus: 1
-      duration: 0.0160972
+      duration: 0.0166198
       messages: 
       output: 
       stacktrace: 
@@ -3040,7 +3112,7 @@ MonoBehaviour:
       name: InputComponent_UpdateNoChange_MouseInputDoesNotCallMouseInputEvent
       fullName: Assets.Editor.UnitTests.Components.Input.InputComponentTestFixture.InputComponent_UpdateNoChange_MouseInputDoesNotCallMouseInputEvent
       resultStatus: 1
-      duration: 0.0155978
+      duration: 0.0166704
       messages: 
       output: 
       stacktrace: 
@@ -3052,7 +3124,7 @@ MonoBehaviour:
       name: InputHandlerTestFixture
       fullName: Assets.Editor.UnitTests.Components.Input.InputHandlerTestFixture
       resultStatus: 1
-      duration: 0.1900673
+      duration: 0.1934623
       messages: 
       output: 
       stacktrace: 
@@ -3064,7 +3136,7 @@ MonoBehaviour:
       name: Analog_BindingDoesNotHandle_Unhandled
       fullName: Assets.Editor.UnitTests.Components.Input.InputHandlerTestFixture.Analog_BindingDoesNotHandle_Unhandled
       resultStatus: 1
-      duration: 0.0048423
+      duration: 0.0060018
       messages: 
       output: 
       stacktrace: 
@@ -3076,7 +3148,7 @@ MonoBehaviour:
       name: Analog_BindingHandles_Handled
       fullName: Assets.Editor.UnitTests.Components.Input.InputHandlerTestFixture.Analog_BindingHandles_Handled
       resultStatus: 1
-      duration: 0.0044359
+      duration: 0.0059441
       messages: 
       output: 
       stacktrace: 
@@ -3088,7 +3160,7 @@ MonoBehaviour:
       name: Analog_NoBinding_Unhandled
       fullName: Assets.Editor.UnitTests.Components.Input.InputHandlerTestFixture.Analog_NoBinding_Unhandled
       resultStatus: 1
-      duration: 0.004659
+      duration: 0.0052565
       messages: 
       output: 
       stacktrace: 
@@ -3100,7 +3172,7 @@ MonoBehaviour:
       name: Analog_WrongBinding_Unhandled
       fullName: Assets.Editor.UnitTests.Components.Input.InputHandlerTestFixture.Analog_WrongBinding_Unhandled
       resultStatus: 1
-      duration: 0.0064783
+      duration: 0.0047667
       messages: 
       output: 
       stacktrace: 
@@ -3112,7 +3184,7 @@ MonoBehaviour:
       name: Button_BindingDoesNotHandle_Unhandled
       fullName: Assets.Editor.UnitTests.Components.Input.InputHandlerTestFixture.Button_BindingDoesNotHandle_Unhandled
       resultStatus: 1
-      duration: 0.0049547
+      duration: 0.0045085
       messages: 
       output: 
       stacktrace: 
@@ -3124,7 +3196,7 @@ MonoBehaviour:
       name: Button_BindingHandles_Handled
       fullName: Assets.Editor.UnitTests.Components.Input.InputHandlerTestFixture.Button_BindingHandles_Handled
       resultStatus: 1
-      duration: 0.0051821
+      duration: 0.0046748
       messages: 
       output: 
       stacktrace: 
@@ -3136,7 +3208,7 @@ MonoBehaviour:
       name: Button_NoBinding_Unhandled
       fullName: Assets.Editor.UnitTests.Components.Input.InputHandlerTestFixture.Button_NoBinding_Unhandled
       resultStatus: 1
-      duration: 0.00476
+      duration: 0.0045548
       messages: 
       output: 
       stacktrace: 
@@ -3148,7 +3220,7 @@ MonoBehaviour:
       name: Button_WrongBinding_Unhandled
       fullName: Assets.Editor.UnitTests.Components.Input.InputHandlerTestFixture.Button_WrongBinding_Unhandled
       resultStatus: 1
-      duration: 0.0047857
+      duration: 0.0047401
       messages: 
       output: 
       stacktrace: 
@@ -3160,7 +3232,7 @@ MonoBehaviour:
       name: Mouse_BindingDoesNotHandle_Unhandled
       fullName: Assets.Editor.UnitTests.Components.Input.InputHandlerTestFixture.Mouse_BindingDoesNotHandle_Unhandled
       resultStatus: 1
-      duration: 0.0058618
+      duration: 0.0045439
       messages: 
       output: 
       stacktrace: 
@@ -3172,7 +3244,7 @@ MonoBehaviour:
       name: Mouse_BindingHandles_Handled
       fullName: Assets.Editor.UnitTests.Components.Input.InputHandlerTestFixture.Mouse_BindingHandles_Handled
       resultStatus: 1
-      duration: 0.0051248
+      duration: 0.0049623
       messages: 
       output: 
       stacktrace: 
@@ -3184,7 +3256,7 @@ MonoBehaviour:
       name: Mouse_NoBinding_Unhandled
       fullName: Assets.Editor.UnitTests.Components.Input.InputHandlerTestFixture.Mouse_NoBinding_Unhandled
       resultStatus: 1
-      duration: 0.0052485
+      duration: 0.0044321
       messages: 
       output: 
       stacktrace: 
@@ -3196,7 +3268,7 @@ MonoBehaviour:
       name: Mouse_WrongBinding_Unhandled
       fullName: Assets.Editor.UnitTests.Components.Input.InputHandlerTestFixture.Mouse_WrongBinding_Unhandled
       resultStatus: 1
-      duration: 0.0049511
+      duration: 0.0045199
       messages: 
       output: 
       stacktrace: 
@@ -3208,7 +3280,7 @@ MonoBehaviour:
       name: InputManagerParserTestFixture
       fullName: Assets.Editor.UnitTests.Components.Input.InputManagerParserTestFixture
       resultStatus: 1
-      duration: 0.0362211
+      duration: 0.0359676
       messages: 
       output: 
       stacktrace: 
@@ -3220,7 +3292,7 @@ MonoBehaviour:
       name: GetRawInputsFromInputManager_ParsesFileSuccessfully
       fullName: Assets.Editor.UnitTests.Components.Input.InputManagerParserTestFixture.GetRawInputsFromInputManager_ParsesFileSuccessfully
       resultStatus: 1
-      duration: 0.0057884
+      duration: 0.0064178
       messages: 
       output: 
       stacktrace: 
@@ -3232,7 +3304,7 @@ MonoBehaviour:
       name: SaveRawInputsToFile
       fullName: Assets.Editor.UnitTests.Components.Input.InputManagerParserTestFixture.SaveRawInputsToFile
       resultStatus: 1
-      duration: 0.0080345
+      duration: 0.007966
       messages: 
       output: "Input manager as JSON:\n{}\r\n"
       stacktrace: 
@@ -3244,7 +3316,7 @@ MonoBehaviour:
       name: RawInputEqualityComparerTestFixture
       fullName: Assets.Editor.UnitTests.Components.Input.RawInputEqualityComparerTestFixture
       resultStatus: 1
-      duration: 0.1098786
+      duration: 0.1188326
       messages: 
       output: 
       stacktrace: 
@@ -3256,7 +3328,7 @@ MonoBehaviour:
       name: BothNull_True
       fullName: Assets.Editor.UnitTests.Components.Input.RawInputEqualityComparerTestFixture.BothNull_True
       resultStatus: 1
-      duration: 0.0047128
+      duration: 0.0050469
       messages: 
       output: 
       stacktrace: 
@@ -3268,7 +3340,7 @@ MonoBehaviour:
       name: DifferentObject_MatchingNameButDifferentType_False
       fullName: Assets.Editor.UnitTests.Components.Input.RawInputEqualityComparerTestFixture.DifferentObject_MatchingNameButDifferentType_False
       resultStatus: 1
-      duration: 0.0044863
+      duration: 0.0050234
       messages: 
       output: 
       stacktrace: 
@@ -3280,7 +3352,7 @@ MonoBehaviour:
       name: DifferentObject_MatchingTypeAndName_True
       fullName: Assets.Editor.UnitTests.Components.Input.RawInputEqualityComparerTestFixture.DifferentObject_MatchingTypeAndName_True
       resultStatus: 1
-      duration: 0.0045041
+      duration: 0.0049227
       messages: 
       output: 
       stacktrace: 
@@ -3292,7 +3364,7 @@ MonoBehaviour:
       name: DifferentObject_MatchingTypeButDifferentName_False
       fullName: Assets.Editor.UnitTests.Components.Input.RawInputEqualityComparerTestFixture.DifferentObject_MatchingTypeButDifferentName_False
       resultStatus: 1
-      duration: 0.0043437
+      duration: 0.0052974
       messages: 
       output: 
       stacktrace: 
@@ -3304,7 +3376,7 @@ MonoBehaviour:
       name: GetHashCode_ReturnsNamePlusType
       fullName: Assets.Editor.UnitTests.Components.Input.RawInputEqualityComparerTestFixture.GetHashCode_ReturnsNamePlusType
       resultStatus: 1
-      duration: 0.0044531
+      duration: 0.0046346
       messages: 
       output: 
       stacktrace: 
@@ -3316,7 +3388,7 @@ MonoBehaviour:
       name: OneNull_False
       fullName: Assets.Editor.UnitTests.Components.Input.RawInputEqualityComparerTestFixture.OneNull_False
       resultStatus: 1
-      duration: 0.0043868
+      duration: 0.0044857
       messages: 
       output: 
       stacktrace: 
@@ -3328,7 +3400,7 @@ MonoBehaviour:
       name: SameObject_True
       fullName: Assets.Editor.UnitTests.Components.Input.RawInputEqualityComparerTestFixture.SameObject_True
       resultStatus: 1
-      duration: 0.0044564
+      duration: 0.005027
       messages: 
       output: 
       stacktrace: 
@@ -3340,7 +3412,7 @@ MonoBehaviour:
       name: MidnaMovement
       fullName: Assets.Editor.UnitTests.Components.MidnaMovement
       resultStatus: 1
-      duration: 0.5463965
+      duration: 0.7788274
       messages: 
       output: 
       stacktrace: 
@@ -3352,7 +3424,7 @@ MonoBehaviour:
       name: MidnaMovementComponentTestFixture
       fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture
       resultStatus: 1
-      duration: 0.5358804
+      duration: 0.7683771
       messages: 
       output: 
       stacktrace: 
@@ -3364,7 +3436,7 @@ MonoBehaviour:
       name: AddHorizontalImpulse_AddsImpulse
       fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.AddHorizontalImpulse_AddsImpulse
       resultStatus: 1
-      duration: 0.0165747
+      duration: 0.0141054
       messages: 
       output: 
       stacktrace: 
@@ -3376,7 +3448,7 @@ MonoBehaviour:
       name: AddHorizontalImpulse_ClampsToMaxValue
       fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.AddHorizontalImpulse_ClampsToMaxValue
       resultStatus: 1
-      duration: 0.0143777
+      duration: 0.0152002
       messages: 
       output: 
       stacktrace: 
@@ -3388,7 +3460,7 @@ MonoBehaviour:
       name: AddHorizontalImpulse_ClampsToMinValue
       fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.AddHorizontalImpulse_ClampsToMinValue
       resultStatus: 1
-      duration: 0.0144234
+      duration: 0.0143267
       messages: 
       output: 
       stacktrace: 
@@ -3400,7 +3472,7 @@ MonoBehaviour:
       name: AddVerticalImpulse_AddsImpulse
       fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.AddVerticalImpulse_AddsImpulse
       resultStatus: 1
-      duration: 0.0282305
+      duration: 0.0166465
       messages: 
       output: 
       stacktrace: 
@@ -3412,7 +3484,7 @@ MonoBehaviour:
       name: AddVerticalImpulse_ClampsToMaxValue
       fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.AddVerticalImpulse_ClampsToMaxValue
       resultStatus: 1
-      duration: 0.0184477
+      duration: 0.0166043
       messages: 
       output: 
       stacktrace: 
@@ -3424,7 +3496,7 @@ MonoBehaviour:
       name: AddVerticalImpulse_ClampsToMinValue
       fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.AddVerticalImpulse_ClampsToMinValue
       resultStatus: 1
-      duration: 0.0147583
+      duration: 0.0155291
       messages: 
       output: 
       stacktrace: 
@@ -3436,7 +3508,91 @@ MonoBehaviour:
       name: Start_ImpulsesAreZero
       fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Start_ImpulsesAreZero
       resultStatus: 1
-      duration: 0.0147387
+      duration: 0.0167237
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp-Editor][Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_HorizontalAndVerticalInput_PrioritisesVertical]'
+      name: Update_HorizontalAndVerticalInput_PrioritisesVertical
+      fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_HorizontalAndVerticalInput_PrioritisesVertical
+      resultStatus: 1
+      duration: 0.0249568
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp-Editor][Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_NegativeHorizontal_ChangesBy270DegreesInBackAxis]'
+      name: Update_NegativeHorizontal_ChangesBy270DegreesInBackAxis
+      fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_NegativeHorizontal_ChangesBy270DegreesInBackAxis
+      resultStatus: 1
+      duration: 0.0270285
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp-Editor][Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_NegativeVertical_ChangesBy180DegreesInBackAxis]'
+      name: Update_NegativeVertical_ChangesBy180DegreesInBackAxis
+      fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_NegativeVertical_ChangesBy180DegreesInBackAxis
+      resultStatus: 1
+      duration: 0.0251673
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp-Editor][Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_NoMovement_RotationDoesNotChange]'
+      name: Update_NoMovement_RotationDoesNotChange
+      fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_NoMovement_RotationDoesNotChange
+      resultStatus: 1
+      duration: 0.0164406
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp-Editor][Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_NonStartingPosition_SetsCorrectFinalRotation]'
+      name: Update_NonStartingPosition_SetsCorrectFinalRotation
+      fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_NonStartingPosition_SetsCorrectFinalRotation
+      resultStatus: 1
+      duration: 0.0255765
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp-Editor][Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_PositiveHorizontal_ChangesBy45DegreesInBackAxis]'
+      name: Update_PositiveHorizontal_ChangesBy45DegreesInBackAxis
+      fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_PositiveHorizontal_ChangesBy45DegreesInBackAxis
+      resultStatus: 1
+      duration: 0.0251503
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+    - id: '[Assembly-CSharp-Editor][Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_PositiveVertical_NoChange]'
+      name: Update_PositiveVertical_NoChange
+      fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_PositiveVertical_NoChange
+      resultStatus: 1
+      duration: 0.0249462
       messages: 
       output: 
       stacktrace: 
@@ -3448,7 +3604,7 @@ MonoBehaviour:
       name: Update_ResetsImpulses
       fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_ResetsImpulses
       resultStatus: 1
-      duration: 0.0264246
+      duration: 0.0246742
       messages: 
       output: 
       stacktrace: 
@@ -3460,7 +3616,7 @@ MonoBehaviour:
       name: Update_SprintEnabled_AppliesModiferToTransform
       fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_SprintEnabled_AppliesModiferToTransform
       resultStatus: 1
-      duration: 0.0262146
+      duration: 0.0256098
       messages: 
       output: 
       stacktrace: 
@@ -3472,7 +3628,7 @@ MonoBehaviour:
       name: Update_SprintEnabledAndExceedMaxTime_AppliesFatigueModiferToTransform
       fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_SprintEnabledAndExceedMaxTime_AppliesFatigueModiferToTransform
       resultStatus: 1
-      duration: 0.0290581
+      duration: 0.0248962
       messages: 
       output: 
       stacktrace: 
@@ -3484,7 +3640,7 @@ MonoBehaviour:
       name: Update_SprintEnabledAndExceedMaxTime_AppliesNormalModifierAfterSprintTransform
       fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_SprintEnabledAndExceedMaxTime_AppliesNormalModifierAfterSprintTransform
       resultStatus: 1
-      duration: 0.0260452
+      duration: 0.0272551
       messages: 
       output: 
       stacktrace: 
@@ -3496,7 +3652,7 @@ MonoBehaviour:
       name: Update_SprintEnabledAndExceedMaxTime_TogglingSprintOffDelaysFatigue
       fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_SprintEnabledAndExceedMaxTime_TogglingSprintOffDelaysFatigue
       resultStatus: 1
-      duration: 0.0258971
+      duration: 0.0246845
       messages: 
       output: 
       stacktrace: 
@@ -3508,7 +3664,7 @@ MonoBehaviour:
       name: Update_SprintEnabledAndExceedMaxTime_TogglingSprintOffStopsFatigue
       fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_SprintEnabledAndExceedMaxTime_TogglingSprintOffStopsFatigue
       resultStatus: 1
-      duration: 0.0269753
+      duration: 0.0248004
       messages: 
       output: 
       stacktrace: 
@@ -3520,7 +3676,7 @@ MonoBehaviour:
       name: Update_SprintEnabledAndNoInput_DoesNotBecomeFatigued
       fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_SprintEnabledAndNoInput_DoesNotBecomeFatigued
       resultStatus: 1
-      duration: 0.0265797
+      duration: 0.0269837
       messages: 
       output: 
       stacktrace: 
@@ -3532,7 +3688,7 @@ MonoBehaviour:
       name: Update_SprintToggled_DoesNotResetSprintTimer
       fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_SprintToggled_DoesNotResetSprintTimer
       resultStatus: 1
-      duration: 0.02703
+      duration: 0.0270095
       messages: 
       output: 
       stacktrace: 
@@ -3544,7 +3700,7 @@ MonoBehaviour:
       name: Update_UpdatesTransformUsingImpulseValues
       fullName: Assets.Editor.UnitTests.Components.MidnaMovement.MidnaMovementComponentTestFixture.Update_UpdatesTransformUsingImpulseValues
       resultStatus: 1
-      duration: 0.0271508
+      duration: 0.0246895
       messages: 
       output: 
       stacktrace: 
@@ -3556,7 +3712,7 @@ MonoBehaviour:
       name: Player
       fullName: Assets.Editor.UnitTests.Components.Player
       resultStatus: 1
-      duration: 0.101155
+      duration: 0.0949184
       messages: 
       output: 
       stacktrace: 
@@ -3568,7 +3724,7 @@ MonoBehaviour:
       name: PlayerAudioComponentTestFixture
       fullName: Assets.Editor.UnitTests.Components.Player.PlayerAudioComponentTestFixture
       resultStatus: 1
-      duration: 0.0900648
+      duration: 0.0842576
       messages: 
       output: 
       stacktrace: 
@@ -3580,7 +3736,7 @@ MonoBehaviour:
       name: ReceivesDeadMessage_DeadClipPlayed
       fullName: Assets.Editor.UnitTests.Components.Player.PlayerAudioComponentTestFixture.ReceivesDeadMessage_DeadClipPlayed
       resultStatus: 1
-      duration: 0.0209901
+      duration: 0.0152422
       messages: 
       output: 
       stacktrace: 
@@ -3592,7 +3748,7 @@ MonoBehaviour:
       name: ReceivesHealthChangeMessage_Negative_DamageClipPlayed
       fullName: Assets.Editor.UnitTests.Components.Player.PlayerAudioComponentTestFixture.ReceivesHealthChangeMessage_Negative_DamageClipPlayed
       resultStatus: 1
-      duration: 0.0157503
+      duration: 0.0138464
       messages: 
       output: 
       stacktrace: 
@@ -3604,7 +3760,7 @@ MonoBehaviour:
       name: ReceivesHealthChangeMessage_Positive_HealClipPlayed
       fullName: Assets.Editor.UnitTests.Components.Player.PlayerAudioComponentTestFixture.ReceivesHealthChangeMessage_Positive_HealClipPlayed
       resultStatus: 1
-      duration: 0.016149
+      duration: 0.0173903
       messages: 
       output: 
       stacktrace: 
@@ -3616,7 +3772,7 @@ MonoBehaviour:
       name: Spawn
       fullName: Assets.Editor.UnitTests.Components.Spawn
       resultStatus: 1
-      duration: 0.0823935
+      duration: 0.0784692
       messages: 
       output: 
       stacktrace: 
@@ -3628,7 +3784,7 @@ MonoBehaviour:
       name: ProximitySpawnComponentTestFixture
       fullName: Assets.Editor.UnitTests.Components.Spawn.ProximitySpawnComponentTestFixture
       resultStatus: 1
-      duration: 0.038883
+      duration: 0.0358256
       messages: 
       output: 
       stacktrace: 
@@ -3640,7 +3796,7 @@ MonoBehaviour:
       name: OnCollisionEnter_HasCharacterComponent_TriggersSpawnUpdate
       fullName: Assets.Editor.UnitTests.Components.Spawn.ProximitySpawnComponentTestFixture.OnCollisionEnter_HasCharacterComponent_TriggersSpawnUpdate
       resultStatus: 1
-      duration: 0.0061004
+      duration: 0.005442
       messages: 
       output: 
       stacktrace: 
@@ -3652,7 +3808,7 @@ MonoBehaviour:
       name: OnCollisionEnter_NoCharacterComponent_DoesNotTriggersSpawnUpdate
       fullName: Assets.Editor.UnitTests.Components.Spawn.ProximitySpawnComponentTestFixture.OnCollisionEnter_NoCharacterComponent_DoesNotTriggersSpawnUpdate
       resultStatus: 1
-      duration: 0.0057119
+      duration: 0.005053
       messages: 
       output: 
       stacktrace: 
@@ -3664,7 +3820,7 @@ MonoBehaviour:
       name: SpawnComponentTests
       fullName: Assets.Editor.UnitTests.Components.Spawn.SpawnComponentTests
       resultStatus: 1
-      duration: 0.0229149
+      duration: 0.0197343
       messages: 
       output: 
       stacktrace: 
@@ -3676,7 +3832,7 @@ MonoBehaviour:
       name: Trigger_SendEventToTriggeringGameObjectWithTransform
       fullName: Assets.Editor.UnitTests.Components.Spawn.SpawnComponentTests.Trigger_SendEventToTriggeringGameObjectWithTransform
       resultStatus: 1
-      duration: 0.0056177
+      duration: 0.0056988
       messages: 
       output: 
       stacktrace: 
@@ -3688,7 +3844,7 @@ MonoBehaviour:
       name: UnityEvent
       fullName: Assets.Editor.UnitTests.Components.UnityEvent
       resultStatus: 1
-      duration: 0.4291259
+      duration: 0.4290588
       messages: 
       output: 
       stacktrace: 
@@ -3700,7 +3856,7 @@ MonoBehaviour:
       name: UnityEventMessageHandleTestFixture
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityEventMessageHandleTestFixture
       resultStatus: 1
-      duration: 0.1313884
+      duration: 0.1327645
       messages: 
       output: 
       stacktrace: 
@@ -3712,7 +3868,7 @@ MonoBehaviour:
       name: NewHandle_IsRegistered_False
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityEventMessageHandleTestFixture.NewHandle_IsRegistered_False
       resultStatus: 1
-      duration: 0.0043621
+      duration: 0.0046385
       messages: 
       output: 
       stacktrace: 
@@ -3724,7 +3880,7 @@ MonoBehaviour:
       name: RegisterHandle_ActionIsAddedAsListener
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityEventMessageHandleTestFixture.RegisterHandle_ActionIsAddedAsListener
       resultStatus: 1
-      duration: 0.0048097
+      duration: 0.006142
       messages: 
       output: 
       stacktrace: 
@@ -3736,7 +3892,7 @@ MonoBehaviour:
       name: RegisterHandle_IsRegistered_True
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityEventMessageHandleTestFixture.RegisterHandle_IsRegistered_True
       resultStatus: 1
-      duration: 0.0044922
+      duration: 0.0048141
       messages: 
       output: 
       stacktrace: 
@@ -3748,7 +3904,7 @@ MonoBehaviour:
       name: RegisterHandle_NullAction_ThrowsException
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityEventMessageHandleTestFixture.RegisterHandle_NullAction_ThrowsException
       resultStatus: 1
-      duration: 0.0046546
+      duration: 0.0052489
       messages: 
       output: 
       stacktrace: 
@@ -3760,7 +3916,7 @@ MonoBehaviour:
       name: RegisterHandle_NullEvent_ThrowsException
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityEventMessageHandleTestFixture.RegisterHandle_NullEvent_ThrowsException
       resultStatus: 1
-      duration: 0.004551
+      duration: 0.0053452
       messages: 
       output: 
       stacktrace: 
@@ -3772,7 +3928,7 @@ MonoBehaviour:
       name: UnregisterHandle_ActionIsRemovedAsListener
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityEventMessageHandleTestFixture.UnregisterHandle_ActionIsRemovedAsListener
       resultStatus: 1
-      duration: 0.004553
+      duration: 0.0051932
       messages: 
       output: 
       stacktrace: 
@@ -3784,7 +3940,7 @@ MonoBehaviour:
       name: UnregisterHandle_IsRegistered_False
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityEventMessageHandleTestFixture.UnregisterHandle_IsRegistered_False
       resultStatus: 1
-      duration: 0.004615
+      duration: 0.0051596
       messages: 
       output: 
       stacktrace: 
@@ -3796,7 +3952,7 @@ MonoBehaviour:
       name: UnregisterHandle_NullEvent_ThrowsException
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityEventMessageHandleTestFixture.UnregisterHandle_NullEvent_ThrowsException
       resultStatus: 1
-      duration: 0.0046961
+      duration: 0.0055068
       messages: 
       output: 
       stacktrace: 
@@ -3808,7 +3964,7 @@ MonoBehaviour:
       name: UnityMessageEventDispatcherComponentTestFixture
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityMessageEventDispatcherComponentTestFixture
       resultStatus: 1
-      duration: 0.0197899
+      duration: 0.0206157
       messages: 
       output: 
       stacktrace: 
@@ -3820,7 +3976,7 @@ MonoBehaviour:
       name: GetMessageEventDispatcher_ReturnsValidDispatcher
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityMessageEventDispatcherComponentTestFixture.GetMessageEventDispatcher_ReturnsValidDispatcher
       resultStatus: 1
-      duration: 0.0052278
+      duration: 0.0056523
       messages: 
       output: 
       stacktrace: 
@@ -3832,7 +3988,7 @@ MonoBehaviour:
       name: UnityMessageEventDispatcherTestFixture
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityMessageEventDispatcherTestFixture
       resultStatus: 1
-      duration: 0.1329742
+      duration: 0.1310306
       messages: 
       output: 
       stacktrace: 
@@ -3844,7 +4000,7 @@ MonoBehaviour:
       name: RegisterForMessageEventOfType_InvokeDoesNotReceiveMessagesOfOtherTypes
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityMessageEventDispatcherTestFixture.RegisterForMessageEventOfType_InvokeDoesNotReceiveMessagesOfOtherTypes
       resultStatus: 1
-      duration: 0.0055799
+      duration: 0.0050721
       messages: 
       output: 
       stacktrace: 
@@ -3856,7 +4012,7 @@ MonoBehaviour:
       name: RegisterForMessageEventOfType_InvokeReceivesMessageWithExpectedArgs
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityMessageEventDispatcherTestFixture.RegisterForMessageEventOfType_InvokeReceivesMessageWithExpectedArgs
       resultStatus: 1
-      duration: 0.0055996
+      duration: 0.0064865
       messages: 
       output: 
       stacktrace: 
@@ -3868,7 +4024,7 @@ MonoBehaviour:
       name: RegisterForMessageEventOfType_InvokeReceivesMessageWithExpectedArgsForAllRegisteredListeners
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityMessageEventDispatcherTestFixture.RegisterForMessageEventOfType_InvokeReceivesMessageWithExpectedArgsForAllRegisteredListeners
       resultStatus: 1
-      duration: 0.0062328
+      duration: 0.0048935
       messages: 
       output: 
       stacktrace: 
@@ -3880,7 +4036,7 @@ MonoBehaviour:
       name: RegisterForMessageEventOfType_RegistersHandle
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityMessageEventDispatcherTestFixture.RegisterForMessageEventOfType_RegistersHandle
       resultStatus: 1
-      duration: 0.0047861
+      duration: 0.0046952
       messages: 
       output: 
       stacktrace: 
@@ -3892,7 +4048,7 @@ MonoBehaviour:
       name: UnregisterForMessageEvent_NoLongerReceivesEvents
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityMessageEventDispatcherTestFixture.UnregisterForMessageEvent_NoLongerReceivesEvents
       resultStatus: 1
-      duration: 0.0048612
+      duration: 0.0045331
       messages: 
       output: 
       stacktrace: 
@@ -3904,7 +4060,7 @@ MonoBehaviour:
       name: UnregisterForMessageEvent_UnregistersHandle
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityMessageEventDispatcherTestFixture.UnregisterForMessageEvent_UnregistersHandle
       resultStatus: 1
-      duration: 0.0044959
+      duration: 0.0045415
       messages: 
       output: 
       stacktrace: 
@@ -3916,7 +4072,7 @@ MonoBehaviour:
       name: UnregisterHandleNotRegistered_ThrowsException
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityMessageEventDispatcherTestFixture.UnregisterHandleNotRegistered_ThrowsException
       resultStatus: 1
-      duration: 0.0058747
+      duration: 0.0045574
       messages: 
       output: 
       stacktrace: 
@@ -3928,7 +4084,7 @@ MonoBehaviour:
       name: UnregisterNullHandle_ThrowsException
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityMessageEventDispatcherTestFixture.UnregisterNullHandle_ThrowsException
       resultStatus: 1
-      duration: 0.0046757
+      duration: 0.0045032
       messages: 
       output: 
       stacktrace: 
@@ -3940,7 +4096,7 @@ MonoBehaviour:
       name: UnityMessageEventFunctionsTestFixture
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityMessageEventFunctionsTestFixture
       resultStatus: 1
-      duration: 0.1004012
+      duration: 0.0985864
       messages: 
       output: 
       stacktrace: 
@@ -3952,7 +4108,7 @@ MonoBehaviour:
       name: InvokeMessageEvent_NullDispatcher_ExceptionThrown
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityMessageEventFunctionsTestFixture.InvokeMessageEvent_NullDispatcher_ExceptionThrown
       resultStatus: 1
-      duration: 0.0043993
+      duration: 0.0045024
       messages: 
       output: 
       stacktrace: 
@@ -3964,7 +4120,7 @@ MonoBehaviour:
       name: InvokeMessageEventWithDispatcher_InvokesEvent
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityMessageEventFunctionsTestFixture.InvokeMessageEventWithDispatcher_InvokesEvent
       resultStatus: 1
-      duration: 0.0051098
+      duration: 0.0045817
       messages: 
       output: 
       stacktrace: 
@@ -3976,7 +4132,7 @@ MonoBehaviour:
       name: RegisterMessageEvent_NullDispatcher_ExceptionThrown
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityMessageEventFunctionsTestFixture.RegisterMessageEvent_NullDispatcher_ExceptionThrown
       resultStatus: 1
-      duration: 0.0054274
+      duration: 0.0049087
       messages: 
       output: 
       stacktrace: 
@@ -3988,7 +4144,7 @@ MonoBehaviour:
       name: RegisterMessageEvent_RegistersMessageEvent
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityMessageEventFunctionsTestFixture.RegisterMessageEvent_RegistersMessageEvent
       resultStatus: 1
-      duration: 0.0045278
+      duration: 0.0046411
       messages: 
       output: 
       stacktrace: 
@@ -4000,7 +4156,7 @@ MonoBehaviour:
       name: UnregisterMessageEvent_NullDispatcher_ExceptionThrown
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityMessageEventFunctionsTestFixture.UnregisterMessageEvent_NullDispatcher_ExceptionThrown
       resultStatus: 1
-      duration: 0.0044312
+      duration: 0.0048381
       messages: 
       output: 
       stacktrace: 
@@ -4012,7 +4168,7 @@ MonoBehaviour:
       name: UnregisterMessageEvent_UnregistersEvent
       fullName: Assets.Editor.UnitTests.Components.UnityEvent.UnityMessageEventFunctionsTestFixture.UnregisterMessageEvent_UnregistersEvent
       resultStatus: 1
-      duration: 0.0056558
+      duration: 0.0047843
       messages: 
       output: 
       stacktrace: 
@@ -4024,7 +4180,7 @@ MonoBehaviour:
       name: Core
       fullName: Assets.Editor.UnitTests.Core
       resultStatus: 1
-      duration: 0.1907803
+      duration: 0.1887934
       messages: 
       output: 
       stacktrace: 
@@ -4036,7 +4192,7 @@ MonoBehaviour:
       name: CopyExtensionsTestFixture
       fullName: Assets.Editor.UnitTests.Core.CopyExtensionsTestFixture
       resultStatus: 1
-      duration: 0.0205223
+      duration: 0.0199986
       messages: 
       output: 
       stacktrace: 
@@ -4048,7 +4204,7 @@ MonoBehaviour:
       name: DeepClone_ObjectsAreDifferent
       fullName: Assets.Editor.UnitTests.Core.CopyExtensionsTestFixture.DeepClone_ObjectsAreDifferent
       resultStatus: 1
-      duration: 0.0099309
+      duration: 0.0087345
       messages: 
       output: 
       stacktrace: 
@@ -4060,7 +4216,7 @@ MonoBehaviour:
       name: EnumExtensionsTestFixture
       fullName: Assets.Editor.UnitTests.Core.EnumExtensionsTestFixture
       resultStatus: 1
-      duration: 0.0355364
+      duration: 0.0341169
       messages: 
       output: 
       stacktrace: 
@@ -4072,7 +4228,7 @@ MonoBehaviour:
       name: TryParse_Fails_ReturnsUnsetOptional
       fullName: Assets.Editor.UnitTests.Core.EnumExtensionsTestFixture.TryParse_Fails_ReturnsUnsetOptional
       resultStatus: 1
-      duration: 0.006834
+      duration: 0.0067315
       messages: 
       output: "The requested value 'ValueAGarbage' was not found.\r\n"
       stacktrace: 
@@ -4084,7 +4240,7 @@ MonoBehaviour:
       name: TryParse_Succeeds_ReturnsSetOptional
       fullName: Assets.Editor.UnitTests.Core.EnumExtensionsTestFixture.TryParse_Succeeds_ReturnsSetOptional
       resultStatus: 1
-      duration: 0.0044684
+      duration: 0.0050188
       messages: 
       output: 
       stacktrace: 
@@ -4096,7 +4252,7 @@ MonoBehaviour:
       name: OptionalTestFixture
       fullName: Assets.Editor.UnitTests.Core.OptionalTestFixture
       resultStatus: 1
-      duration: 0.0975583
+      duration: 0.0982088
       messages: 
       output: 
       stacktrace: 
@@ -4108,7 +4264,7 @@ MonoBehaviour:
       name: ConstructWithNullObject_Get_ThrowsException
       fullName: Assets.Editor.UnitTests.Core.OptionalTestFixture.ConstructWithNullObject_Get_ThrowsException
       resultStatus: 1
-      duration: 0.0046792
+      duration: 0.00576
       messages: 
       output: 
       stacktrace: 
@@ -4120,7 +4276,7 @@ MonoBehaviour:
       name: ConstructWithNullObject_IsSet_False
       fullName: Assets.Editor.UnitTests.Core.OptionalTestFixture.ConstructWithNullObject_IsSet_False
       resultStatus: 1
-      duration: 0.0045235
+      duration: 0.005402
       messages: 
       output: 
       stacktrace: 
@@ -4132,7 +4288,7 @@ MonoBehaviour:
       name: ConstructWithObject_Get_ReturnsObject
       fullName: Assets.Editor.UnitTests.Core.OptionalTestFixture.ConstructWithObject_Get_ReturnsObject
       resultStatus: 1
-      duration: 0.0049938
+      duration: 0.0051668
       messages: 
       output: 
       stacktrace: 
@@ -4144,7 +4300,7 @@ MonoBehaviour:
       name: ConstructWithObject_IsSet_True
       fullName: Assets.Editor.UnitTests.Core.OptionalTestFixture.ConstructWithObject_IsSet_True
       resultStatus: 1
-      duration: 0.0055064
+      duration: 0.0049728
       messages: 
       output: 
       stacktrace: 
@@ -4156,7 +4312,7 @@ MonoBehaviour:
       name: DefaultConstructor_Get_ThrowsException
       fullName: Assets.Editor.UnitTests.Core.OptionalTestFixture.DefaultConstructor_Get_ThrowsException
       resultStatus: 1
-      duration: 0.0052143
+      duration: 0.0054619
       messages: 
       output: 
       stacktrace: 
@@ -4168,7 +4324,7 @@ MonoBehaviour:
       name: DefaultConstructor_IsSet_False
       fullName: Assets.Editor.UnitTests.Core.OptionalTestFixture.DefaultConstructor_IsSet_False
       resultStatus: 1
-      duration: 0.0049892
+      duration: 0.0051008
       messages: 
       output: 
       stacktrace: 
@@ -4180,7 +4336,7 @@ MonoBehaviour:
       name: DefaultTests
       fullName: Assets.Editor.UnitTests.DefaultTests
       resultStatus: 1
-      duration: 0.0201105
+      duration: 0.0205211
       messages: 
       output: 
       stacktrace: 
@@ -4192,7 +4348,7 @@ MonoBehaviour:
       name: GivenFailingTest_BuildGoesRed
       fullName: Assets.Editor.UnitTests.DefaultTests.GivenFailingTest_BuildGoesRed
       resultStatus: 1
-      duration: 0.0045392
+      duration: 0.0048062
       messages: 
       output: 
       stacktrace: 
@@ -4204,7 +4360,7 @@ MonoBehaviour:
       name: Helpers
       fullName: Assets.Editor.UnitTests.Helpers
       resultStatus: 1
-      duration: 0.1137669
+      duration: 0.1106465
       messages: 
       output: 
       stacktrace: 
@@ -4216,7 +4372,7 @@ MonoBehaviour:
       name: ObjectComparisonExtensionTestFixture
       fullName: Assets.Editor.UnitTests.Helpers.ObjectComparisonExtensionTestFixture
       resultStatus: 1
-      duration: 0.1030464
+      duration: 0.1004433
       messages: 
       output: 
       stacktrace: 
@@ -4228,7 +4384,7 @@ MonoBehaviour:
       name: EqualByPublicProperties_AllMatch_True
       fullName: Assets.Editor.UnitTests.Helpers.ObjectComparisonExtensionTestFixture.EqualByPublicProperties_AllMatch_True
       resultStatus: 1
-      duration: 0.0073955
+      duration: 0.0057802
       messages: 
       output: 
       stacktrace: 
@@ -4240,7 +4396,7 @@ MonoBehaviour:
       name: EqualByPublicProperties_IgnoreListUsed_IgnoresUnmatchedProperites
       fullName: Assets.Editor.UnitTests.Helpers.ObjectComparisonExtensionTestFixture.EqualByPublicProperties_IgnoreListUsed_IgnoresUnmatchedProperites
       resultStatus: 1
-      duration: 0.0049681
+      duration: 0.0048972
       messages: 
       output: 
       stacktrace: 
@@ -4252,7 +4408,7 @@ MonoBehaviour:
       name: EqualByPublicProperties_PrivateDoesNotMatch_True
       fullName: Assets.Editor.UnitTests.Helpers.ObjectComparisonExtensionTestFixture.EqualByPublicProperties_PrivateDoesNotMatch_True
       resultStatus: 1
-      duration: 0.0066681
+      duration: 0.0048539
       messages: 
       output: 
       stacktrace: 
@@ -4264,7 +4420,7 @@ MonoBehaviour:
       name: EqualByPublicProperties_PublicDoesNotMatch_False
       fullName: Assets.Editor.UnitTests.Helpers.ObjectComparisonExtensionTestFixture.EqualByPublicProperties_PublicDoesNotMatch_False
       resultStatus: 1
-      duration: 0.0045577
+      duration: 0.0056693
       messages: 
       output: 
       stacktrace: 
@@ -4276,7 +4432,7 @@ MonoBehaviour:
       name: EqualByPublicProperties_SubObjectDifferentRef_False
       fullName: Assets.Editor.UnitTests.Helpers.ObjectComparisonExtensionTestFixture.EqualByPublicProperties_SubObjectDifferentRef_False
       resultStatus: 1
-      duration: 0.0049356
+      duration: 0.0052556
       messages: 
       output: 
       stacktrace: 
@@ -4288,7 +4444,7 @@ MonoBehaviour:
       name: EqualByPublicProperties_SubObjectSameRef_True
       fullName: Assets.Editor.UnitTests.Helpers.ObjectComparisonExtensionTestFixture.EqualByPublicProperties_SubObjectSameRef_True
       resultStatus: 1
-      duration: 0.0050475
+      duration: 0.0049219
       messages: 
       output: 
       stacktrace: 
@@ -4300,7 +4456,7 @@ MonoBehaviour:
       name: Integration
       fullName: Assets.Editor.UnitTests.Integration
       resultStatus: 1
-      duration: 0.0479097
+      duration: 0.0486744
       messages: 
       output: 
       stacktrace: 
@@ -4312,7 +4468,7 @@ MonoBehaviour:
       name: IntegrationTestComponentTestFixture
       fullName: Assets.Editor.UnitTests.Integration.IntegrationTestComponentTestFixture
       resultStatus: 1
-      duration: 0.036631
+      duration: 0.0387621
       messages: 
       output: 
       stacktrace: 
@@ -4324,7 +4480,7 @@ MonoBehaviour:
       name: Awake_PassedFalse
       fullName: Assets.Editor.UnitTests.Integration.IntegrationTestComponentTestFixture.Awake_PassedFalse
       resultStatus: 1
-      duration: 0.0062252
+      duration: 0.0051429
       messages: 
       output: 
       stacktrace: 
@@ -4336,7 +4492,7 @@ MonoBehaviour:
       name: Awake_RunTestImplCalled
       fullName: Assets.Editor.UnitTests.Integration.IntegrationTestComponentTestFixture.Awake_RunTestImplCalled
       resultStatus: 1
-      duration: 0.0050023
+      duration: 0.0054628
       messages: 
       output: 
       stacktrace: 
@@ -4348,7 +4504,7 @@ MonoBehaviour:
       name: UnityTestTools
       fullName: Assets.UnityTestTools
       resultStatus: 2
-      duration: 0.5912919
+      duration: 0.5859651
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -4360,7 +4516,7 @@ MonoBehaviour:
       name: Examples
       fullName: Assets.UnityTestTools.Examples
       resultStatus: 2
-      duration: 0.5829995
+      duration: 0.5758761
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -4372,7 +4528,7 @@ MonoBehaviour:
       name: UnitTestExamples
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples
       resultStatus: 2
-      duration: 0.5681452
+      duration: 0.5645816
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -4384,7 +4540,7 @@ MonoBehaviour:
       name: Editor
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor
       resultStatus: 2
-      duration: 0.5549247
+      duration: 0.5546118
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -4396,7 +4552,7 @@ MonoBehaviour:
       name: SampleTests
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests
       resultStatus: 2
-      duration: 0.5429335
+      duration: 0.5435698
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -4407,8 +4563,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp-Editor][Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.CultureSpecificTest]'
       name: CultureSpecificTest
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.CultureSpecificTest
-      resultStatus: 0
-      duration: 0
+      resultStatus: 4
+      duration: 0.0003115
       messages: Only supported under culture pl-PL
       output: 
       stacktrace: 
@@ -4420,7 +4576,7 @@ MonoBehaviour:
       name: ExceptionTest
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.ExceptionTest
       resultStatus: 2
-      duration: 0.0059836
+      duration: 0.0065396
       messages: 'System.Exception : Exception throwing test'
       output: 
       stacktrace: "  at Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.ExceptionTest
@@ -4438,7 +4594,7 @@ MonoBehaviour:
       name: FailingTest
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.FailingTest
       resultStatus: 2
-      duration: 0.0056821
+      duration: 0.0070528
       messages: 
       output: 
       stacktrace: "at Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.FailingTest
@@ -4450,8 +4606,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp-Editor][Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.IgnoredTest]'
       name: IgnoredTest
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.IgnoredTest
-      resultStatus: 0
-      duration: 0
+      resultStatus: 4
+      duration: 0.0000131
       messages: Ignored test
       output: 
       stacktrace: 
@@ -4463,7 +4619,7 @@ MonoBehaviour:
       name: InconclusiveTest
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.InconclusiveTest
       resultStatus: 3
-      duration: 0.0046151
+      duration: 0.0054289
       messages: 
       output: 
       stacktrace: "at Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.InconclusiveTest
@@ -4476,7 +4632,7 @@ MonoBehaviour:
       name: ParameterizedTest
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.ParameterizedTest
       resultStatus: 1
-      duration: 0.0483887
+      duration: 0.0471471
       messages: 
       output: 
       stacktrace: 
@@ -4488,7 +4644,7 @@ MonoBehaviour:
       name: ParameterizedTest(1)
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.ParameterizedTest(1)
       resultStatus: 1
-      duration: 0.0056731
+      duration: 0.0049316
       messages: 
       output: 
       stacktrace: "at Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.ParameterizedTest
@@ -4501,7 +4657,7 @@ MonoBehaviour:
       name: ParameterizedTest(2)
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.ParameterizedTest(2)
       resultStatus: 1
-      duration: 0.005777
+      duration: 0.0046051
       messages: 
       output: 
       stacktrace: "at Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.ParameterizedTest
@@ -4514,7 +4670,7 @@ MonoBehaviour:
       name: ParameterizedTest(3)
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.ParameterizedTest(3)
       resultStatus: 1
-      duration: 0.0058987
+      duration: 0.0051601
       messages: 
       output: 
       stacktrace: "at Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.ParameterizedTest
@@ -4527,7 +4683,7 @@ MonoBehaviour:
       name: PassingTest
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.PassingTest
       resultStatus: 1
-      duration: 0.0045515
+      duration: 0.0044414
       messages: 
       output: 
       stacktrace: "at Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.PassingTest
@@ -4540,7 +4696,7 @@ MonoBehaviour:
       name: RangeTest
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.RangeTest
       resultStatus: 1
-      duration: 0.0599654
+      duration: 0.0599118
       messages: 
       output: 
       stacktrace: 
@@ -4552,7 +4708,7 @@ MonoBehaviour:
       name: RangeTest(1)
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.RangeTest(1)
       resultStatus: 1
-      duration: 0.0044836
+      duration: 0.0045308
       messages: 
       output: 
       stacktrace: "at Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.RangeTest
@@ -4565,7 +4721,7 @@ MonoBehaviour:
       name: RangeTest(4)
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.RangeTest(4)
       resultStatus: 1
-      duration: 0.0043783
+      duration: 0.004671
       messages: 
       output: 
       stacktrace: "at Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.RangeTest
@@ -4578,7 +4734,7 @@ MonoBehaviour:
       name: RangeTest(7)
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.RangeTest(7)
       resultStatus: 1
-      duration: 0.0043012
+      duration: 0.0053408
       messages: 
       output: 
       stacktrace: "at Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.RangeTest
@@ -4591,7 +4747,7 @@ MonoBehaviour:
       name: RangeTest(10)
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.RangeTest(10)
       resultStatus: 1
-      duration: 0.0049725
+      duration: 0.0047858
       messages: 
       output: 
       stacktrace: "at Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.RangeTest
@@ -4604,8 +4760,8 @@ MonoBehaviour:
       name: SlowTest
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.SlowTest
       resultStatus: 2
-      duration: 0.2060181
-      messages: Elapsed time of 205.6838ms exceeds maximum of 100ms
+      duration: 0.2056664
+      messages: Elapsed time of 204.5924ms exceeds maximum of 100ms
       output: 
       stacktrace: 
       notRunnable: 0
@@ -4616,7 +4772,7 @@ MonoBehaviour:
       name: SquareRootDefinition
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.SquareRootDefinition
       resultStatus: 1
-      duration: 0.0878361
+      duration: 0.081481
       messages: 
       output: 
       stacktrace: 
@@ -4628,7 +4784,7 @@ MonoBehaviour:
       name: SquareRootDefinition(0.0d)
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.SquareRootDefinition(0.0d)
       resultStatus: 1
-      duration: 0.0069909
+      duration: 0.0087533
       messages: 
       output: 
       stacktrace: 
@@ -4640,7 +4796,7 @@ MonoBehaviour:
       name: SquareRootDefinition(1.0d)
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.SquareRootDefinition(1.0d)
       resultStatus: 1
-      duration: 0.0046332
+      duration: 0.0065334
       messages: 
       output: 
       stacktrace: 
@@ -4652,7 +4808,7 @@ MonoBehaviour:
       name: SquareRootDefinition(-1.0d)
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.SquareRootDefinition(-1.0d)
       resultStatus: 3
-      duration: 0.0058007
+      duration: 0.0064924
       messages: "  Expected: True\r\n  But was:  False\r\n"
       output: 
       stacktrace: "at Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.SquareRootDefinition
@@ -4665,7 +4821,7 @@ MonoBehaviour:
       name: SquareRootDefinition(double.MaxValue)
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.SquareRootDefinition(double.MaxValue)
       resultStatus: 3
-      duration: 0.0049898
+      duration: 0.0052855
       messages: "  Expected: True\r\n  But was:  False\r\n"
       output: 
       stacktrace: "at Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.SquareRootDefinition
@@ -4678,7 +4834,7 @@ MonoBehaviour:
       name: SquareRootDefinition(double.PositiveInfinity)
       fullName: Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.SquareRootDefinition(double.PositiveInfinity)
       resultStatus: 3
-      duration: 0.0066172
+      duration: 0.0047129
       messages: "  Expected: True\r\n  But was:  False\r\n"
       output: 
       stacktrace: "at Assets.UnityTestTools.Examples.UnitTestExamples.Editor.SampleTests.SquareRootDefinition
@@ -4690,9 +4846,9 @@ MonoBehaviour:
     - id: '[Assembly-CSharp-Editor][YarnSpinnerTests][suite]'
       name: YarnSpinnerTests
       fullName: YarnSpinnerTests
-      resultStatus: 2
-      duration: 0.021018
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 0.0238068
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -4702,45 +4858,22 @@ MonoBehaviour:
     - id: '[Assembly-CSharp-Editor][YarnSpinnerTests.EditorTest]'
       name: EditorTest
       fullName: YarnSpinnerTests.EditorTest
-      resultStatus: 2
-      duration: 0.0066702
-      messages: 'System.NullReferenceException : Object reference not set to an instance
-        of an object'
+      resultStatus: 1
+      duration: 0.0084464
+      messages: 
       output: 
-      stacktrace: "  at Yarn.Unity.DialogueRunner.AddScript (UnityEngine.TextAsset
-        asset) [0x00008] in F:\\Midna\\Midna\\Assets\\YarnSpinner\\Code\\DialogueRunner.cs:149
-        \r\n  at YarnSpinnerTests.SetUp () [0x00031] in F:\\Midna\\Midna\\Assets\\YarnSpinner\\Code\\Editor\\YarnSpinnerTests.cs:86
-        \r\n  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke
-        (object,object[],System.Exception&)\r\n  at System.Reflection.MonoMethod.Invoke
-        (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder,
-        System.Object[] parameters, System.Globalization.CultureInfo culture) [0x000d0]
-        in /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Reflection/MonoMethod.cs:222 "
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
       isSuite: 0
-    m_ResultText: "EditorTest (0.007s)\n---\nSystem.NullReferenceException : Object
-      reference not set to an instance of an object\n---\nat Yarn.Unity.DialogueRunner.AddScript
-      (UnityEngine.TextAsset asset) [0x00008] in F:\\Midna\\Midna\\Assets\\YarnSpinner\\Code\\DialogueRunner.cs:149
-      \r\n  at YarnSpinnerTests.SetUp () [0x00031] in F:\\Midna\\Midna\\Assets\\YarnSpinner\\Code\\Editor\\YarnSpinnerTests.cs:86
-      \r\n  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke
-      (object,object[],System.Exception&)\r\n  at System.Reflection.MonoMethod.Invoke
-      (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder,
-      System.Object[] parameters, System.Globalization.CultureInfo culture) [0x000d0]
-      in /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Reflection/MonoMethod.cs:222"
-    m_ResultStacktrace: "  at Yarn.Unity.DialogueRunner.AddScript (UnityEngine.TextAsset
-      asset) [0x00008] in F:\\Midna\\Midna\\Assets\\YarnSpinner\\Code\\DialogueRunner.cs:149
-      \r\n  at YarnSpinnerTests.SetUp () [0x00031] in F:\\Midna\\Midna\\Assets\\YarnSpinner\\Code\\Editor\\YarnSpinnerTests.cs:86
-      \r\n  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke
-      (object,object[],System.Exception&)\r\n  at System.Reflection.MonoMethod.Invoke
-      (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder,
-      System.Object[] parameters, System.Globalization.CultureInfo culture) [0x000d0]
-      in /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Reflection/MonoMethod.cs:222 "
+    m_ResultText: SetPawn_SetsTransformCorrectly (0.005s)
+    m_ResultStacktrace: 
     m_TestListState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 4162a494
-      m_LastClickedID: -1801166271
-      m_ExpandedIDs: bce72886ccdc9e88e2637d8cd72ee98f87899192759895960c5849986aa95b990f315c9b0411f99bd634299c2ee2769e8d3bd5a5f359baabfb4b9cb3389d41b50d365eb5fe27b3b57dccfab598a67db6fbee6bbbaa48f0bec90978c1b4d0ddc296f949cbe3d772d3c829edd6d20ba4d7ce7cdad7d5f302dd610e04debad5b7e117b634e4da9bbde4f85bf3ee351a6df6062d88f68f0425fbfd0d8ffc4bd102fed7f84fff6fed59ff5482c4027fdd5b0661ae6907f229900a3c14450c37876410c2dfa21af12d3d1c347df122955db1248459b62762ae0a2937ea50298fc8cb2928c67b2d54e8dd30a3bf6b3737842e3a11c0483af2fada3d7b37893ee844643f0e9a71423592384341b7bb43d605de4436e789482897b64be458624cb9b1194eb7fd09504f6ebf50b8fbc4536e9817557f65f7593f66745be66891609d275a63ace74764008e5665911f0b667f6a596acacca96bb4dcf76bb8ed3d6ca5829472b7e1167affffff7f
+      scrollPos: {x: 0, y: 1680}
+      m_SelectedIDs: da18c0ce
+      m_LastClickedID: -826271526
+      m_ExpandedIDs: bce72886ccdc9e88e2637d8cd72ee98f87899192759895960c5849986aa95b990f315c9b0411f99bd634299c2ee2769e8d3bd5a5f359baabfb4b9cb3389d41b50d365eb5fe27b3b57dccfab598a67db6fbee6bbbaa48f0bec90978c1b4d0ddc296f949cbf3a49ecee3d772d3c829edd6d20ba4d7ce7cdad7d5f302dd610e04debad5b7e117b634e4da9bbde4f85bf3ee351a6df6062d88f68f0425fbfd0d8ffc408a60fd4bd102fed7f84fff6fed59ff5482c4027fdd5b0661ae6907f229900a3c14450c37876410c2dfa21af12d3d1c347df122955db1248459b62762ae0a2937ea50298fc8cb2928c67b2d54e8dd30a3bf6b3737842e3a11c0483af2fada3d7b37893ee844643f0e9a71423592384341b7bb43d605de4436e789482897b64be458624cb9b1194eb7fd09504f6ebf50b8fbc4536e981755471ea7557f65f7593f66745be66891609d275a63ace74764008e5665911f0b667f6a596acacca96bb4dcf76bb8ed3d6ca5829472b7e1167affffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -4908,19 +5041,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/YarnSpinner/Examples
+    - Assets/Scripts/Components/ActionStateMachine
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/YarnSpinner/Examples
+  - Assets/Scripts/Components/ActionStateMachine
   m_LastFoldersGridSize: -1
   m_LastProjectPath: F:\Midna\Midna
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 1350}
-    m_SelectedIDs: 86300000
-    m_LastClickedID: 12422
-    m_ExpandedIDs: 0000000096290000122a0000182a00003c2a0000822a0000a22a0000f62a0000222b0000362b0000622b00007e2b00009e2b0000cc2b0000e22b00001e2c0000322c00003a2c0000d22c0000863000008c3000009a300000b230000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 502}
+    m_SelectedIDs: 0e2d0000
+    m_LastClickedID: 11534
+    m_ExpandedIDs: 00000000da2900005a2a0000602a0000862a0000d02a0000f82a0000502b00005a2b00005c2b0000882b00009e2b0000ce2b0000ee2b0000102c0000222c0000402c00005c2c00009c2c0000b22c0000ba2c00001e2d0000622d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -4948,7 +5081,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000096290000122a0000182a00003c2a0000822a0000a22a0000f62a0000222b0000362b0000622b00007e2b00009e2b0000cc2b0000e22b00001e2c0000322c00003a2c0000d22c0000
+    m_ExpandedIDs: 00000000da2900005a2a0000602a0000862a0000d02a0000f82a0000502b00005a2b00005c2b0000882b00009e2b0000ce2b0000ee2b0000102c0000222c0000402c00005c2c00009c2c0000b22c0000ba2c00001e2d0000622d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -5064,28 +5197,27 @@ MonoBehaviour:
     height: 574
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ea390000
-    m_LastClickedID: 14826
-    m_ExpandedIDs: 602bffff2a45ffff064dffffac54ffff3655ffff6457ffff548affff02a5ffffbad7ffff7cebffffa6fbffff00000000ca390000ce390000d4390000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 82bcfdff28cffdff5404feff8414feff1a24fefff237feff245afeff986cfeff6c7dfeff7290feffe49ffeff42b0feff70c0feff84dafeff2aebfeff444cffff0ea9fffffab9ffff66f8ffffa6fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Frame
-      m_OriginalName: Frame
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 14794
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 7}
     m_SearchString: 
-  m_ExpandedScenes:
-  - YarnSpinnerBasicExample
+  m_ExpandedScenes: []
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
