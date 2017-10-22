@@ -1,7 +1,8 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+#if UNITY_EDITOR
+
 using Assets.Editor.UnitTests.Helpers;
-using Assets.Scripts.Components.UnityEvent;
 using Assets.Scripts.Test.Components.HUD;
 using Assets.Scripts.Test.UnityEvent;
 using NUnit.Framework;
@@ -82,3 +83,5 @@ namespace Assets.Editor.UnitTests.Components.HUD
         }
     }
 }
+
+#endif

@@ -1,5 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+#if UNITY_EDITOR
+
 using Assets.Editor.UnitTests.Helpers;
 using Assets.Scripts.Test.Components.Health;
 using Assets.Scripts.Test.Components.Health.Damage;
@@ -26,3 +28,5 @@ namespace Assets.Editor.UnitTests.Components.Health.Damage
         }
     }
 }
+
+#endif

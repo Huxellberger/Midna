@@ -1,5 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+#if UNITY_EDITOR
+
 using Assets.Editor.UnitTests.Helpers;
 using Assets.Scripts.Components.HUD;
 using Assets.Scripts.Components.UnityEvent;
@@ -163,3 +165,5 @@ namespace Assets.Editor.UnitTests.Components.Controller
         }
     }
 }
+
+#endif

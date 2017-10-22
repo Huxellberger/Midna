@@ -1,5 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+#if UNITY_EDITOR
+
 using System.Collections.Generic;
 using Assets.Scripts.Components.GameMode;
 using Assets.Scripts.Test.TestableMonobehaviour;
@@ -22,3 +24,5 @@ namespace Assets.Scripts.Test.Components.GameMode
         }
     }
 }
+
+#endif

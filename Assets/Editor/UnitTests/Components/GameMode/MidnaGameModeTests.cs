@@ -1,5 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+#if UNITY_EDITOR
+
 using Assets.Scripts.Components.GameMode;
 using NUnit.Framework;
 using UnityEngine;
@@ -52,3 +54,5 @@ namespace Assets.Editor.UnitTests.Components.GameMode
         private GameObject _setGameMode;
     }
 }
+
+#endif

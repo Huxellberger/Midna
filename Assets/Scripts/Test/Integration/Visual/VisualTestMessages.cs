@@ -1,5 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+#if UNITY_EDITOR
+
 using Assets.Scripts.Components.UnityEvent;
 
 namespace Assets.Scripts.Test.Integration.Visual
@@ -9,3 +11,5 @@ namespace Assets.Scripts.Test.Integration.Visual
     {
     }
 }
+
+#endif

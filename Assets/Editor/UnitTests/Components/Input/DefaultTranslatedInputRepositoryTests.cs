@@ -1,5 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+#if UNITY_EDITOR
+
 using System.Collections.Generic;
 using NUnit.Framework;
 using Assets.Editor.UnitTests.Helpers;
@@ -122,3 +124,5 @@ namespace Assets.Editor.UnitTests.Components.Input
         }
     }
 }
+
+#endif

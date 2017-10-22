@@ -1,5 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+#if UNITY_EDITOR
+
 using System;
 using Assets.Scripts.Core;
 using NUnit.Framework;
@@ -56,3 +58,5 @@ namespace Assets.Editor.UnitTests.Core
         }
     }
 }
+
+#endif

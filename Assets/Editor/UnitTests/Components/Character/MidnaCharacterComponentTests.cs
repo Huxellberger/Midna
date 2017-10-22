@@ -1,5 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+#if UNITY_EDITOR
+
 using Assets.Editor.UnitTests.Helpers;
 using Assets.Scripts.Components.ActionStateMachine.States.Locomotion;
 using Assets.Scripts.Components.GameMode;
@@ -76,3 +78,5 @@ namespace Assets.Editor.UnitTests.Components.Character
         private MockActionStateMachineComponent _mockActionStateMachineComponent;
     }
 }
+
+#endif

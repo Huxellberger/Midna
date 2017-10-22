@@ -1,5 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+#if UNITY_EDITOR
+
 using Assets.Editor.UnitTests.Components.UnityEvent;
 using Assets.Editor.UnitTests.Helpers;
 using Assets.Scripts.Components.ActionStateMachine.States.Dead;
@@ -145,3 +147,5 @@ namespace Assets.Editor.UnitTests.Components.Health
         private TestUnityMessageEventDispatcherComponent _dispatcherComponent;
     }
 }
+
+#endif

@@ -1,5 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+#if UNITY_EDITOR
+
 using Assets.Editor.UnitTests.Helpers;
 using Assets.Scripts.Test.Components.Equipment;
 using Assets.Scripts.Test.Components.Equipment.Loadout;
@@ -68,3 +70,5 @@ namespace Assets.Editor.UnitTests.Components.Equipment.Loadout
         }
     }
 }
+
+#endif

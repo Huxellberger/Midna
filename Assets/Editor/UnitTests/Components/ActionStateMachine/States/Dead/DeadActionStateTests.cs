@@ -1,5 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+#if UNITY_EDITOR
+
 using System.Linq;
 using Assets.Editor.UnitTests.Components.UnityEvent;
 using Assets.Editor.UnitTests.Helpers;
@@ -170,3 +172,5 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine.States.Dead
         }
     }
 }
+
+#endif

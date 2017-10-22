@@ -1,8 +1,9 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+#if UNITY_EDITOR
+
 using Assets.Scripts.Components.ActionStateMachine.ConditionRunner.Conditions;
 using NUnit.Framework;
-using UnityEngine;
 
 namespace Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.Conditions
 {
@@ -56,3 +57,5 @@ namespace Assets.Editor.UnitTests.Components.ActionStateMachine.ConditionRunner.
         }
     }
 }
+
+#endif

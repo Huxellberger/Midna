@@ -1,5 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+#if UNITY_EDITOR
+
 using Assets.Editor.UnitTests.Helpers;
 using Assets.Scripts.Components.ActionStateMachine.States.Dead;
 using Assets.Scripts.Components.Health;
@@ -62,3 +64,5 @@ namespace Assets.Editor.UnitTests.Components.Player
         }
     }
 }
+
+#endif

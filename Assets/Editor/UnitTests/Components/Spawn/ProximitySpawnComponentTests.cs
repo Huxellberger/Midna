@@ -1,5 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+#if UNITY_EDITOR
+
 using Assets.Editor.UnitTests.Helpers;
 using Assets.Scripts.Test.Components.Character;
 using Assets.Scripts.Test.Components.Spawn;
@@ -39,3 +41,5 @@ namespace Assets.Editor.UnitTests.Components.Spawn
         }
     }
 }
+
+#endif

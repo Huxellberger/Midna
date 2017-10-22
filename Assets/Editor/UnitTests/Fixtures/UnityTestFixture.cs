@@ -1,5 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+#if UNITY_EDITOR
+
 using Assets.Editor.UnitTests.Helpers;
 using NUnit.Framework;
 
@@ -37,3 +39,5 @@ namespace Assets.Editor.UnitTests.Fixtures
         protected ConsoleLogHandler consoleLogHandler;
     }
 }
+
+#endif

@@ -9,7 +9,7 @@ namespace Assets.Editor.UnitTests
     public class DefaultTests
     {
         [Test]
-        public void GivenFailingTest_BuildGoesRed()
+        public void DefaultTest()
         {
             //Given
             var gameObject = new GameObject();
