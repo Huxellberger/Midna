@@ -1,5 +1,7 @@
 ﻿// Copyright Threetee Gang (C) 2017
 
+#if UNITY_EDITOR
+
 using Assets.Scripts.Components.Camera;
 using Assets.Scripts.Components.UnityEvent;
 using UnityEngine;
@@ -31,3 +33,5 @@ namespace Assets.Scripts.Test.Integration.Visual.Tests
         }
     }
 }
+
+#endif 
